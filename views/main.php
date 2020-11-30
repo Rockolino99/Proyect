@@ -10,8 +10,8 @@
         <div class="card" style="width: 33.33%;">
             <img src="images/img1.jpg" class="card-img-top" title="Invierno">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Invierno</h5>
+                <p class="card-text">Colección de temporada, que el clima no sea un impedimento para que tu puedas lucir perfecta.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
