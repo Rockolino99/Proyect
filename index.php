@@ -6,6 +6,7 @@
     <title>Tienda | Cutsie Girl</title>
     <!--Links-->
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos2.css">
     <!--Fin Links-->
 </head>
 <body>
