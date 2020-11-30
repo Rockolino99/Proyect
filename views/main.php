@@ -6,7 +6,7 @@
 </ol>
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="images/img3.jpg" class="d-block w-100" alt="..." id="car">
+    <img src="images/img3.jpg" class="d-block w-50" alt="..." id="car">
     <div class="carousel-caption d-none d-md-block">
       <h5>First slide label</h5>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
