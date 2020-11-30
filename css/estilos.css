@@ -1,8 +1,19 @@
-body{
-    font-size: 12px;
-    color: blue;   
-}
 .content{
     display: flex;
     justify-content: space-around;
+}
+.pie-de-pagina{
+    background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));  
+}
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-twitter {
+    color: #00acee;
+}
+
+.fa-youtube {
+    color: red;
 }
