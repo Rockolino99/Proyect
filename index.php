@@ -79,9 +79,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
+                <!--aqui hay que meter un mapa de la ubicación-->
                     <img src="images/imagen.png" style="width:130px;">
                     <h6 class="text-muted">
-                        Poner direccion de la tienda<br>
+                    Zaragoza #225, Centro
+                    Aguascalientes, Ags, mx.<br>
                     </h6>
                 </div>
                 <div class="col-xs-12 col-md-6 text-right">
