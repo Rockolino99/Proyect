@@ -74,21 +74,21 @@
     }
     ?>
     <!--Footer (Pie de pagina)-->
-    <!--Modificar el color de las letras, intente modificar pero no se reflejaban los cambios :(-->
+    <!--Ya quedó ;)-->
     <footer class="pie-de-pagina">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                 <!--aqui hay que meter un mapa de la ubicación-->
                     <img src="images/imagen.png" style="width:130px;">
-                    <h6 class="text-muted">
+                    <h6>
                     Zaragoza #225, Centro
                     Aguascalientes, Ags, mx.<br>
                     </h6>
                 </div>
                 <div class="col-xs-12 col-md-6 text-right">
                     <div class="pull-right">
-                        <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                        <h6 class="lead">ENCUENTRANOS EN LAS REDES</h6>
 
                             <div class="redes-footer">
                                 <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -97,7 +97,7 @@
                             </div>
                     </div>
                     <div class="row">
-                        <p class="text-muted small text-center">Cutsie Girl&reg;
+                        <p class="small text-center">Cutsie Girl&reg;
                             <br> Todos los derechos reservados.
                         </p>
                     </div>
