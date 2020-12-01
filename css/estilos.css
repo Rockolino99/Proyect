@@ -2,21 +2,56 @@
     display: flex;
     justify-content: space-around;
 }
+
+.nav-link:hover{
+    opacity: 0.5;
+}
+
+/*Inicia estilos de pie de pagina*/
 .pie-de-pagina{
     background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));  
 }
 
-.fa-facebook {
+.container{
+    padding-top: 25px;
+}
+
+.col-md-4{
+    text-align: center;
+    pad
+}
+
+ul li{
+    list-style: none;
+    text-align: left;
+}
+
+ul li a{
+    color:rgb(236, 231, 231);
+}
+
+.titulosPiePag{
+    color:white;
+    padding: 5px;
+}
+
+.fa-facebook-f{
     color: blue;
+    font-size: 35px;
+    margin-right: 20px;
 }
 
-.fa-twitter {
+.fa-twitter{
     color: #00acee;
+    font-size: 35px;
+    margin-right: 20px;
 }
 
-.fa-youtube {
+.fa-youtube{
     color: red;
+    font-size: 35px;
 }
-footer{
-    color: white;
+
+.fab:hover{
+    opacity: 0.5;
 }
