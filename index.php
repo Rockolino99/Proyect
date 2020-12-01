@@ -76,7 +76,7 @@
         case 'main': //Página Principal
             include "views/main.php";
             break;
-        case 'store':
+        case 'store': //Tienda
             include "";
             break;
     }
