@@ -25,6 +25,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li>
+                    <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
                 </li>
@@ -58,6 +61,11 @@
                     <a class="nav-link active" href="index.php?mod="style="color: white;">BLOG</a>
                 </li>
             </ul>
+            <!--link de LogIn-->
+            <div class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b>  LOG IN</b></a>
+            </div>
+            
         </div>
     </nav>
     <!--Fin Header-->
@@ -74,33 +82,41 @@
     }
     ?>
     <!--Footer (Pie de pagina)-->
-    <!--Ya quedó ;)-->
     <footer class="pie-de-pagina">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-6">
-                <!--aqui hay que meter un mapa de la ubicación-->
-                    <img src="images/imagen.png" style="width:130px;">
-                    <h6>
-                    Zaragoza #225, Centro
-                    Aguascalientes, Ags, mx.<br>
+                <div class="col-md-4">
+                    <h5 class="titulosPiePag">LOCALÍZANOS</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.255485442629!2d-102.29483538599813!3d21.88623548554018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee644fd3139d%3A0x586a90fb8f831491!2sZaragoza%20225%2C%20Zona%20Centro%2C%2020000%20Aguascalientes%2C%20Ags.!5e0!3m2!1sen!2smx!4v1606773540684!5m2!1sen!2smx" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <h6 style="color:rgb(236, 231, 231); text-align: left; margin: 15px;">
+                        Zaragoza #225, Centro<br>Aguascalientes, Ags, mx.
                     </h6>
                 </div>
-                <div class="col-xs-12 col-md-6 text-right">
+                <div class="col-md-4">
+                <h5 class="titulosPiePag">CUTSIE INFO</h5>
+                    <ul>
+                        <li><a href="">Envíos y devoluciones</a></li>
+                        <li><a href="">Nuestras políticas</a></li>
+                        <li><a href="">Metodos de pago</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
                     <div class="pull-right">
-                        <h6 class="lead">ENCUENTRANOS EN LAS REDES</h6>
+                        <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
 
                             <div class="redes-footer">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                             </div>
                     </div>
-                    <div class="row">
-                        <p class="small text-center">Cutsie Girl&reg;
-                            <br> Todos los derechos reservados.
-                        </p>
-                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="color:rgb(236, 231, 231); text-align: center; font-size: small;">Cutsie Girl&reg;
+                        <br> Todos los derechos reservados.
+                    </p>
                 </div>
             </div>
         </div>
@@ -112,4 +128,4 @@
     <script src="https://kit.fontawesome.com/f8978717f6.js" crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 
