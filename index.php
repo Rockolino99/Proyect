@@ -103,7 +103,6 @@
                 <div class="col-md-4">
                     <div class="pull-right">
                         <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
-
                             <div class="redes-footer">
                                 <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
