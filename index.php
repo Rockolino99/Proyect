@@ -18,58 +18,56 @@
 
 <body>
     <!--Header (Encabezado)-->
-    <header class="patas"> 
-        <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));">
-            <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item dropdown">
+    <nav class="navbar navbar-expand-lg navbar-light" style="overflow:hidden; background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%;">
+        <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-                            TIENDA
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                        </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="index.php?mod=" style="color: white;">ACERCA DE </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="index.php?mod=" style="color: white;">FILOSOFIA</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="index.php?mod=" style="color: white;">CONTACTO</a>
-                    </li>
-                    <!--Esta opción se quita o se deja dependiendo de la rúbrica-->
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="index.php?mod=" style="color: white;">BLOG</a>
-                    </li>
-                </ul>
-                <!--link de LogIn-->
-                <div class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b> LOG IN</b></a>
-                </div>
-
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                        TIENDA
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;">ACERCA DE </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;">FILOSOFIA</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;">CONTACTO</a>
+                </li>
+                <!--Esta opción se quita o se deja dependiendo de la rúbrica-->
+                <li class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;">BLOG</a>
+                </li>
+            </ul>
+            <!--link de LogIn-->
+            <div class="nav-item active">
+                <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b> LOG IN</b></a>
             </div>
-        </nav>
-    </header>
+
+        </div>
+    </nav>
     <!--Fin Header-->
     <?php
     if (!isset($mod))
