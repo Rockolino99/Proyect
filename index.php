@@ -18,56 +18,58 @@
 
 <body>
     <!--Header (Encabezado)-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));">
-        <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li>
-                    <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item dropdown">
+    <header class="patas"> 
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));">
+            <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-                        TIENDA
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;">ACERCA DE </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod="style="color: white;">FILOSOFIA</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod="style="color: white;">CONTACTO</a>
-                </li>
-                <!--Esta opción se quita o se deja dependiendo de la rúbrica-->
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod="style="color: white;">BLOG</a>
-                </li>
-            </ul>
-            <!--link de LogIn-->
-            <div class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b>  LOG IN</b></a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                            TIENDA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="index.php?mod=" style="color: white;">ACERCA DE </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="index.php?mod=" style="color: white;">FILOSOFIA</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="index.php?mod=" style="color: white;">CONTACTO</a>
+                    </li>
+                    <!--Esta opción se quita o se deja dependiendo de la rúbrica-->
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="index.php?mod=" style="color: white;">BLOG</a>
+                    </li>
+                </ul>
+                <!--link de LogIn-->
+                <div class="nav-item active">
+                    <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b> LOG IN</b></a>
+                </div>
+
             </div>
-            
-        </div>
-    </nav>
+        </nav>
+    </header>
     <!--Fin Header-->
     <?php
     if (!isset($mod))
@@ -93,7 +95,7 @@
                     </h6>
                 </div>
                 <div class="col-md-4">
-                <h5 class="titulosPiePag">CUTSIE INFO</h5>
+                    <h5 class="titulosPiePag">CUTSIE INFO</h5>
                     <ul>
                         <li><a href="">Envíos y devoluciones</a></li>
                         <li><a href="">Nuestras políticas</a></li>
@@ -103,11 +105,11 @@
                 <div class="col-md-4">
                     <div class="pull-right">
                         <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
-                            <div class="redes-footer">
-                                <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                            </div>
+                        <div class="redes-footer">
+                            <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,4 +129,4 @@
     <script src="https://kit.fontawesome.com/f8978717f6.js" crossorigin="anonymous"></script>
 </body>
 
-</html> 
+</html>
