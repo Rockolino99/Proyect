@@ -40,7 +40,7 @@
                         TIENDA
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        <a class="dropdown-item" href="index.php?mod=tienda-invierno">Ropa Invierno<img src="" width="50px"></a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
                         <div class="dropdown-divider"></div>
@@ -61,7 +61,7 @@
                     <a class="nav-link active" href="index.php?mod=" style="color: white;">BLOG</a>
                 </li>
             </ul>
-            <!--link de LogIn-->
+            <!--link de Login-->
             <div class="nav-item active">
                 <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b> LOG IN</b></a>
             </div>
@@ -74,10 +74,10 @@
         $mod = 'main';
     switch ($mod) {
         case 'main': //Página Principal
-            include "views/main.php";
+            include ("views/main.php");
             break;
-        case 'store': //Tienda
-            include "";
+        case 'store': //TiendaInvierno
+            include ("views/tienda-invierno.php");
             break;
     }
     ?>
