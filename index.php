@@ -18,7 +18,7 @@
 
 <body>
     <!--Header (Encabezado)-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="overflow:hidden; background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%; position: sticky; z-index: 1">
         <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
                         TIENDA
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
                         <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
