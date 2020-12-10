@@ -1,5 +1,6 @@
 <?php
-class Database {
+class Database
+{
 
     // specify your own database credentials
     private $host = "localhost";
@@ -9,29 +10,30 @@ class Database {
     public $conn;
 
     // get the database connection
-    public function getConnection() {
+    public function getConnection()
+    {
         $this->conn = null;
-        try{
-            //$this->conn = new mysqli("localhost", "root", "", "cutsiegirl");
+        try {
             $this->conn = new PDO("mysql:host=localhost;dbname=cutsiegirl", 'root', '');
-        }catch(PDOException $exception){
+        } catch (PDOException $exception) {
             echo "Connection error: " . $exception->getMessage();
         }
         return $this->conn;
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         try {
-            $this->conn = new mysqli("localhost", "root", "", "cutsiegirl");
-           //$this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            //$this->conn->exec("SET CHARACTER SET utf8"); 
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("SET CHARACTER SET utf8");
         } catch (PDOException $exception) {
             print "Error!: " . $exception->getMessage();
             die();
         }
     }
 
-    public function prepare($sql) {
+    public function prepare($sql)
+    {
         return $this->conn->prepare($sql);
     }
 }
