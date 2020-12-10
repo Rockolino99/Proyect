@@ -36,7 +36,7 @@ ul li a{
     color:white;
     padding: 5px;
 }
-
+/*Estilos para iconos redes sociales*/
 .fa-facebook-f{
     color: blue;
     font-size: 35px;
@@ -64,6 +64,7 @@ ul li a{
     transition: 0.5s;
 }
 
+/*Estilos para tabla de articulos*/
 table, th, td{
     border-collapse: collapse;
     border: 1px solid red;

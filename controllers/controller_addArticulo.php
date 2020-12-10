@@ -7,5 +7,5 @@ $db = $database->getConnection();
 
 $articulo = new Articulo($db);
 
-echo $articulo->addArticulo();
+echo $articulo->addArticulo();//retorna ultimo id insertado
 ?>

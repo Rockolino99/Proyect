@@ -4,6 +4,7 @@ include_once "../connection/Object_Connection.php";
 class Articulo {
     private $conn;
 
+    public $idArticulo;
     public $nombre;
     public $marca;
     public $decripcion;
@@ -36,6 +37,23 @@ class Articulo {
                   FROM cutsiegirl.articulo";
 
         $stmt = $this->conn->prepare($query);
+        if($stmt->execute())
+            return $stmt;
+        else
+            return 0;
+    }
+
+    function getLastArticulo() {
+        $query = "SELECT *
+                  FROM cutsiegirl.articulo
+                  WHERE idArticulo = :idArticulo";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+
+        $stmt->bindParam(":idArticulo", $this->idArticulo);
+
         if($stmt->execute())
             return $stmt;
         else
