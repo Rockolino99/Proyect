@@ -13,6 +13,10 @@
     <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!--AJAX JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <!--JS-->
+    <script src="js/funciones.js"></script>
     <!--Fin Links-->
 </head>
 
@@ -73,10 +77,10 @@
     $mod = (isset($_GET['mod'])) ? $_GET['mod'] : "main";
     switch ($mod) {
         case 'main': //Página Principal
-            include("views/main.php");
+            include "views/main.php";
             break;
         case 'store': //TiendaInvierno
-            include("views/tienda-invierno.php");
+            include ("views/tienda-invierno.php");
             break;
     }
     ?>
@@ -86,7 +90,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5 class="titulosPiePag">LOCALÍZANOS</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.255485442629!2d-102.29483538599813!3d21.88623548554018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee644fd3139d%3A0x586a90fb8f831491!2sZaragoza%20225%2C%20Zona%20Centro%2C%2020000%20Aguascalientes%2C%20Ags.!5e0!3m2!1sen!2smx!4v1606773540684!5m2!1sen!2smx" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.255485442629!2d-102.29483538599813!3d21.88623548554018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee644fd3139d%3A0x586a90fb8f831491!2sZaragoza%20225%2C%20Zona%20Centro%2C%2020000%20Aguascalientes%2C%20Ags.!5e0!3m2!1sen!2smx!4v1606773540684!5m2!1sen!2smx" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
                     <h6 style="color:rgb(236, 231, 231); text-align: left; margin: 15px;">
                         Zaragoza #225, Centro<br>Aguascalientes, Ags, mx.
                     </h6>
@@ -121,7 +125,6 @@
     </footer>
     <!--Fin Footer-->
     <!--Scripts de Bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f8978717f6.js" crossorigin="anonymous"></script>
 </body>
