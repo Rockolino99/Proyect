@@ -13,6 +13,7 @@ class Articulo {
     function __construct($db) {
         $this->conn = $db;
     }
+
     function addArticulo() {
         $query = "INSERT INTO cutsiegirl.articulo
                   SET
@@ -23,9 +24,22 @@ class Articulo {
                   idCategoria = 6";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->execute();
 
-        return 5;
+        if(!$stmt->execute())
+            return 0;
+        else 
+            return $this->conn->lastInsertId();
+    }
+
+    function getArticulo() {
+        $query = "SELECT *
+                  FROM cutsiegirl.articulo";
+
+        $stmt = $this->conn->prepare($query);
+        if($stmt->execute())
+            return $stmt;
+        else
+            return 0;
     }
 }
 ?>

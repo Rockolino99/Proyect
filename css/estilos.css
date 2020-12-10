@@ -63,3 +63,8 @@ ul li a{
     filter:brightness(0.5);
     transition: 0.5s;
 }
+
+table, th, td{
+    border-collapse: collapse;
+    border: 1px solid red;
+}

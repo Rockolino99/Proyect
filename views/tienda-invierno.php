@@ -4,3 +4,16 @@
     </div>
 </div>
 <button onclick="addArticulo()">Press me</button>
+<table>
+    <thead>
+        <tr>
+            <th>idArticulo</th>
+            <th>nombre</th>
+            <th>marca</th>
+            <th>descripcion</th>
+            <th>idProveedor</th>
+            <th>idCategoria</th>
+        </tr>
+    </thead>
+    <tbody id="patas1"></tbody>
+</table>
