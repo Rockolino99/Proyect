@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+    <div class="presentacion">
+        <div class="inicio" style="align-self:center; width: 50%; margin-left: 10%;">
+            <h1 style="font-size: 65px;">Cutsie Girl</h1>
+            <h2 style="font-family: 'Cookie', cursive;">Dream in color</h2>
+        </div>
+        <div class="logoInicio" style="width: 50%; text-align: center;">
+            <video src="images/logoVideo.mp4" width="80%" autoplay loop></video>
+        </div>
+    </div>
+
     <div class="content">
         <div class="card" style="width: 33.33%;">
             <div class="opaco">

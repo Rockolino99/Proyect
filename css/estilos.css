@@ -10,6 +10,14 @@ p.card-text {
     text-align: justify;
 }
 
+/*Estilos presentacion de la pagina*/
+
+.presentacion{
+    display: flex;
+    justify-content: center;
+}
+
+
 /*Inicia estilos de pie de pagina*/
 .pie-de-pagina{
     background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));  

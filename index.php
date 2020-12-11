@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda | Cutsie Girl</title>
     <!--Links-->
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos2.css">
