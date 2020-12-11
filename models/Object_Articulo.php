@@ -5,9 +5,10 @@ class Articulo {
     private $conn;
 
     public $idArticulo;
+
     public $nombre;
     public $marca;
-    public $decripcion;
+    public $descripcion;
     public $idProveedor;
     public $idCategoria;
 
@@ -16,20 +17,34 @@ class Articulo {
     }
 
     function addArticulo() {
+        
         $query = "INSERT INTO cutsiegirl.articulo
                   SET
-                  nombre = 'a',
-                  marca = 'a',
-                  descripcion = 'a',
-                  idProveedor = 12,
-                  idCategoria = 6";
+                  nombre = :nombre,
+                  marca = :marca,
+                  idProveedor = :idProveedor,
+                  idCategoria = :idCategoria,
+                  descripcion = :descripcion";
 
         $stmt = $this->conn->prepare($query);
 
-        if(!$stmt->execute())
-            return 0;
-        else 
+        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
+        $this->marca = htmlspecialchars(strip_tags($this->marca));
+        $this->idProveedor = htmlspecialchars(strip_tags($this->idProveedor));
+        $this->idCategoria = htmlspecialchars(strip_tags($this->idCategoria));
+        $this->descripcion = htmlspecialchars(strip_tags($this->descripcion));
+        
+        $stmt->bindValue(":nombre", $this->nombre);
+        $stmt->bindValue(":marca", $this->marca);
+        $stmt->bindValue(":idProveedor", $this->idProveedor);
+        $stmt->bindValue(":idCategoria", $this->idCategoria);
+        $stmt->bindValue(":descripcion", $this->descripcion);
+
+        if($stmt->execute())
             return $this->conn->lastInsertId();
+        else
+            return 0; 
+
     }
 
     function getArticulo() {

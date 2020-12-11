@@ -20,9 +20,3 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo "</tr>";
 }
 ?>
-<div class="container" style="width: 300px; height: 300px; padding: 50px;">
-  <div class="card" style="padding: 20px; width: 200px; height: 200px;">
-        :v
-
-    </div>
-</div>

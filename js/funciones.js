@@ -1,6 +1,13 @@
 function addArticulo() {
     $.ajax({
         type: 'POST',
+        data: {
+            nombre: $('#nombre').val(),
+            marca:  $('#marca').val(),
+            idProveedor:  parseInt($('#idProveedor').val()),
+            idCategoria:  parseInt($('#idCategoria').val()),
+            descripcion:  $('#descripcion').val()
+        },
         url: "controllers/controller_addArticulo.php",
         success: function(result) {
             getLastArticulo(result)
@@ -30,6 +37,16 @@ function getLastArticulo(id) {
         }
     })
 }
+
+function getProveedores() {
+    $.ajax({
+        url: "controllers/controller_getProveedores.php",
+        success: function(result) {
+            $('#selectProveedor').append(result)
+        }
+    })
+}
 $(document).ready(function(){
     getArticulo()
+    getProveedores()
 })

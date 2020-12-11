@@ -7,5 +7,11 @@ $db = $database->getConnection();
 
 $articulo = new Articulo($db);
 
+$articulo->nombre = $_POST['nombre'];
+$articulo->marca = $_POST['marca'];
+$articulo->idProveedor = $_POST['idProveedor'];
+$articulo->idCategoria = $_POST['idCategoria'];
+$articulo->descripcion = $_POST['descripcion'];
+
 echo $articulo->addArticulo();//retorna ultimo id insertado
 ?>
