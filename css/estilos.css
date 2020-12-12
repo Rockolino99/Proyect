@@ -5,6 +5,7 @@
 
 .nav-link:hover{
     opacity: 0.5;
+    cursor: pointer;
 }
 p.card-text {
     text-align: justify;
@@ -77,3 +78,4 @@ table, th, td{
     border-collapse: collapse;
     border: 1px solid red;
 }
+

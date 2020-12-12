@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos2.css">
+
     <!--Favicon-->
     <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
     <!--Bootstrap-->
@@ -49,32 +49,110 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
                         <a class="dropdown-item" href="index.php?mod=store">Ropa Invierno<img src="" width="50px"></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        <a class="dropdown-item" href="#"><img src="" width="50px"></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod="><img src="" width="50px"></a>
+                        <a class="dropdown-item" href="#"><img src="" width="50px"></a>
                     </div>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;">ACERCA DE </a>
+                    <a class="nav-link active" href="#" style="color: white;">ACERCA DE </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;">FILOSOFIA</a>
+                    <a class="nav-link active" href="#" style="color: white;">FILOSOFIA</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;">CONTACTO</a>
-                </li>
-                <!--Esta opción se quita o se deja dependiendo de la rúbrica-->
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.php?mod=" style="color: white;">BLOG</a>
+                    <a class="nav-link active" href="#" style="color: white;">CONTACTO</a>
                 </li>
             </ul>
-            <!--link de Login-->
-            <div class="nav-item active">
-                <a class="nav-link active" href="index.php?mod=" style="color: white;"><i class="fas fa-user"></i><b> LOG IN</b></a>
-            </div>
-
+            <!--Login-->
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="dropdown order-1">
+                    <a class="nav-link active" data-toggle="dropdown" style="color: white;"><i class="fas fa-user"></i><b> INICIAR SESIÓN</b></a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-2">
+                        <li class="px-3 py-2">
+                            <form class="form" role="form" action="" method="post">
+                                <div class="form-group">
+                                    <input name="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" required autocomplete="on">
+                                </div>
+                                <input type="hidden" name="array" value=''>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary" name="entrar">Entrar</button>
+                                </div>
+                                <!--modificar boton-->
+                                <div class="form-group text-center">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPassword">Registrarse</button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </nav>
+    <!--//Modal registro-->
+    <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Registro</h3>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="form" role="form" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="apat">Apellido Paterno:</label>
+                                    <input type="text" class="form-control" id="apat" placeholder="A. Paterno" name="apat" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="amat">Apellido Materno:</label>
+                                    <input type="text" class="form-control" id="amat" placeholder="A. Materno" name="amat" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user">Dirección:</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="pass">Contraseña:</label>
+                                    <input type="password" class="form-control" id="pass" placeholder="Contraseña" name="pass" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="pass">Confirma Contraseña:</label>
+                                    <input type="password" class="form-control" id="pass2" placeholder="Confirma Contraseña" name="pass2" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" name="enviar" id="btnRegistrar" onclick="registro()">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//Modal registro-->
     <!--Fin Header-->
     <?php
     $mod = (isset($_GET['mod'])) ? $_GET['mod'] : "main";
@@ -83,7 +161,7 @@
             include "views/main.php";
             break;
         case 'store': //TiendaInvierno
-            include ("views/tienda-invierno.php");
+            include("views/tienda-invierno.php");
             break;
     }
     ?>
