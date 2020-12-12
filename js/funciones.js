@@ -93,7 +93,7 @@ function registro() {
     //validacion direccion
     $('#direccion').focus()
     if (direccion == '') {
-        alert("Dirección Incorrecto!")
+        alert("Dirección Incorrecta!")
         return
     }
 
