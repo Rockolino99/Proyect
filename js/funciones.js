@@ -110,7 +110,7 @@ function registro() {
             nombre: nombre,
             apellido_paterno: ap_paterno,
             apellido_materno: ap_paterno,
-            correo: $correo,
+            correo: correo,
             password: password,
             direccion: direccion
         },
