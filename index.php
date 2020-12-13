@@ -67,7 +67,6 @@ session_start();
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" href="#" style="color: white;">CONTÁCTANOS</a>
-                    <a class="nav-link active" href="index.php?mod=filosofia" style="color: white;">FILOSOFIA</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
