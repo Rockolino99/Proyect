@@ -160,7 +160,16 @@ function login() {
         },
         url: "controllers/controller_Login.php",
         success: function (result) {
-            alert(result)
+            switch (result) {
+                case '1':
+                    alert(result)
+                    location.reload()
+                    break;
+                default:
+                    alert(result)
+                    alert(":v")
+                    break;
+            }
         }
     })
 

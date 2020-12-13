@@ -91,12 +91,19 @@ class Login {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if(!$row)
-                return "La cagaste mijo, el correo no está registrado";
+                return 0;//No hay correo registrado
             else {
                 if(password_verify($this->contra, $row['contra'])) {
-                    return "Ingreso exitoso";
+                    session_start();
+                    $_SESSION['idUsuario'] = $row['idUsuario'];
+                    $_SESSION['nombreUsuario'] = $row['nombre'];
+                    $_SESSION['apellidos'] = "$row[apellido_paterno] $row[apellido_materno]";
+                    $_SESSION['correo'] = $row['correo'];
+                    $_SESSION['direccion'] = $row['direccion'];
+
+                    return 1;//Inicio de sesión
                 }
-                return "Contraseña incorrecta.";
+                return -1;//Contraseña incorrecta
             }
         }
     }

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,6 +68,16 @@
                     <a class="nav-link active" href="#" style="color: white;">CONTACTO</a>
                 </li>
             </ul>
+            <?php 
+            if(isset($_SESSION['idUsuario'])) {
+                echo "Hola $_SESSION[nombreUsuario]";
+            ?>
+                <a href="php/logout.php">Cerrar sesión</a>
+            <?php
+            }
+            else {
+                session_destroy();
+            ?>
             <!--Login-->
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                 <li class="dropdown order-1">
@@ -90,6 +104,9 @@
                     </ul>
                 </li>
             </ul>
+            <?php
+            }
+            ?>
         </div>
     </nav>
     <!--//Modal registro-->
