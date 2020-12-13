@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    getArticulo()
+    getProveedores()
+
+})
+
 function addArticulo() {
     $.ajax({
         type: 'POST',
@@ -46,12 +52,6 @@ function getProveedores() {
         }
     })
 }
-
-$(document).ready(function () {
-    getArticulo()
-    getProveedores()
-
-})
 
 function registro() {
     var nombre = $('#nombre').val()
@@ -128,7 +128,71 @@ function registro() {
         },
         url: "controllers/controller_RegistroUsuario.php",
         success: function (result) {
-            alert(result)
+            swal("ÉXITO", "Usuario registrado exitosamente.", "success");
+            swal({
+                icon: 'success',
+                title: 'ÉXITO',
+                text: 'Usuario registrado exitosamente. Ahora puede inciar sesión.',
+                buttons: false,
+                timer: 4000
+            })
         }
     })
+    $('#formularioRegistro').trigger('reset')
+    $('#modalRegistro').modal('hide')
+}
+
+function login() {
+
+    var correo = $('#correoLogin').val()
+    var contrasena = $('#contrasena').val()
+
+    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
+        alert("¡Usuario requerido!")
+        $('#correoLogin').focus()
+        return
+    }
+
+    if (contrasena == null || contrasena.length == 0 || /^\s+$/.test(contrasena)) {
+        alert("Contraseña requerida!")
+        $('#contrasena').focus()
+        return
+    }
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            correo: correo,
+            contra: contrasena,
+        },
+        url: "controllers/controller_Login.php",
+        success: function (result) {
+            switch (result) {
+                case '1':
+                    location.reload()
+                    break;
+                case '-1':
+                    swal({
+                        icon: 'error',
+                        title: 'ERROR',
+                        text: 'Contraseña incorrecta',
+                        buttons: false,
+                        timer: 2000
+                    })
+                    $('#contrasena').focus()
+                    break;
+                case '0':
+                    swal({
+                        icon: 'warning',
+                        title: 'ERROR',
+                        text: 'El correo no está registrado',
+                        buttons: false,
+                        timer: 2000
+                    })
+                    $('#correoLogin').focus()
+                    break;
+            }
+        }
+    })
+
 }

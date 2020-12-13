@@ -5,7 +5,7 @@
 </div>
 <div class="container">
     <label for="nombre">Nombre:</label>
-    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+    <input type="text" class="form-control" id="nombreArticulo" placeholder="Nombre">
     <label for="marca">Marca:</label>
     <input type="text" class="form-control" id="marca" placeholder="Marca">
     <label for="selectProveedor">Proveedor:</label>
@@ -42,4 +42,5 @@
         </tr>
     </thead>
     <tbody id="patas1"></tbody>
+    
 </table>

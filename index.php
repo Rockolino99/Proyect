@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="css/estilos.css">
-
+    <link rel="stylesheet" href="css/estilos2.css">
     <!--Favicon-->
     <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
     <!--Bootstrap-->
@@ -20,6 +24,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <!--JS-->
     <script src="js/funciones.js"></script>
+    <!--AnimateCSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!--Fin Links-->
 </head>
 
@@ -55,7 +61,7 @@
                     </div>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="#" style="color: white;">ACERCA DE </a>
+                    <a class="nav-link active" href="index.php?mod=acercade" style="color: white;">ACERCA DE </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" href="#" style="color: white;">FILOSOFIA</a>
@@ -64,43 +70,55 @@
                     <a class="nav-link active" href="#" style="color: white;">CONTACTO</a>
                 </li>
             </ul>
+            <?php 
+            if(isset($_SESSION['idUsuario'])) {
+            ?>
+                <a href="php/logout.php" style="color: white;" class="nav-link active"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
+            <?php
+            }
+            else {
+                session_destroy();
+            ?>
             <!--Login-->
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                 <li class="dropdown order-1">
                     <a class="nav-link active" data-toggle="dropdown" style="color: white;"><i class="fas fa-user"></i><b> INICIAR SESIÓN</b></a>
                     <ul class="dropdown-menu dropdown-menu-right mt-2">
                         <li class="px-3 py-2">
-                            <form class="form" role="form" action="" method="post">
+                            <form class="form" role="form" id="formularioLogin">
                                 <div class="form-group">
-                                    <input name="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required>
+                                    <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin" required>
                                 </div>
                                 <div class="form-group">
-                                    <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" required autocomplete="on">
+                                    <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" required>
                                 </div>
-                                <input type="hidden" name="array" value=''>
+                                <input type="hidden" name="array">
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-primary" name="entrar">Entrar</button>
+                                    <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
                                 </div>
                                 <!--modificar boton-->
                                 <div class="form-group text-center">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPassword">Registrarse</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
                                 </div>
                             </form>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <?php
+            }
+            ?>
         </div>
     </nav>
     <!--//Modal registro-->
-    <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Registro</h3>
                     <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
-                <div class="form" role="form" method="post">
+                <form class="form" role="form" id="formularioRegistro">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nombre">Nombre:</label>
@@ -148,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -162,6 +180,9 @@
             break;
         case 'store': //TiendaInvierno
             include("views/tienda-invierno.php");
+            break;
+        case 'acercade': //Acerca de
+            include ("views/acercade.php");
             break;
     }
     ?>
