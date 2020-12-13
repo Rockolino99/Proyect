@@ -105,7 +105,7 @@ function registro() {
     }
     
     if (password2 == null || password2.length == 0 || /^\s+$/.test(password2)) {
-        alert("¡Ingresa una contraseña!")
+        alert("¡Repite la contraseña!")
         $('#pass2').focus()
         return
     }
