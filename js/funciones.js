@@ -83,15 +83,15 @@ function registro() {
         return
     }
 
-    //validación correo
-    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
-        alert("¡Correo Incorrecto!")
+    //validación de correo
+    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(correo))) {
+        alert("¡Ingrese una dirección de correo válida!")
         $('#correo').focus()
         return
     }
 
     //validación direccion
-    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)) {
+    if (direccion == null || direccion.length == 0 || /^\s+$/.test()){
         alert("¡Dirección Incorrecta!")
         $('#direccion').focus()
         return
