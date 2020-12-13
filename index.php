@@ -138,7 +138,7 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="pass">Confirma Contraseña:</label>
-                                    <input type="password" class="form-control" id="pass2" placeholder="Confirma Contraseña" name="pass2" required>
+                                    <input type="password" class="form-control" id="pass2" placeholder="Repite Tu Contraseña" name="pass2" required>
                                 </div>
                             </div>
                         </div>

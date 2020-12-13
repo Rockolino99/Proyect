@@ -62,44 +62,56 @@ function registro() {
     var password = $('#pass').val()
     var password2 = $('#pass2').val()
 
-    //validacion nombre
-    $('#nombre').focus()
-    if (nombre == '') {
+    //validación nombre
+    if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
         alert("¡Nombre Incorrecto!")
+        $('#nombre').focus()
         return
     }
 
-    //validacion ap_paterno
-    $('#apat').focus()
-    if (ap_paterno == '') {
+    //validación ap_paterno   
+    if (ap_paterno == null || ap_paterno.length == 0 || /^\s+$/.test(ap_paterno)) {
         alert("¡Apellido Paterno Incorrecto!")
+        $('#apat').focus()
         return
     }
 
-    //validacion ap_materno
-    $('#amat').focus()
-    if (ap_materno == '') {
+    //validación ap_materno
+    if (ap_materno == null || ap_materno.length == 0 || /^\s+$/.test(ap_materno)) {
         alert("¡Apellido Materno Incorrecto!")
+        $('#amat').focus()
         return
     }
 
-    //validacion correo
-    $('#correo').focus()
-    if (correo == '') {
+    //validación correo
+    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
         alert("¡Correo Incorrecto!")
+        $('#correo').focus()
         return
     }
 
-    //validacion direccion
-    $('#direccion').focus()
-    if (direccion == '') {
+    //validación direccion
+    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)) {
         alert("¡Dirección Incorrecta!")
+        $('#direccion').focus()
         return
     }
 
-    //validacion password
+    //validación password    
+    if (password == null || password.length == 0 || /^\s+$/.test(password)) {
+        alert("¡Ingresa una contraseña!")
+        $('#pass').focus()
+        return
+    }
+    
+    if (password2 == null || password2.length == 0 || /^\s+$/.test(password2)) {
+        alert("¡Ingresa una contraseña!")
+        $('#pass2').focus()
+        return
+    }
+
     if (password != password2) {
-        alert("¡Las contraseñas no Coinciden!")
+        alert("¡Las contraseñas no coinciden!")
         $('#pass2').focus()
         return
     }
