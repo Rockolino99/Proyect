@@ -8,13 +8,13 @@
   width: 100%;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .fondoPreguntas{
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  
 }
 
 h3 {
@@ -32,7 +32,26 @@ h3 {
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .bgimg-1, .bgimg-2, .bgimg-3, .fondoPreguntas{
     background-attachment: scroll;
   }
+}
+
+/*Estilos pagina Ayuda*/
+.fondoPreguntas{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 100px;
+  padding: 45px;
+}
+.preguntas{
+  color: #777;
+  text-align:center;
+  padding:30px;
+  text-align: justify; 
+  width:75%;
 }
