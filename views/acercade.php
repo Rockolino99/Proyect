@@ -1,5 +1,5 @@
 <div class="coleccion">
-  <span>LO QUE DEBES DE SABER DE NOSOTROS...</span>
+  <span>SOBRE NOSOTROS...</span>
 </div>
 
 <div class="invierno">
@@ -10,9 +10,6 @@
       Es complicado dar un balance entre la ropa comoda y la ropa a la moda, nosotros tratando de dar ese balance creamos nuestras tres categorías donde seguramente encontrarás algo que se adapte a ti, a tus gustos y a tus necesidades.
       Cada una de las prendas esta llena de amor, colores y buenas vibras para ti, con todo nuestro corazón hasta la puerta de tu casa.
     </p>
-    <div style="text-align:center;">
-      <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
-    </div>
   </div>
   <div class="bgimg-1" style="background-image: url('images/outfitin.jpg'); min-height: 800px; width:55%;"></div>
 </div>
@@ -26,9 +23,6 @@
       Queremos llegar a tener una tienda física donde puedas asistir con tu familia o amigos y tengas una atención digna de ti. <br>
       Esperamos llegar a ser tu tienda favorita que te conviertas en nuestra amiga y siempre seamos tu primer opción.
     </p>
-    <div style="text-align:center;">
-      <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
-    </div>
   </div>
 </div>
 
@@ -41,9 +35,6 @@
     en todos los sentidos<br>
     Somos una tienda llena de amor donde ponemos el corazón en cada paquete procesado.
     </p>
-    <div style="text-align:center;">
-      <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
-    </div>
   </div>
   <div class="bgimg-3" style="background-image: url('images/fondodisney.jpg'); min-height: 800px; width:55%;"></div>
 </div>
