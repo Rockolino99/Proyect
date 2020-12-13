@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    getArticulo()
+    getProveedores()
+
+})
+
 function addArticulo() {
     $.ajax({
         type: 'POST',
@@ -46,12 +52,6 @@ function getProveedores() {
         }
     })
 }
-
-$(document).ready(function () {
-    getArticulo()
-    getProveedores()
-
-})
 
 function registro() {
     var nombre = $('#nombre').val()
@@ -131,4 +131,37 @@ function registro() {
             alert(result)
         }
     })
+    $('#formularioRegistro').trigger('reset')
+    $('#modalRegistro').modal('hide')
+}
+
+function login() {
+
+    var correo = $('#correoLogin').val()
+    var contrasena = $('#contrasena').val()
+
+    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
+        alert("¡Usuario requerido!")
+        $('#correoLogin').focus()
+        return
+    }
+
+    if (contrasena == null || contrasena.length == 0 || /^\s+$/.test(contrasena)) {
+        alert("Contraseña requerida!")
+        $('#contrasena').focus()
+        return
+    }
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            correo: correo,
+            contra: contrasena,
+        },
+        url: "controllers/controller_Login.php",
+        success: function (result) {
+            alert(result)
+        }
+    })
+
 }

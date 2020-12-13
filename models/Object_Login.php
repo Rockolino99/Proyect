@@ -47,6 +47,7 @@ class Login {
                           bloqueo = :bloqueo";
                 
                 $stmt = $this->conn->prepare($query);
+                $this->contra = password_hash($this->contra, PASSWORD_BCRYPT);
 
                 $this->correo = htmlspecialchars(strip_tags($this->correo));
                 $this->nombre = htmlspecialchars(strip_tags($this->nombre));
@@ -73,32 +74,31 @@ class Login {
 
     }
 
-    function getArticulo() {
+    function login() {
         $query = "SELECT *
-                  FROM cutsiegirl.articulo";
-
-        $stmt = $this->conn->prepare($query);
-        if($stmt->execute())
-            return $stmt;
-        else
-            return 0;
-    }
-
-    function getLastArticulo() {
-        $query = "SELECT *
-                  FROM cutsiegirl.articulo
-                  WHERE idArticulo = :idArticulo";
+                  FROM cutsiegirl.usuario
+                  WHERE correo = :correo";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->correo = htmlspecialchars(strip_tags($this->correo));
+        
+        $stmt->bindValue(":correo", $this->correo);
 
-        $stmt->bindParam(":idArticulo", $this->idArticulo);
-
-        if($stmt->execute())
-            return $stmt;
-        else
+        if(!$stmt->execute())
             return 0;
+        else {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if(!$row)
+                return "La cagaste mijo, el correo no está registrado";
+            else {
+                if(password_verify($this->contra, $row['contra'])) {
+                    return "Ingreso exitoso";
+                }
+                return "Contraseña incorrecta.";
+            }
+        }
     }
 }
 ?>
