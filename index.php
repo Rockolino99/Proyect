@@ -16,6 +16,8 @@ session_start();
     <!--CSS-->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos2.css">
+    <!--Sweet Alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Favicon-->
     <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
     <!--Bootstrap-->
