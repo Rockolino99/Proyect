@@ -84,7 +84,7 @@ function registro() {
     }
 
     //validación de correo
-    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(correo))) {
+    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(correo))) {
         alert("¡Ingrese una dirección de correo válida!")
         $('#correo').focus()
         return
