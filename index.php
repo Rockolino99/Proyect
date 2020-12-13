@@ -15,7 +15,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="css/estilos.css">
-
+    <!--Sweet Alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Favicon-->
     <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
     <!--Bootstrap-->

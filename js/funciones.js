@@ -128,7 +128,7 @@ function registro() {
         },
         url: "controllers/controller_RegistroUsuario.php",
         success: function (result) {
-            alert(result)
+            swal("ÉXITO", "Usuario registrado exitosamente.", "success");
         }
     })
     $('#formularioRegistro').trigger('reset')
@@ -162,12 +162,13 @@ function login() {
         success: function (result) {
             switch (result) {
                 case '1':
-                    alert(result)
                     location.reload()
                     break;
-                default:
-                    alert(result)
-                    alert(":v")
+                case '-1':
+                    swal("ERROR", "Contraseña incorrecta.", "error");
+                    break;
+                case '0':
+                    swal("ERROR", "El correo no está registrado.", "warning");
                     break;
             }
         }
