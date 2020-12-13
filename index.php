@@ -66,7 +66,7 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=acercade" style="color: white;">ACERCA DE </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="#" style="color: white;">FILOSOFIA</a>
+                    <a class="nav-link active" href="index.php?mod=filosofia" style="color: white;">FILOSOFIA</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" href="#" style="color: white;">CONTACTO</a>
