@@ -11,7 +11,7 @@ $stmt = $proveedor->getProveedor();
 $i = 0;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     ?>
-    <option id="proveedor<?echo $i?>" data-idProveedor="<? echo $row[idProveedor] ?>" data-nombre="<? echo $row[nombre] ?>"></option>
+    <option data-idproveedor="<?php echo $row['idProveedor'] ?>" data-nombre="<?php echo $row['nombre'] ?>"><?php echo $row['nombre'] ?></option>
     <?php
 }
 ?>

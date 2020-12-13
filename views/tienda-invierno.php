@@ -9,7 +9,7 @@
     <label for="marca">Marca:</label>
     <input type="text" class="form-control" id="marca" placeholder="Marca">
     <label for="selectProveedor">Proveedor:</label>
-    <select id="selectProveedor" class="form-select" aria-label="Default select example">
+    <select id="selectProveedor" class="form-select" aria-label="Default select example" onchange="alert($('#selectProveedor option:selected').data('idproveedor'))">
         <option value="Seleccionar" selected disabled>Seleccionar</option>
     </select>
     <br>

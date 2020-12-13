@@ -13,7 +13,7 @@ class Proveedor {
     }
 
     function getProveedor() {
-        $query = "SELECT nombre
+        $query = "SELECT idProveedor, nombre
                   FROM cutsiegirl.proveedores";
 
         $stmt = $this->conn->prepare($query);
