@@ -1,14 +1,14 @@
 <div class="coleccion">
-  <span>NUESTRAS COLECCIONES</span>
+  <span>LO QUE DEBES DE SABER DE NOSOTROS...</span>
 </div>
 
 <div class="invierno">
   <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify; width:45%;">
-    <h3 style="text-align:center;">INVIERNO</h3>
-    <p>¿Quién no ha sentido que no puede tener un equilibrio entre la temporada y su outfit?<br>
-      Invierno es una colección temporal que se adapta a tus necesidades, nace con el único propósito de hacerte lucir comoda con la temporada y hacerte lucir bien.
-      <br>Invierno aparece año con año con prendas que te van a encantar y portaras con orgullo, nació hace algunos años cuando nos dimos cuenta que todos merecemos estilo y amor en nuestros outfits de frío.
-      <br>Visita nuestra colección, enamorate junto con nosotros de todo lo que Invierno tiene para ti, lleno de amor, colores y buenas vibras.
+    <h3 style="text-align:center;">MISIÓN</h3>
+    <p>
+      Nuestra principal misión es darte un outfit digno de ti, que puedas salir a la calle con alguna de nuestras prendas y sepas que luces bien y sobre todo que estas comoda. <br>
+      Es complicado dar un balance entre la ropa comoda y la ropa a la moda, nosotros tratando de dar ese balance creamos nuestras tres categorías donde seguramente encontrarás algo que se adapte a ti, a tus gustos y a tus necesidades.
+      Cada una de las prendas esta llena de amor, colores y buenas vibras para ti, con todo nuestro corazón hasta la puerta de tu casa.
     </p>
     <div style="text-align:center;">
       <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
@@ -20,10 +20,12 @@
 <div class="vestidos">
   <div class="bgimg-2" style="background-image: url('images/ves.jpg'); min-height: 800px; width:60%;"></div>
   <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify; width:40%;">
-    <h3 style="text-align:center;">VESTIDOS</h3>
-    <p>Vestidos es una colección que siempre vas a encontrar activa y actualizada, todo el año trabajamos en ella adaptandola a lo último de la moda y a la temporada en la que nos encontramos. <br>
-  En ella encontraras todo lo que buscas ya que su principal objetivo es darte el vestido de tus sueños y acompañarte a donde quiera que vayas con mucho estilo <br>
-Queremos que cualquier evento al que asistas nos lleves contigo ya que llevaras un pedacito de nuestro corazón que se encuentra en esta colección llena de amor, colores y buenas vibras.</p>
+    <h3 style="text-align:center;">VISIÓN.</h3>
+    <p>
+      Uno de nuestros anhelos más grandes es que Cutsie Girl se convierta en tu tienda favorita, que necesites cualquier prenda y la primer tienda en la que pienses que lo podrás conseguir seamos nosotros. <br>
+      Queremos llegar a tener una tienda física donde puedas asistir con tu familia o amigos y tengas una atención digna de ti. <br>
+      Esperamos llegar a ser tu tienda favorita que te conviertas en nuestra amiga y siempre seamos tu primer opción.
+    </p>
     <div style="text-align:center;">
       <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
     </div>
@@ -32,11 +34,13 @@ Queremos que cualquier evento al que asistas nos lleves contigo ya que llevaras 
 
 <div class="disney">
   <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify; width:45%;">
-    <h3 style="text-align:center;">DISNEY</h3>
-    <p>Disney es nuestra colección especial y la única que encontraras en el mercado. <br>
-  Nace por mi amor a los personajes que marcaron mi infancia y que seguramente la tuya también, nace con una idea loca y divertida de hacer que lleves a esos personajes contigo pero siempre luciendo bien <br>
-Disney se mantiene actualizada todo el año con prendas únicas para ti.<br>
-Te invitamos a visitar y enamorarte de esta colección única en el mercado, llena de amor, buenas vibras y colores.</p>
+    <h3 style="text-align:center;">NUESTO OBJETIVO</h3>
+    <p>
+      Nuestro objetivo más grande es hacerte lucir bien, con estilo y radiante a cualquier lugar que vayas, acompañarte en cualquier ocasión y te sientas bien de llevarnos contigo.
+    <br>Queremos que Cutsie Girl no sea solo una tienda para ti, si no también un hogar donde encuentres amigas que te guiaran para realizar compras exitosas y que en cada colección encuentres algo que se adapta a ti 
+    en todos los sentidos<br>
+    Somos una tienda llena de amor donde ponemos el corazón en cada paquete procesado.
+    </p>
     <div style="text-align:center;">
       <button type="button" class="btn btn-outline-dark">Comprar ya...</button>
     </div>
