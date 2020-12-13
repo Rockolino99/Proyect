@@ -25,6 +25,8 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <!--JS-->
     <script src="js/funciones.js"></script>
+    <!--AnimateCSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!--Fin Links-->
 </head>
 
@@ -71,9 +73,8 @@ session_start();
             </ul>
             <?php 
             if(isset($_SESSION['idUsuario'])) {
-                echo "Hola $_SESSION[nombreUsuario]";
             ?>
-                <a href="php/logout.php">Cerrar sesión</a>
+                <a href="php/logout.php" style="color: white;" class="nav-link active"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
             <?php
             }
             else {
