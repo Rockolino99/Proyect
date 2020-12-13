@@ -91,7 +91,7 @@ function registro() {
     }
 
     //validación direccion
-    if (direccion == null || direccion.length == 0 || /^\s+$/.test()){
+    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)){
         alert("¡Dirección Incorrecta!")
         $('#direccion').focus()
         return
