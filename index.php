@@ -195,23 +195,23 @@ session_start();
                         <div class="row">
                             <div class="col">
                                 <label for="nombreRestablecer">Correo electrónico:</label>
-                                <input type="text" class="form-control" id="nombreRestablecer" placeholder="Correo Electrónico">
+                                <input type="text" class="form-control" id="nombreReestablecer" placeholder="Correo Electrónico">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
                                 <label for="passRestablecer1">Contraseña:</label>
-                                <input type="password" class="form-control" id="passRestablecer1" placeholder="Contraseña">
+                                <input type="password" class="form-control" id="passReestablecer1" placeholder="Contraseña">
                             </div>
                             <div class="col">
                                 <label for="passRestablecer2">Repetir contraseña:</label>
-                                <input type="password" class="form-control" id="passRestablecer2" placeholder="Repetir Contraseña">
+                                <input type="password" class="form-control" id="passReestablecer2" placeholder="Repetir Contraseña">
                             </div>
                         </div>
                         <br><br>
                         <center>
-                            <button class="btn btn-primary" onclick="reestablecerPass()">Cambiar contraseña</button>
+                            <button type="button" class="btn btn-primary" onclick="reestablecerPass()">Cambiar contraseña</button>
                         </center>
                     </div>
                 </form>
