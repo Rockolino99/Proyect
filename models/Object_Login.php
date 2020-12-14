@@ -89,10 +89,13 @@ class Login {
             return 0;
         else {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
             if(!$row)
                 return 0;//No hay correo registrado
             else {
+                $this->bloqueo = $row['bloqueo'];
+                if($this->bloqueo == 3)
+                        return 3; //Cuenta bloqueada
+                        
                 if(password_verify($this->contra, $row['contra'])) {
                     session_start();
                     $_SESSION['idUsuario'] = $row['idUsuario'];
@@ -101,8 +104,45 @@ class Login {
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['direccion'] = $row['direccion'];
 
+                    $query = "UPDATE cutsiegirl.usuario
+                              SET bloqueo = 0
+                              WHERE correo = :correo
+                              AND idUsuario = :idUsuario";
+                    
+                    $stmt = $this->conn->prepare($query);
+
+                    $this->idUsuario = $row['idUsuario'];
+
+                    $this->correo = htmlspecialchars(strip_tags($this->correo));
+                    $this->idUsuario = htmlspecialchars(strip_tags($this->idUsuario));
+
+                    $stmt->bindParam(":correo", $this->correo);
+                    $stmt->bindParam(":idUsuario", $this->idUsuario);
+
+                    $stmt->execute();
                     return 1;//Inicio de sesión
                 }
+                //Contraseña incorrecta
+                $query = "UPDATE cutsiegirl.usuario
+                          SET bloqueo = :bloqueo
+                          WHERE correo = :correo
+                          AND idUsuario = :idUsuario";
+
+                $this->idUsuario = $row['idUsuario'];
+                $stmt = $this->conn->prepare($query);
+
+                $this->bloqueo = htmlspecialchars(strip_tags($this->bloqueo + 1));
+                $this->correo = htmlspecialchars(strip_tags($this->correo));
+                $this->idUsuario = htmlspecialchars(strip_tags($this->idUsuario));
+
+                $stmt->bindParam(":bloqueo", $this->bloqueo);
+                $stmt->bindParam(":correo", $this->correo);
+                $stmt->bindParam(":idUsuario", $this->idUsuario);
+
+                if($stmt->execute())
+
+                if($this->bloqueo == 3)
+                    return 2;//3er intento erróneo, bloqueado
                 return -1;//Contraseña incorrecta
             }
         }

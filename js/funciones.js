@@ -168,10 +168,10 @@ function login() {
         url: "controllers/controller_Login.php",
         success: function (result) {
             switch (result) {
-                case '1':
+                case '1'://Inicio de sesión
                     location.reload()
-                    break;
-                case '-1':
+                    break
+                case '-1'://Contraseña incorrecta
                     swal({
                         icon: 'error',
                         title: 'ERROR',
@@ -180,8 +180,8 @@ function login() {
                         timer: 2000
                     })
                     $('#contrasena').focus()
-                    break;
-                case '0':
+                    break
+                case '0'://No hay correo registrado
                     swal({
                         icon: 'warning',
                         title: 'ERROR',
@@ -190,7 +190,27 @@ function login() {
                         timer: 2000
                     })
                     $('#correoLogin').focus()
-                    break;
+                    break
+                case '3'://Cuenta bloqueada
+                    swal({
+                        icon: 'warning',
+                        title: 'ADVERTENCIA',
+                        text: 'Su cuenta ha sido bloqueada. Por favor, reestablezca su contraseña.',
+                        buttons: false,
+                        timer: 3000
+                    })
+                    //$('#formularioLogin').reset()
+                    break
+                case '2'://3er intento erróneo, bloqueado
+                    swal({
+                        icon: 'warning',
+                        title: 'Demasiados intentos fallidos',
+                        text: 'Reestablezca su contraseña.',
+                        buttons: false,
+                        timer: 2500
+                    })
+                    //$('#formularioLogin').reset()
+                    break
             }
         }
     })
