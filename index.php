@@ -102,7 +102,7 @@ session_start();
                                         <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                     </div>
                                     <div class="form-group text-center">
-                                        <button type="button" class="btn btn-primary" name="entrar" onclick="patas()">Entrar</button><!--onclick="login()"-->
+                                        <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button><!--onclick="login()"-->
                                     </div>
                                     <br>
                                     <div class="form-group text-center">
