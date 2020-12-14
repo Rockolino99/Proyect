@@ -8,6 +8,7 @@
 
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
+<<<<<<< Updated upstream
     if(isset($_SESSION['nombreUsuario']) && $_SESSION['nombreUsuario']=='Admin') { ?>
 =======
     if ($_SESSION['nombreUsuario'] == 'Admin') { ?>
