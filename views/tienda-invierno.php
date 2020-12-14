@@ -4,8 +4,6 @@
     </div>
 </div>
 <div class="container">
-
-
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
     if(isset($_SESSION['nombreUsuario']) && $_SESSION['nombreUsuario']=='Admin') { ?>
