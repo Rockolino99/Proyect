@@ -94,9 +94,6 @@ session_start();
                                         <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" required>
                                     </div>
                                     <input type="hidden" name="array">
-                                    <div class="form-group text-center">
-                                        <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
-                                    </div>
                                     <!--Captcha-->
                                     <label for="captcha">Ingresa Captcha</label>
                                     <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha" onclick="newCaptcha()"></i>
@@ -104,9 +101,9 @@ session_start();
                                         <!--<input type="text" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}">-->
                                         <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                     </div>
-                                    <center>
-                                        <button class="btn btn-danger" onclick="patas()">Enviar</button>
-                                    </center>
+                                    <div class="form-group text-center">
+                                        <button type="button" class="btn btn-primary" name="entrar" onclick="patas()">Entrar</button><!--onclick="login()"-->
+                                    </div>
                                     <br>
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>

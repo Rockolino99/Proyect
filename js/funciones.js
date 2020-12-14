@@ -233,10 +233,22 @@ function reestablecerPass() {
     alert("Pendiente")
 }
 //funciones para captcha
-function patas(){
-    alert("Pendiente")
-}
 //Poner nueva imagen
 function newCaptcha(){
     document.querySelector(".captcha-image").src ='captcha.php?' + Date.now();
+}
+function patas() {
+    alert("Pendiente xd")
+}
+
+function verificar() {//Debería funcionar, pero no
+    var captcha_text = $('#captcha').val()
+    var captcha
+
+    $.ajax({
+        url: "php/getCaptchaText.php",
+        success: function(data) {
+            alert(data)
+        }
+    })
 }
