@@ -230,7 +230,55 @@ function login() {
 }
 
 function reestablecerPass() {
-    alert("Pendiente")
+    var nombre = $('#nombreReestablecer').val()
+    var pass1 = $('#passReestablecer1').val()
+    var pass2 = $('#passReestablecer2').val()
+
+    if (nombre == null || nombre.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(nombre))) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa un correo electrónico válido!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#nombreReestablecer').focus()
+        return
+    }
+
+    if (pass1 == null || pass1.length == 0 || /^\s+$/.test(pass1)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#passReestablecer1').focus()
+        return
+    }
+
+    if (pass2 == null || pass2.length == 0 || /^\s+$/.test(pass2)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa nuevamente tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#passReestablecer2').focus()
+        return
+    }
+
+    if(pass1 != pass2) {
+        swal({
+            icon: 'info',
+            text: '¡Las contraseñas no coinciden!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#passReestablecer2').focus()
+        return
+    }
+    $('#form_RestablecerPass').trigger('reset')
+    $('#modalReestablecer').modal('hide')
 }
 //funciones para captcha
 //Poner nueva imagen
