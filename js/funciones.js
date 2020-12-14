@@ -147,14 +147,24 @@ function login() {
     var correo = $('#correoLogin').val()
     var contrasena = $('#contrasena').val()
 
-    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
-        alert("¡Usuario requerido!")
+    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(correo))) {
+        swal({
+            icon: 'info',
+            text: '¡Ingresa un correo electrónico válido!',
+            buttons: false,
+            timer: 2000
+        })
         $('#correoLogin').focus()
         return
     }
 
     if (contrasena == null || contrasena.length == 0 || /^\s+$/.test(contrasena)) {
-        alert("Contraseña requerida!")
+        swal({
+            icon: 'info',
+            text: '¡Ingresa tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
         $('#contrasena').focus()
         return
     }
@@ -169,6 +179,7 @@ function login() {
         success: function (result) {
             switch (result) {
                 case '1'://Inicio de sesión
+                    $('#formularioLogin').trigger('reset')
                     location.reload()
                     break
                 case '-1'://Contraseña incorrecta
@@ -189,6 +200,7 @@ function login() {
                         buttons: false,
                         timer: 2000
                     })
+                    $('#formularioLogin').trigger('reset')
                     $('#correoLogin').focus()
                     break
                 case '3'://Cuenta bloqueada
@@ -199,7 +211,7 @@ function login() {
                         buttons: false,
                         timer: 3000
                     })
-                    //$('#formularioLogin').reset()
+                    $('#formularioLogin').trigger('reset')
                     break
                 case '2'://3er intento erróneo, bloqueado
                     swal({
@@ -209,10 +221,14 @@ function login() {
                         buttons: false,
                         timer: 2500
                     })
-                    //$('#formularioLogin').reset()
+                    $('#formularioLogin').trigger('reset')
                     break
             }
         }
     })
 
+}
+
+function reestablecerPass() {
+    alert("Pendiente")
 }
