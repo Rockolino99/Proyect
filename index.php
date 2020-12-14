@@ -66,7 +66,7 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=acercade" style="color: white;">ACERCA DE </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link active" href="#" style="color: white;">CONTÁCTANOS</a>
+                    <a class="nav-link active" href="index.php?mod=contactanos" style="color: white;">CONTÁCTANOS</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
@@ -186,6 +186,10 @@ session_start();
         case 'acercade': //Acerca de
             include ("views/acercade.php");
             break;
+        case 'contactanos': //Contactanos
+            include ("views/contactanos.php");
+            break;
+
         case 'ayuda': //Ayuda
             include ("views/ayuda.php");
             break;

@@ -1,4 +1,4 @@
-<div class="coleccion">
+<div class="titulosPags">
   <span>SOBRE NOSOTROS...</span>
 </div>
 

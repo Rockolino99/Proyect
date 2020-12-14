@@ -1,4 +1,4 @@
-<div class="coleccion">
+<div class="titulosPags">
   <span>PREGUNTAS FRECUENTES</span>
 </div>
 
