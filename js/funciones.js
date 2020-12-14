@@ -232,3 +232,11 @@ function login() {
 function reestablecerPass() {
     alert("Pendiente")
 }
+//funciones para captcha
+function patas(){
+    alert("Pendiente")
+}
+//Poner nueva imagen
+function newCaptcha(){
+    document.querySelector(".captcha-image").src ='php/captcha.php?' + Date.now();
+}
