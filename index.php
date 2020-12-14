@@ -98,9 +98,12 @@ session_start();
                                 <div class="form-group text-center">
                                     <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
                                 </div>
-                                <!--modificar boton-->
+                                <!--modificar boton--><!--Para qué o qué? -->
                                 <div class="form-group text-center">
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
+                                </div>
+                                <div class="form-group">
+                                    <a href="index.php?mod=restablecerPass" target="_blank" style="color: blue;">¿Olvidaste tu contraseña? Restablécela aquí</a>
                                 </div>
                             </form>
                         </li>
@@ -181,18 +184,20 @@ session_start();
             include "views/main.php";
             break;
         case 'store': //TiendaInvierno
-            include("views/tienda-invierno.php");
+            include "views/tienda-invierno.php";
             break;
         case 'acercade': //Acerca de
-            include ("views/acercade.php");
+            include "views/acercade.php";
             break;
         case 'contactanos': //Contactanos
             include ("views/contactanos.php");
             break;
 
         case 'ayuda': //Ayuda
-            include ("views/ayuda.php");
+            include "views/ayuda.php";
             break;
+        case 'restablecerPass': //Restablecer contraseña
+            include "views/password.php";
     }
     ?>
     <!--Footer (Pie de pagina)-->

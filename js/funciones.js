@@ -147,14 +147,24 @@ function login() {
     var correo = $('#correoLogin').val()
     var contrasena = $('#contrasena').val()
 
-    if (correo == null || correo.length == 0 || /^\s+$/.test(correo)) {
-        alert("¡Usuario requerido!")
+    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(correo))) {
+        swal({
+            icon: 'info',
+            text: '¡Ingresa un correo electrónico válido!',
+            buttons: false,
+            timer: 2000
+        })
         $('#correoLogin').focus()
         return
     }
 
     if (contrasena == null || contrasena.length == 0 || /^\s+$/.test(contrasena)) {
-        alert("Contraseña requerida!")
+        swal({
+            icon: 'info',
+            text: '¡Ingresa tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
         $('#contrasena').focus()
         return
     }
@@ -168,10 +178,11 @@ function login() {
         url: "controllers/controller_Login.php",
         success: function (result) {
             switch (result) {
-                case '1':
+                case '1'://Inicio de sesión
+                    $('#formularioLogin').trigger('reset')
                     location.reload()
-                    break;
-                case '-1':
+                    break
+                case '-1'://Contraseña incorrecta
                     swal({
                         icon: 'error',
                         title: 'ERROR',
@@ -180,8 +191,8 @@ function login() {
                         timer: 2000
                     })
                     $('#contrasena').focus()
-                    break;
-                case '0':
+                    break
+                case '0'://No hay correo registrado
                     swal({
                         icon: 'warning',
                         title: 'ERROR',
@@ -189,10 +200,35 @@ function login() {
                         buttons: false,
                         timer: 2000
                     })
+                    $('#formularioLogin').trigger('reset')
                     $('#correoLogin').focus()
-                    break;
+                    break
+                case '3'://Cuenta bloqueada
+                    swal({
+                        icon: 'warning',
+                        title: 'ADVERTENCIA',
+                        text: 'Su cuenta ha sido bloqueada. Por favor, reestablezca su contraseña.',
+                        buttons: false,
+                        timer: 3000
+                    })
+                    $('#formularioLogin').trigger('reset')
+                    break
+                case '2'://3er intento erróneo, bloqueado
+                    swal({
+                        icon: 'warning',
+                        title: 'Demasiados intentos fallidos',
+                        text: 'Reestablezca su contraseña.',
+                        buttons: false,
+                        timer: 2500
+                    })
+                    $('#formularioLogin').trigger('reset')
+                    break
             }
         }
     })
 
+}
+
+function reestablecerPass() {
+    alert("Pendiente")
 }
