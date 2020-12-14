@@ -238,5 +238,5 @@ function patas(){
 }
 //Poner nueva imagen
 function newCaptcha(){
-    document.querySelector(".captcha-image").src ='php/captcha.php?' + Date.now();
+    document.querySelector(".captcha-image").src ='captcha.php?' + Date.now();
 }
