@@ -277,6 +277,20 @@ function reestablecerPass() {
         $('#passReestablecer2').focus()
         return
     }
+    $.ajax({
+        type: 'POST',
+        data: {
+            
+        },
+        url: 'controllers/controller_RestPass.php',
+        success: function(result) {
+            alert(result)
+        }
+    })
+
+
+
+
     $('#form_RestablecerPass').trigger('reset')
     $('#modalReestablecer').modal('hide')
 }
