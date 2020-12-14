@@ -98,7 +98,7 @@ session_start();
                                 <div class="form-group text-center">
                                     <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
                                 </div>
-                                <!--modificar boton-->
+                                <!--modificar boton--><!--Para qué o qué? -->
                                 <div class="form-group text-center">
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
                                 </div>
