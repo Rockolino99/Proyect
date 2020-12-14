@@ -27,7 +27,7 @@ session_start();
     <!--JS-->
     <script src="js/funciones.js"></script>
     <!--AnimateCSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--Fin Links-->
 </head>
 
@@ -72,44 +72,42 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
                 </li>
             </ul>
-            <?php 
-            if(isset($_SESSION['idUsuario'])) {
+            <?php
+            if (isset($_SESSION['idUsuario'])) {
             ?>
                 <a href="php/logout.php" style="color: white;" class="nav-link active"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
             <?php
-            }
-            else {
+            } else {
                 session_destroy();
             ?>
-            <!--Login-->
-            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                <li class="dropdown order-1">
-                    <a class="nav-link active" data-toggle="dropdown" style="color: white;"><i class="fas fa-user"></i><b> INICIAR SESIÓN</b></a>
-                    <ul class="dropdown-menu dropdown-menu-right mt-2">
-                        <li class="px-3 py-2">
-                            <form class="form" role="form" id="formularioLogin">
-                                <div class="form-group">
-                                    <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin" required>
-                                </div>
-                                <div class="form-group">
-                                    <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" required>
-                                </div>
-                                <input type="hidden" name="array">
-                                <div class="form-group text-center">
-                                    <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
-                                </div>
-                                <!--modificar boton--><!--Para qué o qué? -->
-                                <div class="form-group text-center">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
-                                </div>
-                                <div class="form-group">
-                                    <a href="index.php?mod=restablecerPass" target="_blank" style="color: blue;">¿Olvidaste tu contraseña? Restablécela aquí</a>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                <!--Login-->
+                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                    <li class="dropdown order-1">
+                        <a class="nav-link active" data-toggle="dropdown" style="color: white;"><i class="fas fa-user"></i><b> INICIAR SESIÓN</b></a>
+                        <ul class="dropdown-menu dropdown-menu-right mt-2">
+                            <li class="px-3 py-2">
+                                <form class="form" role="form" id="formularioLogin">
+                                    <div class="form-group">
+                                        <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" required>
+                                    </div>
+                                    <input type="hidden" name="array">
+                                    <div class="form-group text-center">
+                                        <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#" data-toggle="modal" data-target="#modalReestablecer" target="_blank" style="color: blue;">¿Olvidaste tu contraseña? Restablécela aquí</a>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             <?php
             }
             ?>
@@ -175,7 +173,43 @@ session_start();
             </div>
         </div>
     </div>
-    <!--//Modal registro-->
+    <!--Fin Modal registro-->
+    <!--Modal Reestablecer Contraseña-->
+    <div id="modalReestablecer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Reestablecer Contraseña</h3>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <form class="form" role="form" id="form_RestablecerPass">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <label for="nombreRestablecer">Correo electrónico:</label>
+                                <input type="text" class="form-control" id="nombreRestablecer" placeholder="Correo Electrónico">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="passRestablecer1">Contraseña:</label>
+                                <input type="password" class="form-control" id="passRestablecer1" placeholder="Contraseña">
+                            </div>
+                            <div class="col">
+                                <label for="passRestablecer2">Repetir contraseña:</label>
+                                <input type="password" class="form-control" id="passRestablecer2" placeholder="Repetir Contraseña">
+                            </div>
+                        </div>
+                        <br><br>
+                        <center>
+                            <button class="btn btn-primary" onclick="reestablecerPass()">Cambiar contraseña</button>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!--Fin Header-->
     <?php
     $mod = (isset($_GET['mod'])) ? $_GET['mod'] : "main";
@@ -190,7 +224,7 @@ session_start();
             include "views/acercade.php";
             break;
         case 'contactanos': //Contactanos
-            include ("views/contactanos.php");
+            include("views/contactanos.php");
             break;
 
         case 'ayuda': //Ayuda
