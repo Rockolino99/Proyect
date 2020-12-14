@@ -103,7 +103,7 @@ session_start();
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
                                 </div>
                                 <div class="form-group">
-                                    <a href="https://hackstore.net" target="_blank">¿Olvidaste tu contraseña? Restablécela aquí</a>
+                                    <a href="https://hackstore.net" target="_blank" style="color: blue;">¿Olvidaste tu contraseña? Restablécela aquí</a>
                                 </div>
                             </form>
                         </li>
