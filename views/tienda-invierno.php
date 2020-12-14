@@ -4,7 +4,12 @@
     </div>
 </div>
 <div class="container">
-    <label for="nombre">Nombre:</label>
+
+
+    <?php
+    //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
+    if($_SESSION['nombreUsuario']=='Admin'){ ?>
+        <label for="nombre">Nombre:</label>
     <input type="text" class="form-control" id="nombreArticulo" placeholder="Nombre">
     <label for="marca">Marca:</label>
     <input type="text" class="form-control" id="marca" placeholder="Marca">
@@ -44,3 +49,12 @@
     <tbody id="patas1"></tbody>
     
 </table>
+
+   <?php
+   //cerramos la llave del if y si el admin no es el que esta logueados nos aparecerá la tienda.
+ }else{ ?>
+
+    <h1>Aquí va la tienda</h1>
+    <?php } ?>
+    
+    
