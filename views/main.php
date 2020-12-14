@@ -23,7 +23,9 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">Invierno</h5>
-                <p class="card-text">Colección de temporada, que el clima no sea un impedimento para que tu puedas lucir perfecta.</p>
+                <p class="card-text">Es una colección que aparece año con año, llena de cosas nuevas y a la moda que seguramente te harán lucir perfecta. <br>
+            Quien dijo que el clima es un impendimento para tener estilo y portarlo a donde quiera que vayas. <br>
+        Visita nuestra colección llena de amor para ti y enamórate de ella.</p>
             </div>
         </div>
         <div class="card" style="width: 33.33%;">
@@ -32,7 +34,9 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">Vestidos</h5>
-                <p class="card-text">Colección sorprendente, encontraras un vestido ideal para cualquier ocasión y hará brillar como siempre.</p>
+                <p class="card-text">Tu colección favorita y donde siempre encontrarás lo que buscas. <br>
+            Encuentra aquí un outfit para cualquier ocasión desde lo más casual hasta lo más formal y en cualquiera te hará lucir preciosa. <br>
+        Conoce nuestra coleccion llena de buenas vibras.</p>
             </div>
         </div>
         <div class="card" style="width: 33.33%;">
@@ -41,7 +45,8 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">Disney</h5>
-                <p class="card-text">Colección especial, que mejor manera de lucir bien en conjunto con tus personajes favoritos.</p>
+                <p class="card-text">Nuestra colección especial y única en el mercado. <br>
+            Llego a revolucionar la manera de vestir llevando contigo a tus personajes favoritos de una manera divertida y sin perder el estilo que te caracteriza.</p>
             </div>
         </div>
     </div>
