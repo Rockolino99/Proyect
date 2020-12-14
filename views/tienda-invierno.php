@@ -9,9 +9,6 @@
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
     if(isset($_SESSION['nombreUsuario']) && $_SESSION['nombreUsuario']=='Admin') { ?>
-=======
-    if ($_SESSION['nombreUsuario'] == 'Admin') { ?>
->>>>>>> Stashed changes
         <label for="nombre">Nombre:</label>
         <input type="text" class="form-control" id="nombreArticulo" placeholder="Nombre">
         <label for="marca">Marca:</label>
