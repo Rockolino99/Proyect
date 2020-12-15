@@ -1,8 +1,22 @@
 $(document).ready(function () {
     getArticulo()
     getProveedores()
-
+    $('#correoLogin').val(readCookie('correo'))
+    $('#contrasena').val(readCookie('contra'))
 })
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+    }
+    return null;
+}
 
 function addArticulo() {
     $.ajax({
@@ -112,7 +126,7 @@ function registro() {
     }
 
     //validación direccion
-    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)){
+    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)) {
         swal({
             icon: 'warning',
             text: '¡Ingresa tu direccion!',
@@ -134,7 +148,7 @@ function registro() {
         $('#pass').focus()
         return
     }
-    
+
     if (password2 == null || password2.length == 0 || /^\s+$/.test(password2)) {
         swal({
             icon: 'warning',
@@ -169,7 +183,7 @@ function registro() {
         },
         url: "controllers/controller_RegistroUsuario.php",
         success: function (result) {
-            if(result == '0') {
+            if (result == '0') {
                 swal({
                     icon: 'error',
                     title: 'ERROR',
@@ -222,8 +236,8 @@ function login() {
     var captcha_text = $('#captcha').val()
     $.ajax({
         url: "php/getCaptchaText.php",
-        success: function(data) {
-            if(captcha_text != data) {
+        success: function (data) {
+            if (captcha_text != data) {
                 swal({
                     icon: 'error',
                     text: '¡Captcha Incorrecto!',
@@ -249,14 +263,19 @@ function doLogin(correo, contrasena) {
         url: "controllers/controller_Login.php",
         success: function (result) {
             switch (result) {
-                case '1'://Inicio de sesión
+                case '1': //Inicio de sesión
+                    if ($('input[id="remember"]').is(':checked')) {
+                        
+                        document.cookie = "correo=" + encodeURIComponent(correo)
+                        document.cookie = "contra=" + encodeURIComponent(contrasena)
+                        //remember = 1
+                    } else {
+                        document.cookie = "correo=; max-age=0" + encodeURIComponent(correo)
+                        document.cookie = "contra=; max-age=0" + encodeURIComponent(contrasena)
+                        //remember = 0
 
-                    if($('input[id="remember"]').is(':checked'))
-                        remember = 1
-                    else
-                        remember = 0
-
-                    $.ajax({
+                    }
+                    /*$.ajax({
                         type: 'POST',
                         data: {
                             remember: remember,
@@ -267,12 +286,12 @@ function doLogin(correo, contrasena) {
                         success: function(res) {
                             alert(res)
                         }
-                    })
+                    })*/
 
-                    $('#formularioLogin').trigger('reset')
+                    //$('#formularioLogin').trigger('reset')
                     location.reload()
                     break
-                case '-1'://Contraseña incorrecta
+                case '-1': //Contraseña incorrecta
                     swal({
                         icon: 'error',
                         title: 'ERROR',
@@ -282,7 +301,7 @@ function doLogin(correo, contrasena) {
                     })
                     $('#contrasena').focus()
                     break
-                case '0'://No hay correo registrado
+                case '0': //No hay correo registrado
                     swal({
                         icon: 'warning',
                         title: 'ERROR',
@@ -293,7 +312,7 @@ function doLogin(correo, contrasena) {
                     $('#formularioLogin').trigger('reset')
                     $('#correoLogin').focus()
                     break
-                case '3'://Cuenta bloqueada
+                case '3': //Cuenta bloqueada
                     swal({
                         icon: 'warning',
                         title: 'ADVERTENCIA',
@@ -303,7 +322,7 @@ function doLogin(correo, contrasena) {
                     })
                     $('#formularioLogin').trigger('reset')
                     break
-                case '2'://3er intento erróneo, bloqueado
+                case '2': //3er intento erróneo, bloqueado
                     swal({
                         icon: 'warning',
                         title: 'Demasiados intentos fallidos',
@@ -356,7 +375,7 @@ function reestablecerPass() {
         return
     }
 
-    if(pass1 != pass2) {
+    if (pass1 != pass2) {
         swal({
             icon: 'info',
             text: '¡Las contraseñas no coinciden!',
@@ -373,23 +392,23 @@ function reestablecerPass() {
             contra: pass1
         },
         url: 'controllers/controller_RestPass.php',
-        success: function(result) {
-            switch(result) {
-                case '0'://Mal
-                swal({
-                    icon: 'error',
-                    text: '¡Dirección de correo electrónico no registrada!',
-                    buttons: false,
-                    timer: 2500
-                })
+        success: function (result) {
+            switch (result) {
+                case '0': //Mal
+                    swal({
+                        icon: 'error',
+                        text: '¡Dirección de correo electrónico no registrada!',
+                        buttons: false,
+                        timer: 2500
+                    })
                     break;
-                case '1'://Bien
-                swal({
-                    icon: 'success',
-                    text: 'Contraseña reestablecida exitosamente',
-                    buttons: false,
-                    timer: 2500
-                })
+                case '1': //Bien
+                    swal({
+                        icon: 'success',
+                        text: 'Contraseña reestablecida exitosamente',
+                        buttons: false,
+                        timer: 2500
+                    })
                     break
             }
         }
@@ -400,6 +419,6 @@ function reestablecerPass() {
 }
 //funciones para captcha
 //Poner nueva imagen
-function newCaptcha(){
-    document.querySelector(".captcha-image").src ='captcha.php?' + Date.now();
+function newCaptcha() {
+    document.querySelector(".captcha-image").src = 'captcha.php?' + Date.now();
 }
