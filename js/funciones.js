@@ -64,54 +64,95 @@ function registro() {
 
     //validación nombre
     if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
-        alert("¡Nombre Incorrecto!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu nombre!',
+            buttons: false,
+            timer: 2000
+        })
         $('#nombre').focus()
         return
     }
 
     //validación ap_paterno   
     if (ap_paterno == null || ap_paterno.length == 0 || /^\s+$/.test(ap_paterno)) {
-        alert("¡Apellido Paterno Incorrecto!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu Apellido Paterno!',
+            buttons: false,
+            timer: 2000
+        })
         $('#apat').focus()
         return
     }
 
     //validación ap_materno
     if (ap_materno == null || ap_materno.length == 0 || /^\s+$/.test(ap_materno)) {
-        alert("¡Apellido Materno Incorrecto!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu Apellido Materno!',
+            buttons: false,
+            timer: 2000
+        })
         $('#amat').focus()
         return
     }
 
     //validación de correo
     if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(correo))) {
-        alert("¡Ingrese una dirección de correo válida!")
+        //alert("¡Ingrese una dirección de correo válida!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa una direccion de correo electrónico válida!',
+            buttons: false,
+            timer: 2000
+        })
         $('#correo').focus()
         return
     }
 
     //validación direccion
     if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)){
-        alert("¡Dirección Incorrecta!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu direccion!',
+            buttons: false,
+            timer: 2000
+        })
         $('#direccion').focus()
         return
     }
 
     //validación password    
     if (password == null || password.length == 0 || /^\s+$/.test(password)) {
-        alert("¡Ingresa una contraseña!")
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
         $('#pass').focus()
         return
     }
     
     if (password2 == null || password2.length == 0 || /^\s+$/.test(password2)) {
-        alert("¡Repite la contraseña!")
+        swal({
+            icon: 'warning',
+            text: '¡Vuelve a escribir tu contraseña!',
+            buttons: false,
+            timer: 2000
+        })
         $('#pass2').focus()
         return
     }
 
     if (password != password2) {
-        alert("¡Las contraseñas no coinciden!")
+        swal({
+            icon: 'error',
+            text: '¡Las contraseñas no coinciden!',
+            buttons: false,
+            timer: 2000
+        })
         $('#pass2').focus()
         return
     }
@@ -128,18 +169,27 @@ function registro() {
         },
         url: "controllers/controller_RegistroUsuario.php",
         success: function (result) {
-            swal("ÉXITO", "Usuario registrado exitosamente.", "success");
-            swal({
-                icon: 'success',
-                title: 'ÉXITO',
-                text: 'Usuario registrado exitosamente. Ahora puede inciar sesión.',
-                buttons: false,
-                timer: 4000
-            })
+            if(result == '0') {
+                swal({
+                    icon: 'error',
+                    title: 'ERROR',
+                    text: 'El correo ya está registrado. Intente con otro.',
+                    buttons: false,
+                    timer: 4000
+                })
+            } else {
+                swal({
+                    icon: 'success',
+                    title: 'ÉXITO',
+                    text: 'Usuario registrado exitosamente. Ahora puede inciar sesión.',
+                    buttons: false,
+                    timer: 4000
+                })
+                $('#formularioRegistro').trigger('reset')
+                $('#modalRegistro').modal('hide')
+            }
         }
     })
-    $('#formularioRegistro').trigger('reset')
-    $('#modalRegistro').modal('hide')
 }
 
 function login() {
@@ -169,6 +219,26 @@ function login() {
         return
     }
 
+    var captcha_text = $('#captcha').val()
+    $.ajax({
+        url: "php/getCaptchaText.php",
+        success: function(data) {
+            if(captcha_text != data) {
+                swal({
+                    icon: 'error',
+                    text: '¡Captcha Incorrecto!',
+                    buttons: false,
+                    timer: 2000
+                })
+                return
+            }
+            doLogin(correo, contrasena)
+        },
+    })
+
+}
+
+function doLogin(correo, contrasena) {
     $.ajax({
         type: 'POST',
         data: {
@@ -226,22 +296,21 @@ function login() {
             }
         }
     })
-
 }
 
 function reestablecerPass() {
-    var nombre = $('#nombreReestablecer').val()
+    var correo = $('#correoRestablecer').val()
     var pass1 = $('#passReestablecer1').val()
     var pass2 = $('#passReestablecer2').val()
 
-    if (nombre == null || nombre.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(nombre))) {
+    if (correo == null || correo.length == 0 || !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w/.test(correo))) {
         swal({
             icon: 'warning',
             text: '¡Ingresa un correo electrónico válido!',
             buttons: false,
             timer: 2000
         })
-        $('#nombreReestablecer').focus()
+        $('#correoRestablecer').focus()
         return
     }
 
@@ -280,16 +349,31 @@ function reestablecerPass() {
     $.ajax({
         type: 'POST',
         data: {
-            
+            correo: correo,
+            contra: pass1
         },
         url: 'controllers/controller_RestPass.php',
         success: function(result) {
-            alert(result)
+            switch(result) {
+                case '0'://Mal
+                swal({
+                    icon: 'error',
+                    text: '¡Dirección de correo electrónico no registrada!',
+                    buttons: false,
+                    timer: 2500
+                })
+                    break;
+                case '1'://Bien
+                swal({
+                    icon: 'success',
+                    text: 'Contraseña reestablecida exitosamente',
+                    buttons: false,
+                    timer: 2500
+                })
+                    break
+            }
         }
     })
-
-
-
 
     $('#form_RestablecerPass').trigger('reset')
     $('#modalReestablecer').modal('hide')
@@ -298,19 +382,4 @@ function reestablecerPass() {
 //Poner nueva imagen
 function newCaptcha(){
     document.querySelector(".captcha-image").src ='captcha.php?' + Date.now();
-}
-function patas() {
-    alert("Pendiente xd")
-}
-
-function verificar() {//Debería funcionar, pero no
-    var captcha_text = $('#captcha').val()
-    var captcha
-
-    $.ajax({
-        url: "php/getCaptchaText.php",
-        success: function(data) {
-            alert(data)
-        }
-    })
 }

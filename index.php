@@ -98,9 +98,9 @@ session_start();
                                     <label for="captcha">Ingresa Captcha</label>
                                     <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha" onclick="newCaptcha()"></i>
                                     <div class="form-group">
-                                        <!--<input type="text" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}">-->
                                         <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                     </div>
+                                    <!--Fin Captcha-->
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button><!--onclick="login()"-->
                                     </div>
@@ -194,8 +194,8 @@ session_start();
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
-                                <label for="nombreRestablecer">Correo electrónico:</label>
-                                <input type="text" class="form-control" id="nombreReestablecer" placeholder="Correo Electrónico">
+                                <label for="correoRestablecer">Correo electrónico:</label>
+                                <input type="text" class="form-control" id="correoRestablecer" placeholder="Correo Electrónico">
                             </div>
                         </div>
                         <br>

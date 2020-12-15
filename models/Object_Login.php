@@ -34,7 +34,7 @@ class Login {
             return 0; 
         else {
             if($stmt->rowCount() > 0)
-                echo '¡La dirección de correo electrónico ya está registrada!';
+                return 0;
             else {
                 $stmt = '';
                 $query = "INSERT INTO cutsiegirl.usuario
@@ -146,6 +146,52 @@ class Login {
                 return -1;//Contraseña incorrecta
             }
         }
+    }
+
+    function resetPass() {
+        $query = "SELECT *
+                  FROM cutsiegirl.usuario
+                  WHERE correo = :correo";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->correo = htmlspecialchars(strip_tags($this->correo));
+        
+        $stmt->bindValue(":correo", $this->correo);
+
+        if(!$stmt->execute())
+            return 0;
+        
+        if($stmt->rowCount() < 1)
+            return 0;//Correo no registrado
+
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $this->idUsuario = $row['idUsuario'];
+        $this->contra = password_hash($this->contra, PASSWORD_BCRYPT);
+        
+        $query = "UPDATE cutsiegirl.usuario
+                  SET contra = :contra,
+                      bloqueo = :bloqueo
+                  WHERE correo = :correo
+                  AND idUsuario = :idUsuario";
+        
+        $stmt = $this->conn->prepare($query);
+
+        $this->contra = htmlspecialchars(strip_tags($this->contra));
+        $this->correo = htmlspecialchars(strip_tags($this->correo));
+        $this->idUsuario = htmlspecialchars(strip_tags($this->idUsuario));
+        $this->bloqueo = htmlspecialchars(strip_tags($this->bloqueo));
+
+        $stmt->bindParam(":contra", $this->contra);
+        $stmt->bindParam(":correo", $this->correo);
+        $stmt->bindParam(":idUsuario", $this->idUsuario);
+        $stmt->bindParam(":bloqueo", $this->bloqueo);
+       
+        if($stmt->execute())
+            return 1;//Cambio exitoso
+        else
+            return 0;
     }
 }
 ?>
