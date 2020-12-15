@@ -239,6 +239,7 @@ function login() {
 }
 
 function doLogin(correo, contrasena) {
+
     $.ajax({
         type: 'POST',
         data: {
@@ -249,6 +250,25 @@ function doLogin(correo, contrasena) {
         success: function (result) {
             switch (result) {
                 case '1'://Inicio de sesión
+
+                    if($('input[id="remember"]').is(':checked'))
+                        remember = 1
+                    else
+                        remember = 0
+
+                    $.ajax({
+                        type: 'POST',
+                        data: {
+                            remember: remember,
+                            usuario: correo,
+                            contrasena: contrasena
+                        },
+                        url: 'php/cookies.php',
+                        success: function(res) {
+                            alert(res)
+                        }
+                    })
+
                     $('#formularioLogin').trigger('reset')
                     location.reload()
                     break

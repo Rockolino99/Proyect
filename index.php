@@ -88,12 +88,13 @@ session_start();
                             <li class="px-3 py-2">
                                 <form class="form" role="form" id="formularioLogin">
                                     <div class="form-group">
-                                        <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin" required>
+                                        <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin"
+                                        value="<?php if(isset($_COOKIE['usuario'])) echo $_COOKIE['usuario']; ?>" required>
                                     </div>
                                     <div class="form-group">
-                                        <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" required>
+                                        <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena"
+                                        value="<?php if(isset($_COOKIE['contrasena'])) echo $_COOKIE['contrasena']; ?>" required>
                                     </div>
-                                    <input type="hidden" name="array">
                                     <!--Captcha-->
                                     <label for="captcha">Ingresa Captcha</label>
                                     <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha" onclick="newCaptcha()"></i>
@@ -101,6 +102,7 @@ session_start();
                                         <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                     </div>
                                     <!--Fin Captcha-->
+                                    <p><input type="checkbox" name="remember" id="remember"> Recuérdame</p>
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button><!--onclick="login()"-->
                                     </div>
@@ -109,7 +111,7 @@ session_start();
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
                                     </div>
                                     <div class="form-group">
-                                        <a href="#" data-toggle="modal" data-target="#modalReestablecer" target="_blank" style="color: blue;">¿Olvidaste tu contraseña? Restablécela aquí</a>
+                                        <a href="#" data-toggle="modal" data-target="#modalReestablecer" target="_blank" style="color: blue; text-align: center;">¿Olvidaste tu contraseña? Restablécela aquí</a>
                                     </div>
                                 </form>
                             </li>
