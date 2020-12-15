@@ -265,30 +265,12 @@ function doLogin(correo, contrasena) {
             switch (result) {
                 case '1': //Inicio de sesión
                     if ($('input[id="remember"]').is(':checked')) {
-                        
                         document.cookie = "correo=" + encodeURIComponent(correo)
                         document.cookie = "contra=" + encodeURIComponent(contrasena)
-                        //remember = 1
                     } else {
                         document.cookie = "correo=; max-age=0" + encodeURIComponent(correo)
                         document.cookie = "contra=; max-age=0" + encodeURIComponent(contrasena)
-                        //remember = 0
-
                     }
-                    /*$.ajax({
-                        type: 'POST',
-                        data: {
-                            remember: remember,
-                            usuario: correo,
-                            contrasena: contrasena
-                        },
-                        url: 'php/cookies.php',
-                        success: function(res) {
-                            alert(res)
-                        }
-                    })*/
-
-                    //$('#formularioLogin').trigger('reset')
                     location.reload()
                     break
                 case '-1': //Contraseña incorrecta
