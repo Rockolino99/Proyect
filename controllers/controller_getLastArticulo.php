@@ -11,12 +11,12 @@ $articulo->idArticulo = $_POST['idArticulo'];
 $stmt = $articulo->getLastArticulo();
 
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "<tr>";
+    /*echo "<tr>";
     echo "<td>$row[idArticulo]</td>";
     echo "<td>$row[nombre]</td>";
     echo "<td>$row[marca]</td>";
     echo "<td>$row[descripcion]</td>";
     echo "<td>$row[idProveedor]</td>";
     echo "<td>$row[idCategoria]</td>";
-    echo "</tr>";
+    echo "</tr>";*/
 ?>

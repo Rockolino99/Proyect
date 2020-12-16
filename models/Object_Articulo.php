@@ -49,7 +49,8 @@ class Articulo {
 
     function getArticulo() {
         $query = "SELECT *
-                  FROM cutsiegirl.articulo";
+                  FROM cutsiegirl.articulo a, cutsiegirl.inventario i
+                  WHERE a.idArticulo = i.idArticulo";
 
         $stmt = $this->conn->prepare($query);
         if($stmt->execute())

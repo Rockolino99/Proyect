@@ -1,5 +1,5 @@
 <?php
-
+//En dado caso de que no aparezca la carpeta ropa tienen que crearla xD
 if (is_array($_FILES) && count($_FILES) > 0) {
     if (($_FILES["file"]["type"] == "image/pjpeg")
         || ($_FILES["file"]["type"] == "image/jpeg")

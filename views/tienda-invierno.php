@@ -112,24 +112,12 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
     </div>
     <!--Fin poner modal-->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
-    <table>
-        <thead>
-            <tr>
-                <th>idArticulo</th>
-                <th>nombre</th>
-                <th>marca</th>
-                <th>descripcion</th>
-                <th>idProveedor</th>
-                <th>idCategoria</th>
-            </tr>
-        </thead>
-        <tbody id="patas1"></tbody>
-
-    </table>
-
+    <br><br>
 <?php
-    //cerramos la llave del if y si el admin no es el que esta logueados nos aparecerá la tienda.
-} else { ?>
-
-    <h1>Aquí va la tienda</h1>
-<?php } ?>
+    //Cerramos la llave del if. Si el admin no está logueado, no aparecerá el botón.
+    //if(isset(correo xd) && correo==admin@cutsiegirl) {
+    //       <button onclick=drop(indice)>X<button> 
+    //Puede ser el índice o el id del inventario, lo ponemos en 0 en la bdd y mostramos todo de nuevo
+}
+?>
+<div class="row" id="patas1"></div>
