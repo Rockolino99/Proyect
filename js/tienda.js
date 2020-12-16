@@ -7,17 +7,16 @@ $(document).ready(function () {
 })
 
 function addArticulo() {
-    var nombre = $('#nombreArticulo').val()
-    var marca = $('#marca').val()
-    var proveedor = $('#idProveedor').val()
-    var categoria = $('#idCategoria').val()
-    var descripcion = $('#descripcion').val()
-    var existencia = $('#existencia').val()
-    var talla = $('#talla option:selected').val()
-
-    var precio = $('#precio').val()
-    var color = $('#color').val()
-    var imagen = $('#image').val()
+    var nombre = $('#nombreArticulo').val()         //A
+    var marca = $('#marca').val()                   //A
+    var proveedor = $('#idProveedor').val()         //A
+    var categoria = $('#idCategoria').val()         //A
+    var descripcion = $('#descripcion').val()       //A
+    var existencia = $('#existencia').val()         //I
+    var talla = $('#talla option:selected').val()   //I
+    var precio = $('#precio').val()                 //I
+    var imagen = $('#image').val()                  //I
+    var color = $('#color').val()                   //I
     
     //validación nombre
     if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
@@ -90,7 +89,7 @@ function addArticulo() {
     }
 
     //validación talla
-    if(talla.length == null || talla.length == 0 || isNaN(talla)) {
+    /*if(talla.length == null || talla.length == 0 || isNaN(talla)) {
         swal({
             icon: 'warning',
             text: '¡Ingresa la talla!',
@@ -99,7 +98,7 @@ function addArticulo() {
         })
         $('#talla').focus()
         return
-    }
+    }*/
 
     //validación precio
     if(precio.length == null || precio.length == 0 || isNaN(precio)) {
@@ -137,21 +136,6 @@ function addArticulo() {
         return
     }
     //fin validar  
-    
-    /*$.ajax({
-        type: 'POST',
-        data: {
-            nombre: $('#nombre').val(),
-            marca: $('#marca').val(),
-            idProveedor: parseInt($('#idProveedor').val()),
-            idCategoria: parseInt($('#idCategoria').val()),
-            descripcion: $('#descripcion').val()
-        },
-        url: "controllers/controller_addArticulo.php",
-        success: function (result) {
-            getLastArticulo(result)
-        }
-    })*/
 
     //Carga Imagen
     var formData = new FormData();
@@ -159,12 +143,12 @@ function addArticulo() {
     formData.append('file', files);
     $.ajax({
         url: 'php/uploadImage.php',
-        type: 'post',
+        type: 'POST',
         data: formData,
         contentType: false,
         processData: false,
-        success: function (response) {
-            if (response == 0) {
+        success: function (ruta) {
+            if (ruta == 0) {
                 swal({
                     icon: 'error',
                     text: '¡Formato de imagen incorrecto!',
@@ -174,9 +158,26 @@ function addArticulo() {
                 return
             }
             //Envío de datos
-
-
-            //$(".card-img-top").attr("src", response);
+            $.ajax({
+                type: 'POST',
+                data: {
+                    nombre: nombre,
+                    marca: marca,
+                    idProveedor: parseInt($('#idProveedor').attr('data-idproveedor')),
+                    idCategoria: parseInt($('#idCategoria').attr('data-idcategoria')),
+                    descripcion: descripcion,
+                    existencia: existencia,
+                    talla, talla,
+                    precio: precio,
+                    imagen: ruta,
+                    color: color
+                },
+                url: "controllers/controller_addArticulo.php",
+                success: function (result) {
+                    getLastArticulo(result)
+                }
+            })
+            //Mensaje de éxito
             $('#modalAddArticulo').modal('hide')
             swal({
                 icon: 'success',
