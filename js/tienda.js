@@ -13,7 +13,8 @@ function addArticulo() {
     var categoria = $('#idCategoria').val()
     var descripcion = $('#descripcion').val()
     var existencia = $('#existencia').val()
-    var talla = $('#talla').val()
+    var talla = $('#talla option:selected').val()
+
     var precio = $('#precio').val()
     var color = $('#color').val()
     var imagen = $('#image').val()
@@ -172,6 +173,9 @@ function addArticulo() {
                 })
                 return
             }
+            //Envío de datos
+
+
             //$(".card-img-top").attr("src", response);
             $('#modalAddArticulo').modal('hide')
             swal({

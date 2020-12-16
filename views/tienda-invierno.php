@@ -71,7 +71,14 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="talla">Talla:</label>
-                                    <input type="number" class="form-control" id="talla" placeholder="Talla" min="1" required>
+                                    <!--<input type="number" class="form-control" id="talla" placeholder="Talla" min="1" required>-->
+                                    <select class="form-control" id="talla">
+                                        <option title="EXTRA CHICO">XS</option>
+                                        <option title="CHICO">S</option>
+                                        <option title="MEDIANO">M</option>
+                                        <option title="GRANDE">L</option>
+                                        <option title="EXTRA GRANDE">XL</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
