@@ -1,4 +1,4 @@
-var idPr
+var archivoValido = false
 
 $(document).ready(function () {
     getArticulo()
@@ -163,16 +163,26 @@ function addArticulo() {
         contentType: false,
         processData: false,
         success: function (response) {
-            if (response != 0) {
-                alert(response)
-                //$(".card-img-top").attr("src", response);
-            } else {
-                alert('Formato de imagen incorrecto.');
+            if (response == 0) {
+                swal({
+                    icon: 'error',
+                    text: '¡Formato de imagen incorrecto!',
+                    buttons: false,
+                    timer: 2000
+                })
+                return
             }
+            //$(".card-img-top").attr("src", response);
+            $('#modalAddArticulo').modal('hide')
+            swal({
+                icon: 'success',
+                text: '¡Artículo añadido con éxito!',
+                buttons: false,
+                timer: 2000
+            })
         }
     })
     //$('#image').val() obtener ruta y nombre de nueva imagen
-    return false;
 }
 
 function getArticulo() {
