@@ -7,12 +7,18 @@ $(document).ready(function () {
 })
 
 function addArticulo() {
+<<<<<<< Updated upstream
     //Validar todo
     //inicio aqui
     
     //fin aqui
     //if ok {
     /*$.ajax({
+=======
+    //validaciones
+    
+    $.ajax({
+>>>>>>> Stashed changes
         type: 'POST',
         data: {
             nombre: $('#nombre').val(),
@@ -25,8 +31,31 @@ function addArticulo() {
         success: function (result) {
             getLastArticulo(result)
         }
+<<<<<<< Updated upstream
     })*/
     //} end ok
+=======
+    })
+    //Carga Imagen
+    var formData = new FormData();
+    var files = $('#image')[0].files[0];
+    formData.append('file', files);
+    $.ajax({
+        url: 'php/upload.php',
+        type: 'post',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            if (response != 0) {
+                $(".card-img-top").attr("src", response);
+            } else {
+                alert('Formato de imagen incorrecto.');
+            }
+        }
+    });
+    return false;
+>>>>>>> Stashed changes
 }
 
 function getArticulo() {
@@ -37,6 +66,7 @@ function getArticulo() {
             $('#patas1').append(result)
         }
     })
+
 }
 
 function getLastArticulo(id) {
@@ -78,4 +108,12 @@ function cambioCategoria(elemento) {
 function cambioProveedor(elemento) {
     $('#idProveedor').val($(elemento).text())
     $('#idProveedor').attr('data-idproveedor', $(elemento).data('idproveedor'))
+<<<<<<< Updated upstream
+=======
+}
+
+function cargaImagen() {
+
+
+>>>>>>> Stashed changes
 }
