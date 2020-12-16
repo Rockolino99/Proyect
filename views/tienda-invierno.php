@@ -92,7 +92,6 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                         <div class="form-group">
                             <label for="imagen">Imagen:</label>
                             <input type="file" class="form-control" name="image" id="image">
-                            <input type="button" class="btn btn-primary upload" value="Subir" onclick="cargaImagen()">
                         </div>
                         <div class="modal-footer">
                             <div class="form-group">

@@ -8,13 +8,9 @@ $(document).ready(function () {
 
 function addArticulo() {
     //Validar todo
-    //inicio aqui
-    
-    //fin aqui
-    //if ok {
-    /*$.ajax({
-    //validaciones
-    
+
+    //fin validar
+    /*
     $.ajax({
         type: 'POST',
         data: {
@@ -29,25 +25,26 @@ function addArticulo() {
             getLastArticulo(result)
         }
     })*/
-    //} end ok
     //Carga Imagen
     var formData = new FormData();
     var files = $('#image')[0].files[0];
     formData.append('file', files);
     $.ajax({
-        url: 'php/upload.php',
+        url: 'php/uploadImage.php',
         type: 'post',
         data: formData,
         contentType: false,
         processData: false,
         success: function (response) {
             if (response != 0) {
-                $(".card-img-top").attr("src", response);
+                alert(response)
+                //$(".card-img-top").attr("src", response);
             } else {
                 alert('Formato de imagen incorrecto.');
             }
         }
-    });
+    })
+    //$('#image').val() obtener ruta y nombre de nueva imagen
     return false;
 }
 
