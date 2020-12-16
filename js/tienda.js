@@ -151,7 +151,7 @@ function addArticulo() {
             getLastArticulo(result)
         }
     })*/
-    
+
     //Carga Imagen
     var formData = new FormData();
     var files = $('#image')[0].files[0];
