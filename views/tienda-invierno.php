@@ -65,13 +65,13 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                                 <div class="form-group">
                                     <!--existencia, talla, precio, color, imagen-->
                                     <label for="existencia">Existencia:</label>
-                                    <input type="number" class="form-control" id="existencia" placeholder="Existencia" min="1">
+                                    <input type="number" class="form-control" id="existencia" placeholder="Existencia" min="1" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="talla">Talla:</label>
-                                    <input type="number" class="form-control" id="talla" placeholder="Talla" min="1">
+                                    <input type="number" class="form-control" id="talla" placeholder="Talla" min="1" required>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="precio">Precio:</label>
-                                    <input type="number" class="form-control" id="precio" placeholder="Precio" min="1">
+                                    <input type="number" class="form-control" id="precio" placeholder="Precio" min="1" required>
                                 </div>
                             </div>
                             <div class="col-6">
