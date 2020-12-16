@@ -51,7 +51,7 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                                         </button>
                                         <div class="dropdown-menu" id="listaCategorias">
                                         </div>
-                                        <input type="number" class="form-control" name="idCategoria" id="idCategoria" placeholder="Categoria" data-idCategoria="" disabled>
+                                        <input type="text" class="form-control" name="idCategoria" id="idCategoria" placeholder="Categoria" data-idCategoria="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
         </div>
     </div>
     <!--Fin poner modal-->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo">Nuevo artículo</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
     <table>
         <thead>
             <tr>

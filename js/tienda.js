@@ -7,7 +7,12 @@ $(document).ready(function () {
 })
 
 function addArticulo() {
-    $.ajax({
+    //Validar todo
+    //inicio aqui
+    
+    //fin aqui
+    //if ok {
+    /*$.ajax({
         type: 'POST',
         data: {
             nombre: $('#nombre').val(),
@@ -20,7 +25,8 @@ function addArticulo() {
         success: function (result) {
             getLastArticulo(result)
         }
-    })
+    })*/
+    //} end ok
 }
 
 function getArticulo() {
@@ -72,26 +78,4 @@ function cambioCategoria(elemento) {
 function cambioProveedor(elemento) {
     $('#idProveedor').val($(elemento).text())
     $('#idProveedor').attr('data-idproveedor', $(elemento).data('idproveedor'))
-}
-
-function cargaImagen(){
-    var formData = new FormData();
-    var files = $('#image')[0].files[0];
-    formData.append('file', files);
-    $.ajax({
-        url: 'php/upload.php',
-        type: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(response) {
-            if (response != 0) {
-                $(".card-img-top").attr("src", response);
-            } else {
-                alert('Formato de imagen incorrecto.');
-            }
-        }
-    });
-    return false;
-
 }
