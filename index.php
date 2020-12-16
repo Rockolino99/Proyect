@@ -25,7 +25,8 @@ session_start();
     <!--AJAX JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <!--JS-->
-    <script src="js/funciones.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/tienda.js"></script>
     <!--AnimateCSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--Fin Links-->
@@ -102,7 +103,7 @@ session_start();
                                         <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                     </div>
                                     <!--Fin Captcha-->
-                                    <p><input type="checkbox" name="remember" id="remember"> Recuérdame</p>
+                                    <input type="checkbox" name="remember" id="remember"><label for="remember">&nbsp;Recuérdame</label>
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button><!--onclick="login()"-->
                                     </div>
@@ -174,7 +175,7 @@ session_start();
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <div class="form-group">
+                            <div class="">
                                 <button type="button" class="btn btn-primary btn-block" name="enviar" id="btnRegistrar" onclick="registro()">Enviar</button>
                             </div>
                         </div>
