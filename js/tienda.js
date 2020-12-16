@@ -7,18 +7,15 @@ $(document).ready(function () {
 })
 
 function addArticulo() {
-<<<<<<< Updated upstream
     //Validar todo
     //inicio aqui
     
     //fin aqui
     //if ok {
     /*$.ajax({
-=======
     //validaciones
     
     $.ajax({
->>>>>>> Stashed changes
         type: 'POST',
         data: {
             nombre: $('#nombre').val(),
@@ -31,11 +28,8 @@ function addArticulo() {
         success: function (result) {
             getLastArticulo(result)
         }
-<<<<<<< Updated upstream
     })*/
     //} end ok
-=======
-    })
     //Carga Imagen
     var formData = new FormData();
     var files = $('#image')[0].files[0];
@@ -55,7 +49,6 @@ function addArticulo() {
         }
     });
     return false;
->>>>>>> Stashed changes
 }
 
 function getArticulo() {
@@ -108,12 +101,4 @@ function cambioCategoria(elemento) {
 function cambioProveedor(elemento) {
     $('#idProveedor').val($(elemento).text())
     $('#idProveedor').attr('data-idproveedor', $(elemento).data('idproveedor'))
-<<<<<<< Updated upstream
-=======
-}
-
-function cargaImagen() {
-
-
->>>>>>> Stashed changes
 }
