@@ -1,12 +1,12 @@
 var archivoValido = false
 
 $(document).ready(function () {
-    getArticulo()
+    //getArticulo()
     getProveedores()
     getCategorias()
 })
 
-function addArticulo() {
+function addArticulo(cat) {
     var nombre = $('#nombreArticulo').val()         //A
     var marca = $('#marca').val()                   //A
     var proveedor = $('#idProveedor').val()         //A
@@ -174,7 +174,7 @@ function addArticulo() {
                 },
                 url: "controllers/controller_addArticulo.php",
                 success: function (result) {
-                    getLastArticulo(result)
+                     getArticulo(cat)
                 }
             })
             //Mensaje de éxito
@@ -187,11 +187,14 @@ function addArticulo() {
             })
         }
     })
-    //$('#image').val() obtener ruta y nombre de nueva imagen
 }
 
-function getArticulo() {
+function getArticulo(cat) {
     $.ajax({
+        type: 'POST',
+        data: {
+            categoria: cat
+        },
         url: "controllers/controller_getArticulo.php",
         success: function (result) {
             $('#patas1').empty()
@@ -199,19 +202,6 @@ function getArticulo() {
         }
     })
 
-}
-
-function getLastArticulo(id) {
-    $.ajax({
-        type: 'POST',
-        data: {
-            idArticulo: id
-        },
-        url: "controllers/controller_getLastArticulo.php",
-        success: function (result) {
-            $('#patas1').append(result)
-        }
-    })
 }
 
 function getProveedores() {

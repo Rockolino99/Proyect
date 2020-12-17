@@ -49,7 +49,6 @@ class Inventario {
             return $this->conn->lastInsertId();
         else
             return 0; 
-
     }
 
     function getInventario() {//Modificar

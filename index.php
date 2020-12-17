@@ -56,11 +56,11 @@ session_start();
                         TIENDA
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
-                        <a class="dropdown-item" href="index.php?mod=store">Ropa Invierno<img src="" width="50px"></a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=1" style="text-align: center;">INVIERNO</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><img src="" width="50px"></a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=2" style="text-align: center;">VESTIDOS</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><img src="" width="50px"></a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=3" style="text-align: center;">DISNEY</a>
                     </div>
                 </li>
                 <li class="nav-item active">
@@ -229,7 +229,7 @@ session_start();
             include "views/main.php";
             break;
         case 'store': //TiendaInvierno
-            include "views/tienda-invierno.php";
+            include "views/tienda.php";
             break;
         case 'acercade': //Acerca de
             include "views/acercade.php";
@@ -276,6 +276,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    
                     <p style="color:rgb(236, 231, 231); text-align: center; font-size: small;">Cutsie Girl&reg;
                         <br> Todos los derechos reservados.
                     </p>

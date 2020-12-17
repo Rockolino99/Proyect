@@ -15,6 +15,7 @@ function readCookie(name) {
     }
     return null;
 }
+
 function registro() {
     var nombre = $('#nombre').val()
     var ap_paterno = $('#apat').val()

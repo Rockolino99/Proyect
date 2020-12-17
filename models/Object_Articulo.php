@@ -48,32 +48,24 @@ class Articulo {
     }
 
     function getArticulo() {
-        $query = "SELECT *
+        $query = "SELECT a.idArticulo, a.nombre, a.marca, a.descripcion, a.idProveedor, a.idCategoria,
+                         i.idInventario, i.existencia, i.talla, i.precio, i.imagen, i.color
                   FROM cutsiegirl.articulo a, cutsiegirl.inventario i
-                  WHERE a.idArticulo = i.idArticulo";
-
-        $stmt = $this->conn->prepare($query);
-        if($stmt->execute())
-            return $stmt;
-        else
-            return 0;
-    }
-
-    function getLastArticulo() {
-        $query = "SELECT *
-                  FROM cutsiegirl.articulo
-                  WHERE idArticulo = :idArticulo";
+                  WHERE a.idArticulo = i.idArticulo
+                  AND status = 1
+                  AND idCategoria = :idCategoria";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->idCategoria = htmlspecialchars(strip_tags($this->idCategoria));
 
-        $stmt->bindParam(":idArticulo", $this->idArticulo);
+        $stmt->bindParam(":idCategoria", $this->idCategoria);
 
         if($stmt->execute())
             return $stmt;
         else
             return 0;
     }
+    
 }
 ?>

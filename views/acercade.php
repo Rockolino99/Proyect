@@ -31,11 +31,10 @@
     <h3 style="text-align:center;">NUESTO OBJETIVO</h3>
     <p><br>
       Nuestro objetivo más grande es hacerte lucir bien, con estilo y radiante a cualquier lugar que vayas, acompañarte en cualquier ocasión y te sientas bien de llevarnos contigo. <br>
-    <br>Queremos que Cutsie Girl no sea solo una tienda para ti, si no también un hogar donde encuentres amigas que te guiaran para realizar compras exitosas y que en cada colección encuentres algo que se adapta a ti 
-    en todos los sentidos.<br><br>
-    Somos una tienda llena de amor donde ponemos el corazón en cada paquete procesado.
+      <br>Queremos que Cutsie Girl no sea solo una tienda para ti, si no también un hogar donde encuentres amigas que te guiaran para realizar compras exitosas y que en cada colección encuentres algo que se adapta a ti
+      en todos los sentidos.<br><br>
+      Somos una tienda llena de amor donde ponemos el corazón en cada paquete procesado.
     </p>
   </div>
   <div class="bgimg-3" style="background-image: url('images/fondodisney.jpg'); min-height: 800px; width:55%;"></div>
 </div>
-

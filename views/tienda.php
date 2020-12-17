@@ -1,8 +1,25 @@
-<div class="col-md-12">
-    <div class="page-header">
-        <h1 class="h1-certificado">Invierno</h1>
-    </div>
+<?php $_GET['cat'] = isset($_GET['cat']) && $_GET['cat'] != '' && $_GET['cat'] > 0 && $_GET['cat'] < 4? $_GET['cat'] : '1'?>
+
+<body onload="getArticulo(<?php echo $_GET['cat'] ?>)">
+
+<div class="titulosPags">
+    <?php
+    switch ($_GET['cat']) {
+        case '1':
+            echo "<span>INVIERNO</span>";
+            break;
+        case '2':
+            echo "<span>VESTIDOS</span>";
+            break;
+        case '3':
+            echo "<span>DISNEY</span>";
+            break;
+    }
+    ?>
 </div>
+
+<div class="row" id="patas1" style="padding: 30px"></div>
+
 <?php
 //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
 if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?>
@@ -102,7 +119,7 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
                         </div>
                         <div class="modal-footer">
                             <div class="form-group">
-                                <button type="button" onclick="addArticulo()" class="btn btn-success">Añadir Articulo</button>
+                                <button type="button" onclick="addArticulo(<?php echo $_GET['cat'] ?>)" class="btn btn-success">Añadir Articulo</button>
                             </div>
                         </div>
                     </div>
@@ -120,4 +137,4 @@ if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') 
     //Puede ser el índice o el id del inventario, lo ponemos en 0 en la bdd y mostramos todo de nuevo
 }
 ?>
-<div class="row" id="patas1"></div>
+</body>

@@ -3,10 +3,6 @@ include_once '../connection/Object_Connection.php';
 include_once '../models/Object_Articulo.php';
 include_once '../models/Object_Inventario.php';
 
-//echo "$_POST[nombre] $_POST[marca] $_POST[idProveedor] $_POST[idCategoria] $_POST[descripcion] $_POST[existencia]";
-
-//echo " $_POST[talla] $_POST[precio] $_POST[imagen] $_POST[color]";
-
 $database = new Database();
 $db = $database->getConnection();
 
@@ -29,6 +25,8 @@ $inventario->precio = $_POST['precio'];
 $inventario->imagen = $_POST['imagen'];
 $inventario->color = $_POST['color'];
 
-echo $inventario->addInventario();
+$inventario->addInventario();
+
+echo $idArticulo;
 
 ?>
