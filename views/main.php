@@ -52,9 +52,10 @@
     </div>
     <div class="content">
         <section>
+            <br><br>
             <p>CUPON DEL MES</p>
             <img src="imagen" alt="cupon">
-            <br>
+            <br><br>
         </section>
     </div>
     
