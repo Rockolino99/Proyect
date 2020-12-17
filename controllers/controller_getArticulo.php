@@ -11,7 +11,10 @@ $articulo->idCategoria = $_POST['categoria'];
 $stmt = $articulo->getArticulo();
 
 if($stmt->rowCount() > 0) {
-
+    /*
+    idArticulo, nombre, marca, descripcion, idProveedor, idCategoria,
+    idInventario, existencia, talla, precio, imagen, color
+    */
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {?>
         <div class="col-4 articulo">
             <div class="card" style="width: 18rem;">
@@ -26,6 +29,7 @@ if($stmt->rowCount() > 0) {
         </div>
         <?php
     } 
+
 } else {
 ?>
     <div class="titulosPags">

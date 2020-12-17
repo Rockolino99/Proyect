@@ -2,12 +2,14 @@
 include_once '../connection/Object_Connection.php';
 include_once '../models/Object_Articulo.php';
 include_once '../models/Object_Inventario.php';
+include_once '../models/Object_Compra.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
 $articulo = new Articulo($db);
 $inventario = new Inventario($db);
+$compra = new Compra($db);
 
 $articulo->nombre = $_POST['nombre'];
 $articulo->marca = $_POST['marca'];
@@ -25,7 +27,14 @@ $inventario->precio = $_POST['precio'];
 $inventario->imagen = $_POST['imagen'];
 $inventario->color = $_POST['color'];
 
-$inventario->addInventario();
+$idInventario = $inventario->addInventario();
+
+$compra->idProveedor = $_POST['idProveedor'];
+$compra->idInventario = $idInventario;
+$compra->fecha = date('Y-m-d');
+$compra->cantidad = $_POST['existencia'];
+
+echo $compra->addCompra();
 
 echo $idArticulo;
 

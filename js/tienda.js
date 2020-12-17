@@ -88,18 +88,6 @@ function addArticulo(cat) {
         return
     }
 
-    //validación talla
-    /*if(talla.length == null || talla.length == 0 || isNaN(talla)) {
-        swal({
-            icon: 'warning',
-            text: '¡Ingresa la talla!',
-            buttons: false,
-            timer: 2000
-        })
-        $('#talla').focus()
-        return
-    }*/
-
     //validación precio
     if(precio.length == null || precio.length == 0 || isNaN(precio)) {
         swal({
