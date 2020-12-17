@@ -20,7 +20,7 @@ class Correo {
 	}
 
   	function enviar() {
-		$smtp =& new Swift_Connection_SMTP($this->server, Swift_Connection_SMTP::PORT_SECURE, Swift_Connection_SMTP::ENC_TLS);
+		$smtp = &new Swift_Connection_SMTP($this->server, Swift_Connection_SMTP::PORT_SECURE, Swift_Connection_SMTP::ENC_TLS);
 
 	  	$smtp->setUsername($this->username);
 		$smtp->setpassword($this->pwd);
