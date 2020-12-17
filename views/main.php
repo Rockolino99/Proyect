@@ -50,6 +50,14 @@
             </div>
         </div>
     </div>
+    <div class="content">
+        <section>
+            <p>CUPON DEL MES</p>
+            <img src="imagen" alt="cupon">
+            <br>
+        </section>
+    </div>
+    
 </body>
 
 </html>
