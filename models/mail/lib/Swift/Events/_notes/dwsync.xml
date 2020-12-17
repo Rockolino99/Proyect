@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="ResponseListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="ResponseEvent.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="ConnectListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="DisconnectEvent.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="BeforeCommandListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="CommandEvent.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="ListenerMapper.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="Listener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="ConnectEvent.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="SendListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463470000000" remote="129538463470000000" Dst="1" />
+<file name="BeforeSendListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="CommandListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="DisconnectListener.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+<file name="SendEvent.php" server="201.167.2.226/siscmlamoranew/" local="129538463460000000" remote="129538463460000000" Dst="1" />
+</dwsync>
