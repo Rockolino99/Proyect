@@ -351,3 +351,4 @@ function reestablecerPass() {
 function newCaptcha() {
     document.querySelector(".captcha-image").src = 'captcha.php?' + Date.now();
 }
+

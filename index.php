@@ -27,6 +27,7 @@ session_start();
     <!--JS-->
     <script src="js/login.js"></script>
     <script src="js/tienda.js"></script>
+    <script src="js/contacto.js"></script>
     <!--AnimateCSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--Fin Links-->

@@ -19,12 +19,12 @@
                     <small id="emailHelp" class="form-text text-muted">Su correo electrónico no se compartirá con nadie más.</small>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="InputTelefono" placeholder="Teléfono">
+                    <input type="number" class="form-control" id="InputTelefono" placeholder="Teléfono">
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" id="InputMensaje" placeholder="Compartános su mensaje" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 20%;">Enviar</button>
+                <button type="button" class="btn btn-primary" onclick="contacto()" style="width:20%;">Enviar</button>
             </form>
             <br><br>
             <h5 style="color: rgb(75, 73, 73);"><b>¿Quieres saber mas sobre nuestros<br>productos?</b></h5><br>
