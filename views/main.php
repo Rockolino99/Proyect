@@ -53,9 +53,13 @@
     <div class="content">
         <section>
             <br><br>
-            <p>CUPON DEL MES</p>
-            <img src="imagen" alt="cupon">
+            <h2>CUPÓN DEL MES</h2>
+            <br>
+            <p>Llegaron las ofertas Navideñas</p>
+            <img src="images/CUPONES/propuestas a modificar/Cupon 40off.png" alt="cun">
+            en proceso el submit
             <br><br>
+            <br>
         </section>
     </div>
     
