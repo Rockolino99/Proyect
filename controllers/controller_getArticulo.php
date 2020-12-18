@@ -10,41 +10,52 @@ $articulo = new Articulo($db);
 $articulo->idCategoria = $_POST['categoria'];
 $stmt = $articulo->getArticulo();
 
-if($stmt->rowCount() > 0) {
-    /*
-    idArticulo, nombre, marca, descripcion, idProveedor, idCategoria,
-    idInventario, existencia, talla, precio, imagen, color
-    */
+if ($stmt->rowCount() > 0) {
+    //Card: nombre, marca, descripcion, imagen, talla, color, existencia
+    //Venta: idInventario, precio, idCategoria
+    $i = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {?>
-        <div class="col-4 articulo">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="height: 200px">
+        <div class="col-3">
+            <div class="card" style="width: 18rem; height: 100%; border: 1px solid blue; margin: auto;">
+                <div class="articulo">
+                    <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="widtd: 100%">
+                    <button class="btn btn-primary btnVistaPrevia" style="margin-left: 30%; margin-right: 30%;" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</button>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['nombre']; ?></h5> 
-                    <p class="card-text"> <?php echo $row['marca']?></p>
+                    <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
                     <p class="card-text"><?php echo $row['descripcion']; ?></p>
-                    <a href="#" class="btn btn-primary">Añadir al carrito</a> 
                 </div>
             </div>
         </div>
-        <?php
-    } 
-
+        <!--Modal Vista previa-->
+        <div id="modalVistaPrevia<?php echo $i++; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Vista Previa</h3>
+                        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-6">
+                            <img src="<?php echo $row['imagen'] ?>" style="float: left; width: 100%;">
+                        </div>
+                        <div class="col-6" style="margin-left: 50px;">
+                            <?php echo $row['nombre']; ?>
+                            <button class="btn btn-primary" onclick="/*addToCart()*/">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin Modal Vista previa-->
+    <?php
+    }
 } else {
-?>
+
+    ?>
     <div class="titulosPags">
         <span style="font-size: 25px;">NO HAY ARTICULOS EN ESTA CATEGORIA</span>
     </div>
 <?php
 }
 ?>
-<!--
-    echo "<tr>";
-    echo "<td>$row[idArticulo]</td>";
-    echo "<td>$row[nombre]</td>";
-    echo "<td>$row[marca]</td>";
-    echo "<td>$row[descripcion]</td>";
-    echo "<td>$row[idProveedor]</td>";
-    echo "<td>$row[idCategoria]</td>";
-    echo "</tr>";
--->

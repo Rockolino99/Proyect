@@ -20,14 +20,14 @@ class Correo {
 	}
 
   	function enviar() {
-		$smtp =& new Swift_Connection_SMTP($this->server, Swift_Connection_SMTP::PORT_SECURE, Swift_Connection_SMTP::ENC_TLS);
+		$smtp = new Swift_Connection_SMTP($this->server, Swift_Connection_SMTP::PORT_SECURE, Swift_Connection_SMTP::ENC_TLS);
 
 	  	$smtp->setUsername($this->username);
 		$smtp->setpassword($this->pwd);
 
-		$swift =& new Swift($smtp);
+		$swift = new Swift($smtp);
 
-		$message =& new Swift_Message($this->subject,$this->body,"text/html");
+		$message = new Swift_Message($this->subject,$this->body,"text/html");
 
 		if ($swift->send($message,new Swift_Address($this->to,$this->to),new Swift_Address($this->from,"CUTSIE GIRL")))
 			return 1;
