@@ -19,7 +19,10 @@ if ($stmt->rowCount() > 0) {
             <div class="card" style="width: 18rem; height: 100%; border: 1px solid blue; margin: auto;">
                 <div class="articulo">
                     <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="widtd: 100%">
-                    <button class="btn btn-primary btnVistaPrevia" style="margin-left: 30%; margin-right: 30%;" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</button>
+                    <!--<button class="btn btn-primary btnVistaPrevia" style="margin-left: 30%; margin-right: 30%;" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</button>-->
+                    <div class="overlay">
+                        <div class="text" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>" >Vista Previa</div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
