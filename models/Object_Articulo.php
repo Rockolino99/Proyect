@@ -48,7 +48,7 @@ class Articulo {
     }
 
     function getArticulo() {
-        $query = "SELECT a.idArticulo, a.nombre, a.marca, a.descripcion, a.idProveedor, a.idCategoria,
+        $query = "SELECT a.nombre, a.marca, a.descripcion, a.idCategoria,
                          i.idInventario, i.existencia, i.talla, i.precio, i.imagen, i.color
                   FROM cutsiegirl.articulo a, cutsiegirl.inventario i
                   WHERE a.idArticulo = i.idArticulo

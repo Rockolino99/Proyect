@@ -70,3 +70,26 @@ h3{
   width: 75%;
 }
 
+.btnVistaPrevia {
+  box-sizing: border-box;
+  position: relative;
+  top: 100%;
+}
+
+.imagen:hover {
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+}
+
+.imagen:hover > .btnVistaPrevia{
+  top: 50%;
+  position: absolute;
+}
+.articulo{
+  overflow:hidden;
+}
+/*.imagen:hover{
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+  z-index: -10;
+}*/
