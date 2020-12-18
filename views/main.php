@@ -63,7 +63,7 @@
             <img  src="images/CUPONES/propuestas a modificar/Cupon 40off.png" alt="cupón">
             </div>
             <br><br>
-            <h3 class="centrar-texto">Suscribiete para obtener más cupónes</h3>
+            <h3 class="centrar-texto">Suscríbete para obtener más cupónes</h3>
             <br>
             <fieldset class="centrar-texto">
                     <label for="email">E-mail:</label>
