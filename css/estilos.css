@@ -1,79 +1,169 @@
-.content{
+.content {
     display: flex;
     justify-content: space-around;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     opacity: 0.5;
     cursor: pointer;
 }
+
 p.card-text {
     text-align: justify;
 }
 
+
 /*Estilos presentacion de la pagina*/
 
-.presentacion{
+.presentacion {
     display: flex;
     justify-content: center;
 }
 
+
 /*Inicia estilos de pie de pagina*/
-.pie-de-pagina{
+
+.pie-de-pagina {
     background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));
 }
 
-.container{
+.container {
     padding-top: 25px;
 }
 
-.col-md-4{
+.col-md-4 {
     text-align: center;
 }
 
-ul li{
+ul li {
     list-style: none;
     text-align: left;
 }
 
-ul li a{
-    color:rgb(236, 231, 231);
+ul li a {
+    color: rgb(236, 231, 231);
 }
 
-.titulosPiePag{
-    color:white;
+.titulosPiePag {
+    color: white;
     padding: 5px;
 }
+
+
 /*Estilos para iconos redes sociales*/
-.fa-facebook-f{
+
+.fa-facebook-f {
     color: blue;
     font-size: 35px;
     margin-right: 20px;
 }
 
-.fa-twitter{
+.fa-twitter {
     color: #00acee;
     font-size: 35px;
     margin-right: 20px;
 }
 
-.fa-youtube{
+.fa-youtube {
     color: red;
     font-size: 35px;
 }
 
-.fab:hover{
+.fab:hover {
     opacity: 0.5;
 }
 
+
 /*Imagenes opacas*/
-.opaco :hover{
-    filter:brightness(0.5);
+
+.opaco :hover {
+    filter: brightness(0.5);
     transition: 0.5s;
 }
 
+
 /*Estilos para tabla de articulos*/
-table, th, td{
+
+table,
+th,
+td {
     border-collapse: collapse;
     border: 1px solid red;
 }
+
+.contenedor {
+    /*Altura Maxima, toma todo espacio disponible sin pasarse 1200*/
+    max-width: 1200px;
+    /** = 1200px**/
+    /*Centrar letras en la imagen*/
+    margin: 0 auto;
+}
+
+
+/* Estilos inicio cupón */
+
+section>h2 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+#cupones {
+    background-image: url(../../Proyect/images/CUPONES/background/1519x832.png);
+}
+
+.boton {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 18px;
+    /*Aqui se uso lo de google(sniped):
+    padding: 5px;
+    width: 10px;
+    Para que el padding no sea tomad en cuenta cuando
+     se le da un ancho(width)*/
+    /* margin-top: 30px; */
+    padding: 10px 30px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #2264D4;
+    border-radius: 8px;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton-azul:hover {
+    cursor: pointer;
+    background-color: #2264D4;
+    border: 2px solid #363948;
+}
+
+.boton-azul {
+    background-color: #690155;
+    width: 800px;
+    margin-left: 190px;
+}
+
+input:not([type="submit"]) {
+    width: 800px;
+    margin-left: 190px;
+    padding: 10px;
+    display: block;
+    /* width: 57%; */
+    background-color: #aaa9a9;
+    /* margin-bottom: 20px; */
+    border: none;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 30px;
+}
+
+
+/* Estilos inicio cupón */
