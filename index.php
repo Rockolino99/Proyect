@@ -277,7 +277,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
+                    <br><br>
                     <p style="color:rgb(236, 231, 231); text-align: center; font-size: small;">Cutsie Girl&reg;
                         <br> Todos los derechos reservados.
                     </p>
