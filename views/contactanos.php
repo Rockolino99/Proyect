@@ -26,7 +26,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary" name="enviarContact" onclick="contacto()" style="width:20%;">Enviar</button>
                 <?php
-                    include("correo.php");
+                    include 'php/correo.php';
                 ?>
             </form>
             <br><br>
