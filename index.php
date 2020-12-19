@@ -254,8 +254,8 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="titulosPiePag">LOCALÍZANOS</h5>
-                    <h6 style="color:rgb(236, 231, 231); text-align: left; margin: 15px;">
+                    <h5 class="titulosPiePag"><i class="fas fa-map-marked-alt"></i> LOCALÍZANOS</h5>
+                    <h6 style="color:rgb(236, 231, 231); text-align: center; margin: 15px;">
                         Zaragoza #225, Centro<br>Aguascalientes, Ags, mx.
                     </h6>
                 </div>
