@@ -1,8 +1,9 @@
 <?php $_GET['cat'] = isset($_GET['cat']) && $_GET['cat'] != '' && $_GET['cat'] > 0 && $_GET['cat'] < 4 ? $_GET['cat'] : '1';
 $admin = isset($_GET['admin'])? base64_decode($_GET['admin']): '0';
+$admin = "'".$admin."'";
 ?>
 
-<body onload="getArticulo(<?php echo $_GET['cat'] ?>, <?php echo $admin?>)">
+<body onload="getArticulo(<?php echo $_GET['cat']; ?>, <?php echo $admin;?>)">
 
     <div class="titulosPags">
         <?php

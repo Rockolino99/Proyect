@@ -62,11 +62,11 @@ session_start();
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
                     <?php $admin = isset($_SESSION['correo'] ) && $_SESSION['correo'] == "admin@cutsiegirl.mx" ? base64_encode($_SESSION['correo']) : base64_encode('0') ?>
-                        <a class="dropdown-item" href="index.php?mod=store&cat=1&<?php echo $admin; ?>" style="text-align: center;">INVIERNO</a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=1&admin=<?php echo $admin; ?>" style="text-align: center;">INVIERNO</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod=store&cat=2" style="text-align: center;">VESTIDOS</a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=2&admin=<?php echo $admin; ?>" style="text-align: center;">VESTIDOS</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?mod=store&cat=3" style="text-align: center;">DISNEY</a>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=3&admin=<?php echo $admin; ?>" style="text-align: center;">DISNEY</a>
                     </div>
                 </li>
                 <li class="nav-item active">

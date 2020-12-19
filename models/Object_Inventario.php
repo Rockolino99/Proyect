@@ -4,6 +4,7 @@ include_once "../connection/Object_Connection.php";
 class Inventario {
     private $conn;
 
+    public $idInventario;
     public $idArticulo;
     public $existencia;
     public $talla;
@@ -62,19 +63,19 @@ class Inventario {
             return 0;
     }
 
-    function getLastArticulo() {
-        $query = "SELECT *
-                  FROM cutsiegirl.articulo
-                  WHERE idArticulo = :idArticulo";
+    function deleteInventario() {
+        $query = "DELETE
+                  FROM cutsiegirl.inventario
+                  WHERE idInventario = :idInventario";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->idInventario = htmlspecialchars(strip_tags($this->idInventario));
 
-        $stmt->bindParam(":idArticulo", $this->idArticulo);
+        $stmt->bindParam(":idInventario", $this->idInventario);
 
         if($stmt->execute())
-            return $stmt;
+            return 1;
         else
             return 0;
     }

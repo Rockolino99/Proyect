@@ -13,24 +13,27 @@ $stmt = $articulo->getArticulo();
 if ($stmt->rowCount() > 0) {
     //Card: nombre, marca, descripcion, imagen, talla, color, existencia
     //Venta: idInventario, precio, idCategoria
+    //idArticulo
     $i = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="col-3">
             <div class="card" style="width: 18rem; height: 100%; margin: auto;">
                 <div class="articulo">
-                    <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="widtd: 100%">
+                    <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap">
                     <div class="overlay">
                         <div class="text" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</div>
                     </div>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
-                    <?php if (base64_decode($_GET['admin']) == 'admin@cutsiegirl.mx') { ?>
-                        <div>
-                            <button>Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </div>
-                    <?php } else echo "no"; ?>
+                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
+                        $admin = "'".$_POST['admin']."'"?>
+                        <div style="display: flex; justify-content: space-between;">
+                            <button class="btn btn-info">Editar</button>
+                            <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo']?>,
+                                <?php echo $row['idInventario']?>, <?php echo $_POST['categoria']?>, <?php echo $admin; ?>)">Eliminar</button>
+                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -75,3 +78,5 @@ if ($stmt->rowCount() > 0) {
 <?php
 }
 ?>
+
+<script src="js/tienda.js"></script>
