@@ -83,5 +83,27 @@ class Articulo {
         else
             return 0;
     }
+
+    function editArticulo() {
+        $query = "UPDATE cutsiegirl.articulo
+                  SET nombre = :nombre,
+                  marca = :marca,
+                  descripcion = :descripcion
+                  WHERE idArticulo = :idArticulo";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
+        $this->marca = htmlspecialchars(strip_tags($this->marca));
+        $this->descripcion = htmlspecialchars(strip_tags($this->descripcion));
+
+        $stmt->bindParam(":idArticulo", $this->idArticulo);
+        $stmt->bindParam(":nombre", $this->nombre);
+        $stmt->bindParam(":marca", $this->marca);
+        $stmt->bindParam(":descripcion", $this->descripcion);
+
+        echo $stmt->execute();
+    }
 }
 ?>

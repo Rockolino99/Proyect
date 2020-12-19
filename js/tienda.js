@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    //getArticulo()
     getProveedores()
     getCategorias()
 })
@@ -283,12 +282,14 @@ function validaCantidad(elemento,cantidad, existencia){
     }
         
 }
-/*
-function editArticulo(idArticulo, idInventario, categoria) {
+
+function editArticulo(idArticulo, idInventario, cat, admin) {
     var nombre = $('#editarNombre')
-    var marca = $('#editarMarca').val()
-    var precio = $('#editarPrecio').val()
-    var descripcion = $('#editarDescripcion').val()
+    var marca = $('#editarMarca')
+    var precio = $('#editarPrecio')
+    var existencia = $('#editarExistencia')
+    var descripcion = $('#editarDescripcion')
+
 
     if(!validaTexto(nombre.val())) {
         swal({
@@ -315,11 +316,22 @@ function editArticulo(idArticulo, idInventario, categoria) {
     if(!validaNumero(precio.val())) {
         swal({
             icon: 'error',
-            text: '¡Ingresa una cantidad válida!',
+            text: '¡Ingresa un precio válido!',
             buttons: false,
             timer: 2000
         })
         precio.focus()
+        return
+    }
+
+    if(!validaNumero(existencia.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una existencia válida!',
+            buttons: false,
+            timer: 2000
+        })
+        existencia.focus()
         return
     }
 
@@ -334,13 +346,37 @@ function editArticulo(idArticulo, idInventario, categoria) {
         return
     }
 
-}*/
+    $.ajax({
+        type: 'POST',
+        data: {
+            idArticulo: idArticulo,
+            idInventario: idInventario,
+            nombre: nombre.val(),
+            marca: marca.val(),
+            precio: precio.val(),
+            existencia: existencia.val(),
+            descripcion: descripcion.val()
+        },
+        url: 'controllers/controller_editArticulo.php',
+        success: function(res) {
+            $('#modalEditarArticulo').modal('hide')
+            getArticulo(cat, admin)
+            swal({
+                icon: 'success',
+                text: 'Editado con éxito!',
+                buttons: false,
+                timer: 2000
+            })
+        }
+    })
+}
 
 function validaNumero(numero) {
-    if(numero.length == null || numero.length == 0 || isNaN(numero))
+    //alert(isNaN(numero) + " " + numero)
+    if(isNaN(numero) || numero < 1)
         return false
 
-    return false
+    return true
 }
 
 function validaTexto(cadena) {

@@ -79,5 +79,25 @@ class Inventario {
         else
             return 0;
     }
+
+    function editInventario() {
+        $query = "UPDATE cutsiegirl.inventario
+                  SET precio = :precio,
+                      existencia = :existencia
+                  WHERE idInventario = :idInventario";
+        
+        $stmt = $this->conn->prepare($query);
+
+        $this->idInventario = htmlspecialchars(strip_tags($this->idInventario));
+        $this->precio = htmlspecialchars(strip_tags($this->precio));
+        $this->existencia = htmlspecialchars(strip_tags($this->existencia));
+
+        $stmt->bindParam(":idInventario", $this->idInventario);
+        $stmt->bindParam(":precio", $this->precio);
+        $stmt->bindParam(":existencia", $this->existencia);
+
+        echo $stmt->execute();
+
+    }
 }
 ?>

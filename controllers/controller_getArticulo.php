@@ -29,8 +29,7 @@ if ($stmt->rowCount() > 0) {
                     <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
-                            <button class="btn btn-info" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
-                            <?php echo $_POST['categoria'] ?>)" data-toggle="modal" data-target="#modalEditarArticulo">Editar</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo">Editar</button>
                             <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
                                 <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
                         </div>
@@ -83,38 +82,38 @@ if ($stmt->rowCount() > 0) {
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="nombre">Nombre:</label>
-                                        <input type="text" class="form-control" id="editanombreArticulo" placeholder="Nombre">
+                                        <input type="text" class="form-control" id="editarNombre" placeholder="Nombre" value="<?php echo $row['nombre'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="editamarca">Marca:</label>
-                                        <input type="text" class="form-control" id="editamarca" placeholder="Marca">
+                                        <input type="text" class="form-control" id="editarMarca" placeholder="Marca" value="<?php echo $row['marca'] ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="descripcion">Descripción:</label>
-                                <textarea name="descripcion" class="form-control" id="editadescripcion" cols="30" rows="2" style="resize: none;" placeholder="Descripcion"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="precio">Precio:</label>
-                                        <input type="number" class="form-control" id="editaprecio" placeholder="Precio" min="1" required>
+                                        <input type="number" class="form-control" id="editarPrecio" placeholder="Precio" min="1" value="<?php echo $row['precio'] ?>">
                                     </div>
                                 </div>
-                                <!--Deje color para que no se viera feo el modal xD-->
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="color">Color:</label>
-                                        <input type="text" class="form-control" id="editacolor" placeholder="Color">
+                                        <label for="color">Existencia:</label>
+                                        <input type="number" class="form-control" id="editarExistencia" placeholder="Existencia" value="<?php echo $row['existencia'] ?>">
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripción:</label>
+                                <textarea name="descripcion" class="form-control" id="editarDescripcion" cols="30" rows="2" style="resize: none;" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
+                            </div>
                             <div class="modal-footer">
                                 <div class="form-group">
-                                    <button type="button" onclick="" class="btn btn-success">Aceptar</button>
+                                    <button type="button" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
+                            <?php echo $_POST['categoria'] ?>)" class="btn btn-success">Aceptar</button>
                                 </div>
                             </div>
                         </div>
