@@ -146,22 +146,23 @@ section>h2 {
 .boton-azul {
     background-color: #690155;
     width: 800px;
-    margin-left: 190px;
+    margin-left: 200px;
+    margin-top: -10px;
 }
 
-input:not([type="submit"]) {
+.buu {
     width: 800px;
-    margin-left: 190px;
+    margin-left: 200px;
     padding: 10px;
     display: block;
-    /* width: 57%; */
+    /* width: 57%;*/
     background-color: #aaa9a9;
     /* margin-bottom: 20px; */
     border: none;
     border-radius: 10px;
 }
 
-label {
+*/ label {
     font-size: 30px;
 }
 

@@ -67,9 +67,11 @@
             <br>
             <fieldset class="centrar-texto">
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="Tu correo electrónico" required>
-                </fieldset>
-            <input type="submit" value="Suscribirme" class="boton boton-azul"><br><br><br>
+                    <input class="buu" type="email" id="email" placeholder="Tu correo electrónico" required>
+            </fieldset>
+            <br>
+            <input type="submit" value="Suscribirme" class="boton boton-azul "><br><br><br>
+
             <br><br>
           
         </section>
