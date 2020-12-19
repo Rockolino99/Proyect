@@ -55,7 +55,7 @@
                 <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                         ¿Se permiten devoluciones?
+                        <i class="fas fa-check-square"></i> ¿Se permiten devoluciones?
                         </button>
                     </h5>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="card-header" id="headingFive">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      ¿Cómo puedo ponerme en contacto si tengo alguna duda?
+                        <i class="fas fa-check-square"></i> ¿Cómo puedo ponerme en contacto si tengo alguna duda?
                         </button>
                     </h5>
                 </div>
