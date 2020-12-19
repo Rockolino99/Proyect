@@ -137,10 +137,6 @@ $admin = "'" . $admin . "'";
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
         <br><br>
     <?php
-        //Cerramos la llave del if. Si el admin no está logueado, no aparecerá el botón.
-        //if(isset(correo xd) && correo==admin@cutsiegirl) {
-        //       <button onclick=drop(indice)>X<button> 
-        //Puede ser el índice o el id del inventario, lo ponemos en 0 en la bdd y mostramos todo de nuevo
     }
     ?>
 </body>

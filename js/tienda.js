@@ -283,7 +283,7 @@ function validaCantidad(elemento,cantidad, existencia){
     }
         
 }
-
+/*
 function editArticulo(idArticulo, idInventario, categoria) {
     var nombre = $('#editarNombre')
     var marca = $('#editarMarca').val()
@@ -334,7 +334,7 @@ function editArticulo(idArticulo, idInventario, categoria) {
         return
     }
 
-}
+}*/
 
 function validaNumero(numero) {
     if(numero.length == null || numero.length == 0 || isNaN(numero))
