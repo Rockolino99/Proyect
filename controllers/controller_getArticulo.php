@@ -29,7 +29,8 @@ if ($stmt->rowCount() > 0) {
                     <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
-                            <button class="btn btn-info">Editar</button>
+                            <button class="btn btn-info" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
+                            <?php echo $_POST['categoria'] ?>)">Editar</button>
                             <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
                                 <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
                         </div>

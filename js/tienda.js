@@ -283,3 +283,69 @@ function validaCantidad(elemento,cantidad, existencia){
     }
         
 }
+
+function editArticulo(idArticulo, idInventario, categoria) {
+    var nombre = $('#editarNombre')
+    var marca = $('#editarMarca').val()
+    var precio = $('#editarPrecio').val()
+    var descripcion = $('#editarDescripcion').val()
+
+    if(!validaTexto(nombre.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa un nombre válido!',
+            buttons: false,
+            timer: 2000
+        })
+        nombre.focus()
+        return
+    }
+
+    if(!validaTexto(marca.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una marca válida!',
+            buttons: false,
+            timer: 2000
+        })
+        marca.focus()
+        return
+    }
+
+    if(!validaNumero(precio.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una cantidad válida!',
+            buttons: false,
+            timer: 2000
+        })
+        precio.focus()
+        return
+    }
+
+    if(!validaTexto(descripcion.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una descripción!',
+            buttons: false,
+            timer: 2000
+        })
+        descripcion.focus()
+        return
+    }
+
+}
+
+function validaNumero(numero) {
+    if(numero.length == null || numero.length == 0 || isNaN(numero))
+        return false
+
+    return false
+}
+
+function validaTexto(cadena) {
+    if (cadena == null || cadena.length == 0 || /^\s+$/.test(cadena))
+        return false
+
+    return true
+}

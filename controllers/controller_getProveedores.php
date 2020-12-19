@@ -10,7 +10,6 @@ $proveedor = new Proveedor($db);
 $stmt = $proveedor->getProveedor();
 $i = 0;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo $i++;
 ?>
     <button class="dropdown-item" type="button" onclick="cambioProveedor(this)" data-idproveedor="<?php echo $row['idProveedor'] ?>"><?php echo $row['nombre'] ?></button>
 <?php
