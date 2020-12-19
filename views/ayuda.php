@@ -41,13 +41,13 @@
                 <div class="card-header" id="headingThree">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                         ¿Cuánto cuesta el envío?
+                        <i class="fas fa-check-square"></i> ¿Cuánto cuesta el envío?
                         </button>
                     </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                        El envío depende de la cantidad de tu compra y del peso de este, puede ser gratis si tu compra es gratis o si tenemos alguna promoción vigente, también depende de la ciudad de donde solicites nuestros servicios y la paquetería que prefieras.
+                    <i class="fas fa-check-square"></i> El envío depende de la cantidad de tu compra y del peso de este, puede ser gratis si tu compra es gratis o si tenemos alguna promoción vigente, también depende de la ciudad de donde solicites nuestros servicios y la paquetería que prefieras.
                     </div>    
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        ¿Se permiten devoluciones?
+                         ¿Se permiten devoluciones?
                         </button>
                     </h5>
                 </div>
