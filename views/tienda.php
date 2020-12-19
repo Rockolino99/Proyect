@@ -125,7 +125,7 @@ $admin = "'" . $admin . "'";
                             </div>
                             <div class="modal-footer">
                                 <div class="form-group">
-                                    <button type="button" onclick="addArticulo(<?php echo $_GET['cat'] ?>)" class="btn btn-success">Añadir Articulo</button>
+                                    <button type="button" onclick="addArticulo(<?php echo $_GET['cat'] ?>, <?php echo $admin; ?>)" class="btn btn-success">Añadir Articulo</button>
                                 </div>
                             </div>
                         </div>

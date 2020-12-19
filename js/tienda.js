@@ -4,7 +4,7 @@ $(document).ready(function () {
     getCategorias()
 })
 
-function addArticulo(cat) {
+function addArticulo(cat, admin) {
     var nombre = $('#nombreArticulo').val()         //A
     var marca = $('#marca').val()                   //A
     var proveedor = $('#idProveedor').val()         //A
@@ -160,7 +160,7 @@ function addArticulo(cat) {
                 },
                 url: "controllers/controller_addArticulo.php",
                 success: function (result) {
-                     getArticulo(cat)
+                     getArticulo(cat, admin)
                 }
             })
             //Mensaje de éxito

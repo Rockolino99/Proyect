@@ -26,7 +26,7 @@ if ($stmt->rowCount() > 0) {
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
-                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {//Errores :'v
+                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
                             <button class="btn btn-info">Editar</button>
