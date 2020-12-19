@@ -1,5 +1,3 @@
-var archivoValido = false
-
 $(document).ready(function () {
     //getArticulo()
     getProveedores()
@@ -177,11 +175,13 @@ function addArticulo(cat) {
     })
 }
 
-function getArticulo(cat) {
+function getArticulo(cat, admin) {
+
     $.ajax({
         type: 'POST',
         data: {
-            categoria: cat
+            categoria: cat,
+            admin: admin
         },
         url: "controllers/controller_getArticulo.php",
         success: function (result) {
@@ -189,7 +189,7 @@ function getArticulo(cat) {
             $('#patas1').append(result)
         }
     })
-
+    
 }
 
 function getProveedores() {
@@ -218,4 +218,68 @@ function cambioCategoria(elemento) {
 function cambioProveedor(elemento) {
     $('#idProveedor').val($(elemento).text())
     $('#idProveedor').attr('data-idproveedor', $(elemento).data('idproveedor'))
+}
+
+function deleteArticulo(idArticulo, idInventario, cat, admin) {
+    swal({
+        title: "¿Desea eliminar esta prenda?",
+        text: "Una vez eliminada, no se podrá recuperar",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                type: 'POST',
+                data: {
+                    idArticulo: idArticulo,
+                    idInventario: idInventario
+                },
+                url: 'controllers/controller_deleteArticulo.php',
+                success: function(res) {
+                    getArticulo(cat, admin)
+                    swal({
+                        icon: 'success',
+                        text: '¡Eliminado con éxito!',
+                        buttons: false,
+                        timer: 2000
+                    })
+                }
+            })
+        }
+    })
+}
+function validaCantidad(elemento,cantidad, existencia){
+    if(isNaN(cantidad) || cantidad == ''){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir una cantidad valida!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+    if(existencia<cantidad){
+        swal({
+            icon: 'warning',
+            text: '¡No hay más prendas!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val(existencia)
+        return
+    }
+    if(cantidad<1){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir por lo menos una unidad!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+        
 }
