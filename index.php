@@ -95,12 +95,10 @@ session_start();
                             <li class="px-3 py-2">
                                 <form class="form" role="form" id="formularioLogin">
                                     <div class="form-group">
-                                        <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin"
-                                        value="<?php if(isset($_COOKIE['usuario'])) echo $_COOKIE['usuario']; ?>" required>
+                                        <input name="usuario" placeholder="Correo" class="form-control form-control-sm" type="email" id="correoLogin" value="<?php if (isset($_COOKIE['usuario'])) echo $_COOKIE['usuario']; ?>" required>
                                     </div>
                                     <div class="form-group">
-                                        <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena"
-                                        value="<?php if(isset($_COOKIE['contrasena'])) echo $_COOKIE['contrasena']; ?>" required>
+                                        <input name="contrasena" placeholder="Contraseña" class="form-control form-control-sm" type="password" id="contrasena" value="<?php if (isset($_COOKIE['contrasena'])) echo $_COOKIE['contrasena']; ?>" required>
                                     </div>
                                     <!--Captcha-->
                                     <label for="captcha">Ingresa Captcha</label>
@@ -111,7 +109,8 @@ session_start();
                                     <!--Fin Captcha-->
                                     <input type="checkbox" name="remember" id="remember"><label for="remember">&nbsp;Recuérdame</label>
                                     <div class="form-group text-center">
-                                        <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button><!--onclick="login()"-->
+                                        <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
+                                        <!--onclick="login()"-->
                                     </div>
                                     <br>
                                     <div class="form-group text-center">
@@ -262,11 +261,11 @@ session_start();
                 </div>
                 <div class="col-md-4">
                     <h5 class="titulosPiePag">CUTSIE INFO</h5>
-                    <ul>
-                        <li><a href="">Envíos y devoluciones</a></li>
-                        <li><a href="">Nuestras políticas</a></li>
-                        <li><a href="">Metodos de pago</a></li>
-                    </ul>
+                    <div class="info">
+                        <a href="">Envíos y devoluciones</a><br>
+                        <a href="">Nuestras políticas</a><br>
+                        <a href="">Metodos de pago</a><br>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">

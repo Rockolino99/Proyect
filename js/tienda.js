@@ -249,4 +249,37 @@ function deleteArticulo(idArticulo, idInventario, cat, admin) {
             })
         }
     })
+    
+function validaCantidad(elemento,cantidad, existencia){
+    if(isNaN(cantidad) || cantidad == ''){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir una cantidad valida!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+    if(existencia<cantidad){
+        swal({
+            icon: 'warning',
+            text: '¡No hay más prendas!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val(existencia)
+        return
+    }
+    if(cantidad<1){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir por lo menos una unidad!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+        
 }

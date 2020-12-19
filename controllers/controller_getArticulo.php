@@ -41,25 +41,27 @@ if ($stmt->rowCount() > 0) {
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
         <div id="modalVistaPrevia<?php echo $i++; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content cafe" style="background: linear-gradient(90deg, #F3D6FA, #D6D6FA);">
                     <div class="modal-header">
-                        <h3>Vista Previa</h3>
+                        <h3 class="cafe">Vista Previa</h3>
                         <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-6">
-                            <img src="<?php echo $row['imagen'] ?>" style="float: left; width: 100%;">
-                        </div>
-                        <div class="col-10">
-                            <div>
-                                <div class="nombreArticulo"><?php echo $row['nombre']; ?></div>
-                                <div class="nombreAPrecio"><?php echo $row['precio']; ?></div>
-                                <div class="nombreMarca"><?php echo $row['marca']; ?></div>
-                                <div class="nombreDesc"><?php echo $row['descripcion']; ?></div>
-                                <div class="nombreTalla"><?php echo $row['talla']; ?></div>
-                                <div class="nombreColor"><?php echo $row['color']; ?></div>
-                                <div class="nombreExistencia"><?php echo $row['existencia']; ?></div>
-                                <button class="btn btn-primary" onclick="/*addToCart()*/">Añadir al carrito</button>
+                        <div class="vistaPrevia">
+                            <div class="col-5">
+                                <img src="<?php echo $row['imagen'] ?>" style="float: left; width: 100%;">
+                            </div>
+                            <div class="vista2">
+                                <div class="nombreArticulo"><?php echo $row['nombre']; ?></div><br>
+                                <div class="nombreAPrecio">Precio: $<?php echo $row['precio']; ?></div><br>
+                                <div class="nombreMarca">Marca: <?php echo $row['marca']; ?></div><br>
+                                <div class="nombreTalla">Talla: <?php echo $row['talla']; ?></div><br>
+                                <div class="nombreColor">Color: <?php echo $row['color']; ?></div><br>
+                                <div class="nombreCantidad"><label for="cantidadVP" >Cantidad:</label></div>
+                                <input type="number" class="form-control" id="cantidadVP" placeholder="Cantidad" value="1" required
+                                onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"><br>
+                                <div class="nombreDesc"> <?php echo $row['descripcion']; ?></div><br>
+                                <button class="btn btn-primary" style="background-color: saddlebrown; border-color:saddlebrown; float:right" onclick="/*addToCart()*/">Añadir al carrito</button>
                             </div>
                         </div>
                     </div>
@@ -70,7 +72,6 @@ if ($stmt->rowCount() > 0) {
     <?php
     }
 } else {
-
     ?>
     <div class="titulosPags">
         <span style="font-size: 25px;">NO HAY ARTICULOS EN ESTA CATEGORIA</span>
