@@ -57,7 +57,8 @@ session_start();
                         TIENDA
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
-                        <a class="dropdown-item" href="index.php?mod=store&cat=1" style="text-align: center;">INVIERNO</a>
+                    <?php $admin = isset($_SESSION['correo'] ) && $_SESSION['correo'] == "admin@cutsiegirl.mx" ? base64_encode($_SESSION['correo']) : base64_encode('0') ?>
+                        <a class="dropdown-item" href="index.php?mod=store&cat=1&<?php echo $admin; ?>" style="text-align: center;">INVIERNO</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="index.php?mod=store&cat=2" style="text-align: center;">VESTIDOS</a>
                         <div class="dropdown-divider"></div>
@@ -236,9 +237,8 @@ session_start();
             include "views/acercade.php";
             break;
         case 'contactanos': //Contactanos
-            include("views/contactanos.php");
+            include "views/contactanos.php";
             break;
-
         case 'ayuda': //Ayuda
             include "views/ayuda.php";
             break;

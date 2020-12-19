@@ -22,9 +22,11 @@
     <!--Aqui abajo-->
   
 
-    </div <?php
-            //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
-            if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?> <!--modal tienda-->
+    </div>
+    <?php
+        //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
+        if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?>
+    <!--Modal-->
     <div id="modalAddArticulo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

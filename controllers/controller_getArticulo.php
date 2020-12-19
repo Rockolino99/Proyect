@@ -14,23 +14,28 @@ if ($stmt->rowCount() > 0) {
     //Card: nombre, marca, descripcion, imagen, talla, color, existencia
     //Venta: idInventario, precio, idCategoria
     $i = 0;
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {?>
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="col-3">
-            <div class="card" style="width: 18rem; height: 100%; border: 1px solid blue; margin: auto;">
+            <div class="card" style="width: 18rem; height: 100%; margin: auto;">
                 <div class="articulo">
                     <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="widtd: 100%">
-                    <!--<button class="btn btn-primary btnVistaPrevia" style="margin-left: 30%; margin-right: 30%;" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</button>-->
                     <div class="overlay">
-                        <div class="text" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>" >Vista Previa</div>
+                        <div class="text" data-toggle="modal" data-target="#modalVistaPrevia<?php echo $i; ?>">Vista Previa</div>
                     </div>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
-                    <p class="card-text"><?php echo $row['descripcion']; ?></p>
+                    <?php if (base64_decode($_GET['admin']) == 'admin@cutsiegirl.mx') { ?>
+                        <div>
+                            <button>Editar</button>
+                            <button class="btn btn-danger">Eliminar</button>
+                        </div>
+                    <?php } else echo "no"; ?>
                 </div>
             </div>
         </div>
         <!--Modal Vista previa-->
+        <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
         <div id="modalVistaPrevia<?php echo $i++; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -42,9 +47,17 @@ if ($stmt->rowCount() > 0) {
                         <div class="col-6">
                             <img src="<?php echo $row['imagen'] ?>" style="float: left; width: 100%;">
                         </div>
-                        <div class="col-6" style="margin-left: 50px;">
-                            <?php echo $row['nombre']; ?>
-                            <button class="btn btn-primary" onclick="/*addToCart()*/">Añadir al carrito</button>
+                        <div class="col-10">
+                            <div>
+                                <div><?php echo $row['nombre']; ?></div>
+                                <div><?php echo $row['precio']; ?></div>
+                                <div><?php echo $row['marca']; ?></div>
+                                <div><?php echo $row['descripcion']; ?></div>
+                                <div><?php echo $row['talla']; ?></div>
+                                <div><?php echo $row['color']; ?></div>
+                                <div><?php echo $row['existencia']; ?></div>
+                                <button class="btn btn-primary" onclick="/*addToCart()*/">Añadir al carrito</button>
+                            </div>
                         </div>
                     </div>
                 </div>
