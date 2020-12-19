@@ -249,7 +249,7 @@ function deleteArticulo(idArticulo, idInventario, cat, admin) {
             })
         }
     })
-    
+}
 function validaCantidad(elemento,cantidad, existencia){
     if(isNaN(cantidad) || cantidad == ''){
         swal({
