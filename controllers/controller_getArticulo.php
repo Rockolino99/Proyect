@@ -49,13 +49,13 @@ if ($stmt->rowCount() > 0) {
                         </div>
                         <div class="col-10">
                             <div>
-                                <div><?php echo $row['nombre']; ?></div>
-                                <div><?php echo $row['precio']; ?></div>
-                                <div><?php echo $row['marca']; ?></div>
-                                <div><?php echo $row['descripcion']; ?></div>
-                                <div><?php echo $row['talla']; ?></div>
-                                <div><?php echo $row['color']; ?></div>
-                                <div><?php echo $row['existencia']; ?></div>
+                                <div class="nombreArticulo"><?php echo $row['nombre']; ?></div>
+                                <div class="nombreAPrecio"><?php echo $row['precio']; ?></div>
+                                <div class="nombreMarca"><?php echo $row['marca']; ?></div>
+                                <div class="nombreDesc"><?php echo $row['descripcion']; ?></div>
+                                <div class="nombreTalla"><?php echo $row['talla']; ?></div>
+                                <div class="nombreColor"><?php echo $row['color']; ?></div>
+                                <div class="nombreExistencia"><?php echo $row['existencia']; ?></div>
                                 <button class="btn btn-primary" onclick="/*addToCart()*/">Añadir al carrito</button>
                             </div>
                         </div>
