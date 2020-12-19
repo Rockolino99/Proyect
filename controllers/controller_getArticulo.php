@@ -26,13 +26,13 @@ if ($stmt->rowCount() > 0) {
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
-                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
-                        $admin = "'".$_POST['admin']."'"?>
+                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {//Errores :'v
+                        $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
                             <button class="btn btn-info">Editar</button>
-                            <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo']?>,
-                                <?php echo $row['idInventario']?>, <?php echo $_POST['categoria']?>, <?php echo $admin; ?>)">Eliminar</button>
-                    </div>
+                            <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
+                                <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -51,15 +51,14 @@ if ($stmt->rowCount() > 0) {
                             <div class="col-5">
                                 <img src="<?php echo $row['imagen'] ?>" style="float: left; width: 100%;">
                             </div>
-                            <div class="vista2">
+                            <div class="col-7 vista2">
                                 <div class="nombreArticulo"><?php echo $row['nombre']; ?></div><br>
                                 <div class="nombreAPrecio">Precio: $<?php echo $row['precio']; ?></div><br>
                                 <div class="nombreMarca">Marca: <?php echo $row['marca']; ?></div><br>
                                 <div class="nombreTalla">Talla: <?php echo $row['talla']; ?></div><br>
                                 <div class="nombreColor">Color: <?php echo $row['color']; ?></div><br>
-                                <div class="nombreCantidad"><label for="cantidadVP" >Cantidad:</label></div>
-                                <input type="number" class="form-control" id="cantidadVP" placeholder="Cantidad" value="1" required
-                                onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"><br>
+                                <div class="nombreCantidad"><label for="cantidadVP">Cantidad:</label></div>
+                                <input type="number" class="form-control" id="cantidadVP" placeholder="Cantidad" value="1" required onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"><br>
                                 <div class="nombreDesc"> <?php echo $row['descripcion']; ?></div><br>
                                 <button class="btn btn-primary" style="background-color: saddlebrown; border-color:saddlebrown; float:right" onclick="/*addToCart()*/">Añadir al carrito</button>
                             </div>
@@ -80,4 +79,3 @@ if ($stmt->rowCount() > 0) {
 }
 ?>
 
-<script src="js/tienda.js"></script>
