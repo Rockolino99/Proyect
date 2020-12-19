@@ -9,7 +9,7 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" style="color: black; padding:10px;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            ¿Por qué mi pedido se retrasa?
+                        <i class="fas fa-check-square"></i>  ¿Por qué mi pedido se retrasa?
                         </button>
                     </h5>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            ¿Cuánto tarda el envío?
+                        <i class="fas fa-check-square"></i>  ¿Cuánto tarda el envío?
                         </button>
                     </h5>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="card-header" id="headingThree">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            ¿Cuánto cuesta el envío?
+                         ¿Cuánto cuesta el envío?
                         </button>
                     </h5>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            ¿Se permiten devoluciones?
+                        ¿Se permiten devoluciones?
                         </button>
                     </h5>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="card-header" id="headingFive">
                     <h5 class="mb-0">
                         <button style="color: black; padding:10px;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            ¿Cómo puedo ponerme en contacto si tengo alguna duda?
+                      ¿Cómo puedo ponerme en contacto si tengo alguna duda?
                         </button>
                     </h5>
                 </div>
