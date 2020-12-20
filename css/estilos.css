@@ -172,4 +172,18 @@ section>h2 {
 }
 
 
-/* Estilos fin cupón */
+/* Estilos seccion preguntas */
+
+.container1{
+    padding: 50px;
+}
+
+.preguntasRetro{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.radio-inline{
+    margin-right: 70px;
+}

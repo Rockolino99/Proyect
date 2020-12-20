@@ -82,6 +82,55 @@
         </section>
     </div>
 
+    <div class="container1">
+        <h2 style="font-size: 40px; font-weight: bolder; text-align: center;">AYÚDANOS A MEJORAR</h2><br>
+        <h3 style="text-align: center;">¡Porque tu opinión nos importa!</h3><br>
+        <div class="preguntasRetro">
+        <form method="post">
+            <h4 style="text-align: center;">Contesta estas sencillas preguntas acerca de tu experiencia en CutsieGirl</h4><br>
+            <h5>¿Cómo ha sido tu experiencia en CutsieGirl?</h5>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Buena
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Mala
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">Regular
+            </label>
+
+            <h5>¿Consideras que los precios de los articulos son muy elevados?</h5>
+
+            <label class="radio-inline">
+                <input type="radio" name="optradio1">Si
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio1">No
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio1">Regular
+            </label>
+
+            <h5>¿Es buena la calidad de la ropa?</h5>
+
+            <label class="radio-inline">
+                <input type="radio" name="optradio2">Si
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio2">No
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio2">Regular
+            </label>
+            <br><br><br>
+            <center><button style="font-size: 18px; font-weight: bolder; width: 20%;" type="submit" name="enviarP" class="btn btn-primary">Enviar</button></center>
+            <?php 
+                include 'php/correoCuponRegalo.php'; 
+            ?>
+        </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -22,6 +22,7 @@ $admin = "'" . $admin . "'";
     </div>
     <div class="row" id="patas1" style="padding: 30px; width: 100%; margin: auto;"></div>
     </div>
+
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
     if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?>
