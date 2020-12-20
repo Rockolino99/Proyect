@@ -137,7 +137,7 @@ session_start();
                     <h3>Registro</h3>
                     <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
-                <form class="form" role="form" id="formularioRegistro">
+                <form class="form" role="form" id="formularioRegistro" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nombre">Nombre:</label>
