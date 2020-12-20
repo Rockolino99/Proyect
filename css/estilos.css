@@ -80,6 +80,16 @@ ul li a {
     opacity: 0.5;
 }
 
+/*Carrito de compras*/
+.fa-shopping-cart{
+    font-size: 15px;
+}
+.fa-shopping-cart>b{
+    font-weight: bolder;
+    box-sizing: border-box;
+    
+}
+
 
 /*Imagenes opacas*/
 .opaco :hover {

@@ -17,7 +17,7 @@ if ($stmt->rowCount() > 0) {
     $i = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="col-3">
-            <div class="card" style="width: 18rem; height: 100%; margin: auto;">
+            <div class="card" style="width: 18rem; height: 100%;">
                 <div class="articulo">
                     <img class="card-img-top imagen" src="<?php echo $row['imagen'] ?>" alt="Card image cap">
                     <div class="overlay">

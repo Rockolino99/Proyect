@@ -62,7 +62,7 @@ session_start();
                         TIENDA
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 0;">
-                    <?php $admin = isset($_SESSION['correo'] ) && $_SESSION['correo'] == "admin@cutsiegirl.mx" ? base64_encode($_SESSION['correo']) : base64_encode('0') ?>
+                        <?php $admin = isset($_SESSION['correo']) && $_SESSION['correo'] == "admin@cutsiegirl.mx" ? base64_encode($_SESSION['correo']) : base64_encode('0') ?>
                         <a class="dropdown-item" href="index.php?mod=store&cat=1&admin=<?php echo $admin; ?>" style="text-align: center;">INVIERNO</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="index.php?mod=store&cat=2&admin=<?php echo $admin; ?>" style="text-align: center;">VESTIDOS</a>
@@ -80,7 +80,8 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
                 </li>
             </ul>
-            <button type="button" onclick="verCarrito()">Carrito</button>
+            <!--Carrito de Compras-->
+            <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
             <?php
             if (isset($_SESSION['idUsuario'])) {
             ?>
@@ -125,6 +126,7 @@ session_start();
                             </li>
                         </ul>
                     </li>
+
                 </ul>
             <?php
             }
@@ -220,14 +222,45 @@ session_start();
                             </div>
                         </div>
                         <br><br>
-                        <center>
+                        <div class="modal-footer">
                             <button type="button" class="btn btn-primary" onclick="reestablecerPass()">Cambiar contraseña</button>
-                        </center>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!--Modal carrito de compras-->
+    <div id="modalCarrito" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Carrito</h3>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="vistacarrito">
+                        <div class="col-5">
+                            <img src="images/INVIERNO/invierno1.jpg" style="float: left; width: 100%;"><hr>
+                        </div>
+                        <div class="col-7 vista2">
+                            <div class="nombreArticuloCarrito"></div><br>
+                            <div class="nombreAPrecioCarrito"></div><br>
+                            <div class="nombreMarcaCarrito"></div><br>
+                            <div class="nombreTallaCarrito"></div><br>
+                            <div class="nombreColorCarrito"></div><br>
+                            <div class="nombreDescCarrito"></div><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" style="float:right" onclick="">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fin Modal carrito de compras-->
     <!--Fin Header-->
     <?php
     $mod = (isset($_GET['mod'])) ? $_GET['mod'] : "main";

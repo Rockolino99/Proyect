@@ -1,62 +1,67 @@
 /*Estilos de Vista Previa*/
-.nombreArticulo{
+.nombreArticulo {
     text-align: left;
     margin: auto;
     font-size: 45px;
 }
 
-.nombreAPrecio{
+.nombreAPrecio {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
 
-.nombreMarca{
+.nombreMarca {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
 
-.nombreDesc{
+.nombreDesc {
     text-align: left;
     margin: auto;
     font-size: 15px;
     justify-content: left;
-    
+
 }
 
-.nombreTalla{
+.nombreTalla {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
 
-.nombreColor{
+.nombreColor {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
 
-.nombreExistencia{
+.nombreExistencia {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
-.vistaPrevia{
+
+.vistaPrevia {
     display: flex;
     justify-content: space-around;
-    
 }
-#cantidadVP{
+
+#cantidadVP {
     width: 20%;
 }
 
-.nombreCantidad{
+.nombreCantidad {
     text-align: left;
     margin: auto;
     font-size: 27px;
 }
 
-.cafe{
+.cafe {
     color: saddlebrown;
+}
+.vistaCarrito {
+    display: flex;
+    justify-content: space-around;
 }
