@@ -57,7 +57,7 @@
     <div id="cupones">
         <section class="contenedor">
             <br><br>
-            <h2 class="centrar-texto">CUPÓN DEL MES</h2>
+            <h2 class="centrar-texto">CUPÓNERA DICIEMBRE</h2>
             <br>
             <h3 class="centrar-texto">Llegaron las ofertas Navideñas</h3>
             <br>
@@ -65,7 +65,7 @@
                 <img src="images/CUPONES/propuestas a modificar/Cupon 40offx.png" alt="cupón">
             </div>
             <br><br>
-            <h3 class="centrar-texto">Suscríbete para obtener más cupónes</h3>
+            <h3 class="centrar-texto">Suscríbete y obtén tus cupónes</h3>
             <br>
             <form method="post">
             <fieldset class="centrar-texto">
