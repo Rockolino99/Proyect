@@ -29,7 +29,7 @@ if ($stmt->rowCount() > 0) {
                     <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo">Editar</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo<?php echo $i; ?>">Editar</button>
                             <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
                                 <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
                         </div>
@@ -39,7 +39,7 @@ if ($stmt->rowCount() > 0) {
         </div>
         <!--Modal Vista previa-->
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
-        <div id="modalVistaPrevia<?php echo $i++; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="modalVistaPrevia<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content cafe" style="background: linear-gradient(90deg, #F3D6FA, #D6D6FA);">
                     <div class="modal-header">
@@ -69,7 +69,7 @@ if ($stmt->rowCount() > 0) {
         </div>
         <!--Fin Modal Vista previa-->
         <!--Modal Editar Articulo-->
-        <div id="modalEditarArticulo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="modalEditarArticulo<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -113,7 +113,7 @@ if ($stmt->rowCount() > 0) {
                             <div class="modal-footer">
                                 <div class="form-group">
                                     <button type="button" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
-                            <?php echo $_POST['categoria'] ?>, <?php echo '\''.$_POST['admin'].'\'' ?>)" class="btn btn-success">Aceptar</button>
+                            <?php echo $_POST['categoria'] ?>, <?php echo '\''.$_POST['admin'].'\'' ?>, '<?php echo $i++; ?>')" class="btn btn-success">Aceptar</button>
                                 </div>
                             </div>
                         </div>

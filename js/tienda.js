@@ -283,7 +283,7 @@ function validaCantidad(elemento,cantidad, existencia){
         
 }
 
-function editArticulo(idArticulo, idInventario, cat, admin) {
+function editArticulo(idArticulo, idInventario, cat, admin, i) {
     var nombre = $('#editarNombre')
     var marca = $('#editarMarca')
     var precio = $('#editarPrecio')
@@ -359,8 +359,9 @@ function editArticulo(idArticulo, idInventario, cat, admin) {
         },
         url: 'controllers/controller_editArticulo.php',
         success: function(res) {
-            $('#modalEditarArticulo').modal('hide')
-            getArticulo(cat, admin)
+            $('#modalEditarArticulo'+i).modal('hide')
+            //getArticulo(cat, admin)
+            setTimeout(function (){getArticulo(cat, admin)},2000)
             swal({
                 icon: 'success',
                 text: 'Editado con éxito!',
