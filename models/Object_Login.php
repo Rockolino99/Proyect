@@ -104,7 +104,7 @@ class Login {
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['direccion'] = $row['direccion'];
 
-                    $query = "UPDATE cutsiegirl.usuario
+                    $query = "UPDATE u672703426_cutsiegirl.usuario
                               SET bloqueo = 0
                               WHERE correo = :correo
                               AND idUsuario = :idUsuario";
