@@ -4,7 +4,7 @@ class Database
 
     // specify your own database credentials
     private $host = "localhost";
-    private $db_name = "cutsiegirl";
+    private $db_name = "u672703426_cutsiegirl";
     private $username = "root";
     private $password = "";
     public $conn;
@@ -14,7 +14,7 @@ class Database
     {
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=localhost;dbname=cutsiegirl", 'root', '');
+            $this->conn = new PDO("mysql:host=localhost;dbname=u672703426_cutsiegirl", 'root', '');
         } catch (PDOException $exception) {
             echo "Connection error: " . $exception->getMessage();
         }
