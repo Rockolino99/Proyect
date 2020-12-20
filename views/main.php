@@ -81,7 +81,7 @@
             </form>
         </section>
     </div>
-
+    <!--Si el usuario esta logueado y no es admin va a entrar a la seccion preguntas-->
     <?php
     if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
     ?>
