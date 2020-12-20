@@ -47,7 +47,7 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                     <div class="card-body">
-                    <i class="fas fa-check-square"></i> El envío depende de la cantidad de tu compra y del peso de este, puede ser gratis si tu compra es gratis o si tenemos alguna promoción vigente, también depende de la ciudad de donde solicites nuestros servicios y la paquetería que prefieras.
+                        El envío depende de la cantidad de tu compra y del peso de este, puede ser gratis si tu compra es gratis o si tenemos alguna promoción vigente, también depende de la ciudad de donde solicites nuestros servicios y la paquetería que prefieras.
                     </div>    
                 </div>
             </div>

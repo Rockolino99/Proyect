@@ -1,12 +1,9 @@
-var archivoValido = false
-
 $(document).ready(function () {
-    //getArticulo()
     getProveedores()
     getCategorias()
 })
 
-function addArticulo(cat) {
+function addArticulo(cat, admin) {
     var nombre = $('#nombreArticulo').val()         //A
     var marca = $('#marca').val()                   //A
     var proveedor = $('#idProveedor').val()         //A
@@ -162,7 +159,7 @@ function addArticulo(cat) {
                 },
                 url: "controllers/controller_addArticulo.php",
                 success: function (result) {
-                     getArticulo(cat)
+                     getArticulo(cat, admin)
                 }
             })
             //Mensaje de éxito
@@ -177,11 +174,13 @@ function addArticulo(cat) {
     })
 }
 
-function getArticulo(cat) {
+function getArticulo(cat, admin) {
+
     $.ajax({
         type: 'POST',
         data: {
-            categoria: cat
+            categoria: cat,
+            admin: admin
         },
         url: "controllers/controller_getArticulo.php",
         success: function (result) {
@@ -189,7 +188,7 @@ function getArticulo(cat) {
             $('#patas1').append(result)
         }
     })
-
+    
 }
 
 function getProveedores() {
@@ -218,4 +217,171 @@ function cambioCategoria(elemento) {
 function cambioProveedor(elemento) {
     $('#idProveedor').val($(elemento).text())
     $('#idProveedor').attr('data-idproveedor', $(elemento).data('idproveedor'))
+}
+
+function deleteArticulo(idArticulo, idInventario, cat, admin) {
+    swal({
+        title: "¿Desea eliminar esta prenda?",
+        text: "Una vez eliminada, no se podrá recuperar",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                type: 'POST',
+                data: {
+                    idArticulo: idArticulo,
+                    idInventario: idInventario
+                },
+                url: 'controllers/controller_deleteArticulo.php',
+                success: function(res) {
+                    getArticulo(cat, admin)
+                    swal({
+                        icon: 'success',
+                        text: '¡Eliminado con éxito!',
+                        buttons: false,
+                        timer: 2000
+                    })
+                }
+            })
+        }
+    })
+}
+function validaCantidad(elemento,cantidad, existencia){
+    if(isNaN(cantidad) || cantidad == ''){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir una cantidad valida!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+    if(existencia<cantidad){
+        swal({
+            icon: 'warning',
+            text: '¡No hay más prendas!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val(existencia)
+        return
+    }
+    if(cantidad<1){
+        swal({
+            icon: 'warning',
+            text: '¡Debes elegir por lo menos una unidad!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('1')
+        return
+    }
+        
+}
+
+function editArticulo(idArticulo, idInventario, cat, admin, i) {
+    var nombre = $('#editarNombre' + i)
+    var marca = $('#editarMarca' + i)
+    var precio = $('#editarPrecio' + i)
+    var existencia = $('#editarExistencia' + i)
+    var descripcion = $('#editarDescripcion' + i)
+
+
+    if(!validaTexto(nombre.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa un nombre válido!',
+            buttons: false,
+            timer: 2000
+        })
+        nombre.focus()
+        return
+    }
+
+    if(!validaTexto(marca.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una marca válida!',
+            buttons: false,
+            timer: 2000
+        })
+        marca.focus()
+        return
+    }
+
+    if(!validaNumero(precio.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa un precio válido!',
+            buttons: false,
+            timer: 2000
+        })
+        precio.focus()
+        return
+    }
+
+    if(!validaNumero(existencia.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una existencia válida!',
+            buttons: false,
+            timer: 2000
+        })
+        existencia.focus()
+        return
+    }
+
+    if(!validaTexto(descripcion.val())) {
+        swal({
+            icon: 'error',
+            text: '¡Ingresa una descripción!',
+            buttons: false,
+            timer: 2000
+        })
+        descripcion.focus()
+        return
+    }
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            idArticulo: idArticulo,
+            idInventario: idInventario,
+            nombre: nombre.val(),
+            marca: marca.val(),
+            precio: precio.val(),
+            existencia: existencia.val(),
+            descripcion: descripcion.val()
+        },
+        url: 'controllers/controller_editArticulo.php',
+        success: function(res) {
+            $('#modalEditarArticulo'+i).modal('hide')
+            setTimeout(function (){getArticulo(cat, admin)},2000)
+            swal({
+                icon: 'success',
+                text: 'Editado con éxito!',
+                buttons: false,
+                timer: 2000
+            })
+        }
+    })
+}
+
+function validaNumero(numero) {
+    //alert(isNaN(numero) + " " + numero)
+    if(isNaN(numero) || numero < 1)
+        return false
+
+    return true
+}
+
+function validaTexto(cadena) {
+    if (cadena == null || cadena.length == 0 || /^\s+$/.test(cadena))
+        return false
+
+    return true
 }

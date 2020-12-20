@@ -18,7 +18,7 @@ class Articulo {
 
     function addArticulo() {
         
-        $query = "INSERT INTO cutsiegirl.articulo
+        $query = "INSERT INTO u672703426_cutsiegirl.articulo
                   SET
                   nombre = :nombre,
                   marca = :marca,
@@ -48,9 +48,9 @@ class Articulo {
     }
 
     function getArticulo() {
-        $query = "SELECT a.nombre, a.marca, a.descripcion, a.idCategoria,
+        $query = "SELECT a.idArticulo, a.nombre, a.marca, a.descripcion, a.idCategoria,
                          i.idInventario, i.existencia, i.talla, i.precio, i.imagen, i.color
-                  FROM cutsiegirl.articulo a, cutsiegirl.inventario i
+                  FROM u672703426_cutsiegirl.articulo a, cutsiegirl.inventario i
                   WHERE a.idArticulo = i.idArticulo
                   AND status = 1
                   AND idCategoria = :idCategoria";
@@ -67,5 +67,43 @@ class Articulo {
             return 0;
     }
     
+    function deleteArticulo() {
+        $query = "DELETE
+                  FROM u672703426_cutsiegirl.articulo
+                  WHERE idArticulo = :idArticulo";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+
+        $stmt->bindParam(":idArticulo", $this->idArticulo);
+
+        if($stmt->execute())
+            return 1;
+        else
+            return 0;
+    }
+
+    function editArticulo() {
+        $query = "UPDATE u672703426_cutsiegirl.articulo
+                  SET nombre = :nombre,
+                  marca = :marca,
+                  descripcion = :descripcion
+                  WHERE idArticulo = :idArticulo";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
+        $this->marca = htmlspecialchars(strip_tags($this->marca));
+        $this->descripcion = htmlspecialchars(strip_tags($this->descripcion));
+
+        $stmt->bindParam(":idArticulo", $this->idArticulo);
+        $stmt->bindParam(":nombre", $this->nombre);
+        $stmt->bindParam(":marca", $this->marca);
+        $stmt->bindParam(":descripcion", $this->descripcion);
+
+        echo $stmt->execute();
+    }
 }
 ?>

@@ -4,6 +4,7 @@ include_once "../connection/Object_Connection.php";
 class Inventario {
     private $conn;
 
+    public $idInventario;
     public $idArticulo;
     public $existencia;
     public $talla;
@@ -18,7 +19,7 @@ class Inventario {
 
     function addInventario() {
         
-        $query = "INSERT INTO cutsiegirl.inventario
+        $query = "INSERT INTO u672703426_cutsiegirl.inventario
                   SET
                   idArticulo = :idArticulo,
                   existencia = :existencia,
@@ -53,7 +54,7 @@ class Inventario {
 
     function getInventario() {//Modificar
         $query = "SELECT *
-                  FROM cutsiegirl.articulo";
+                  FROM u672703426_cutsiegirl.articulo";
 
         $stmt = $this->conn->prepare($query);
         if($stmt->execute())
@@ -62,21 +63,41 @@ class Inventario {
             return 0;
     }
 
-    function getLastArticulo() {
-        $query = "SELECT *
-                  FROM cutsiegirl.articulo
-                  WHERE idArticulo = :idArticulo";
+    function deleteInventario() {
+        $query = "DELETE
+                  FROM u672703426_cutsiegirl.inventario
+                  WHERE idInventario = :idInventario";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->idArticulo = htmlspecialchars(strip_tags($this->idArticulo));
+        $this->idInventario = htmlspecialchars(strip_tags($this->idInventario));
 
-        $stmt->bindParam(":idArticulo", $this->idArticulo);
+        $stmt->bindParam(":idInventario", $this->idInventario);
 
         if($stmt->execute())
-            return $stmt;
+            return 1;
         else
             return 0;
+    }
+
+    function editInventario() {
+        $query = "UPDATE u672703426_cutsiegirl.inventario
+                  SET precio = :precio,
+                      existencia = :existencia
+                  WHERE idInventario = :idInventario";
+        
+        $stmt = $this->conn->prepare($query);
+
+        $this->idInventario = htmlspecialchars(strip_tags($this->idInventario));
+        $this->precio = htmlspecialchars(strip_tags($this->precio));
+        $this->existencia = htmlspecialchars(strip_tags($this->existencia));
+
+        $stmt->bindParam(":idInventario", $this->idInventario);
+        $stmt->bindParam(":precio", $this->precio);
+        $stmt->bindParam(":existencia", $this->existencia);
+
+        echo $stmt->execute();
+
     }
 }
 ?>

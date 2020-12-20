@@ -218,7 +218,7 @@ function doLogin(correo, contrasena) {
                         document.cookie = "correo=; max-age=0" + encodeURIComponent(correo)
                         document.cookie = "contra=; max-age=0" + encodeURIComponent(contrasena)
                     }
-                    location.reload()
+                    location.assign('index.php')
                     break
                 case '-1': //Contraseña incorrecta
                     swal({

@@ -22,7 +22,6 @@ p.card-text {
 
 
 /*Inicia estilos de pie de pagina*/
-
 .pie-de-pagina {
     background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));
 }
@@ -37,21 +36,29 @@ p.card-text {
 
 ul li {
     list-style: none;
-    text-align: left;
+    text-align: center;
 }
 
 ul li a {
     color: rgb(236, 231, 231);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
 }
-
+ .info a{
+     color: white;
+    
+ }
 .titulosPiePag {
     color: white;
     padding: 5px;
+    text-align: center;
+
 }
 
-
 /*Estilos para iconos redes sociales*/
-
 .fa-facebook-f {
     color: blue;
     font-size: 35px;
@@ -75,20 +82,9 @@ ul li a {
 
 
 /*Imagenes opacas*/
-
 .opaco :hover {
     filter: brightness(0.5);
     transition: 0.5s;
-}
-
-
-/*Estilos para tabla de articulos*/
-
-table,
-th,
-td {
-    border-collapse: collapse;
-    border: 1px solid red;
 }
 
 .contenedor {
@@ -101,7 +97,6 @@ td {
 
 
 /* Estilos inicio cupón */
-
 section>h2 {
     font-size: 40px;
     font-weight: bolder;
@@ -112,7 +107,7 @@ section>h2 {
 }
 
 #cupones {
-    background-image: url(../../Proyect/images/CUPONES/background/1519x832.png);
+    background-image: url(../images/CUPONES/background/1519x832.png);
 }
 
 .boton {
@@ -150,7 +145,7 @@ section>h2 {
     margin-top: -10px;
 }
 
-.buu{
+.buu {
     width: 800px;
     margin-left: 200px;
     padding: 10px;

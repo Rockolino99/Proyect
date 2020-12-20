@@ -9,22 +9,25 @@
         </div>
         <div class="forms">
             <h6>Por favor, rellene el siguiente formulario y nos pondremos en contacto contigo en breve:</h6>
-            <form>
+            <form method="post">
                 <br>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="InputNombre" placeholder="Nombre completo">
+                    <input type="text" class="form-control" name="name" id="InputNombre" placeholder="Nombre completo">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Correo electrónico">
+                    <input type="email" class="form-control" name="email" id="InputEmail" aria-describedby="emailHelp" placeholder="Correo electrónico">
                     <small id="emailHelp" class="form-text text-muted">Su correo electrónico no se compartirá con nadie más.</small>
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" id="InputTelefono" placeholder="Teléfono">
+                    <input type="number" class="form-control" name="telefono" id="InputTelefono" placeholder="Teléfono">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="InputMensaje" placeholder="Compartános su mensaje" rows="3"></textarea>
+                    <textarea class="form-control" id="InputMensaje" name="mensaje" placeholder="Compartános su mensaje" rows="3"></textarea>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="contacto()" style="width:20%;">Enviar</button>
+                <button type="submit" class="btn btn-primary" name="enviarContact" onclick="contacto()" style="width:20%;">Enviar</button>
+                <?php
+                    include 'php/correo.php';
+                ?>
             </form>
             <br><br>
             <h5 style="color: rgb(75, 73, 73);"><b>¿Quieres saber mas sobre nuestros<br>productos?</b></h5><br>
