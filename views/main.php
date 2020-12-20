@@ -82,6 +82,9 @@
         </section>
     </div>
 
+    <?php
+    if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
+    ?>
     <div class="container1">
         <h2 style="font-size: 40px; font-weight: bolder; text-align: center;">AYÚDANOS A MEJORAR</h2><br>
         <h3 style="text-align: center;">¡Porque tu opinión nos importa!</h3><br>
@@ -130,6 +133,7 @@
         </form>
         </div>
     </div>
+    <?php } ?>
 
 </body>
 

@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['enviarP'])){
-    if(!empty($_POST['optradio']) && !empty($_POST['optradio1']) && !empty($_POST['optradio2']) && isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx' ){
+    if(!empty($_POST['optradio']) && !empty($_POST['optradio1']) && !empty($_POST['optradio2'])){
         $correo=$_SESSION['correo'];
         $asunto='Cupón de regalo';
         $msj="<h2><center>Gracias por registrarte en CutsieGirl</center></h2><h3><center>¡Obten de regalo un cupón de $100 de descuento en tu proxima compra!</center></h3>";
