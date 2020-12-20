@@ -119,7 +119,7 @@ function registro() {
         $('#pass2').focus()
         return
     }
-
+    
     $.ajax({
         type: 'POST',
         data: {
@@ -131,9 +131,9 @@ function registro() {
             direccion: direccion
         },
         url: "controllers/controller_RegistroUsuario.php",
-        success: function (result) {
+       success: function (result) {
             if (result == '0') {
-                swal({
+               swal({
                     icon: 'error',
                     title: 'ERROR',
                     text: 'El correo ya está registrado. Intente con otro.',

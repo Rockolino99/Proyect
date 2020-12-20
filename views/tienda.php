@@ -20,12 +20,9 @@ $admin = "'" . $admin . "'";
         }
         ?>
     </div>
-
     <div class="row" id="patas1" style="padding: 30px; width: 100%; margin: auto;"></div>
-    <!--Aqui abajo-->
-
-
     </div>
+
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
     if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?>
@@ -138,5 +135,21 @@ $admin = "'" . $admin . "'";
         <br><br>
     <?php
     }
+
+    if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
     ?>
+    <br>    <div id="fondocupon">
+        <br>
+            <h1 class="centrar-texto">NOS ENCANTA CONSENTIRTE, ASÍ QUE...</h1>
+            <br>
+            <h4 style="text-align: center;">Usa el código del siguiente cupón en tus compras para tener descuentos especiales.</h4>
+            <br>
+            <div class="centrar-texto">
+                <img src="images/CUPONES/propuestas a modificar/Cupon 40offx.png" alt="cupón">
+            </div>
+            <br><br>
+            </div>
+    <?php } ?>
+    <br>
+    
 </body>
