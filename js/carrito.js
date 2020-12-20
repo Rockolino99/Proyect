@@ -53,3 +53,12 @@ function dropCart(idCarrito) {
         }
     })
 }
+
+function deleteAllCart() {
+    $.ajax({
+        url: 'controllers/controller_deleteAllCart.php',
+        success: function() {
+            verCarrito()
+        }
+    })
+}

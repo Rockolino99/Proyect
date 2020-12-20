@@ -85,7 +85,7 @@ session_start();
             ?>
                 <!--Carrito de Compras-->
                 <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
-                <a href="php/logout.php" style="color: white;" class="nav-link active"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
+                <a href="php/logout.php" onclick="deleteAllCart()" style="color: white;" class="nav-link active" title="Cerrar sesión"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
             <?php
             } else {
                 session_destroy();
@@ -244,7 +244,7 @@ session_start();
                     
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="">Finlaizar compra</button>
+                    <button class="btn btn-primary" style="float:right" onclick="">Finalizar compra</button>
                 </div>
             </div>
         </div>

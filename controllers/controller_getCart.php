@@ -12,7 +12,7 @@ $stmt = $carrito->getCarrito();
 if ($stmt->rowCount() > 0) {
     //idCarrito, idInventario, idCategoria
     //nombre, precio, imagen
-    $i = 0;
+    $subtotal = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="articulo">
             <div class="card">
@@ -20,7 +20,7 @@ if ($stmt->rowCount() > 0) {
                 <img class="card-img-top imgCarrito" src="<?php echo $row['imagen'] ?>" alt="Card image cap" style="height: 150px; width: 80px; float: left;">
                 <button type="button" class="close font-weight-dark" onclick="dropCart(<?php echo $row['idCarrito'] ?>)">×</button>
                 <br>
-                <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
+                <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre]"; ?></h5>
                 <br>
                 <h5 class="card-title" style="text-align: center;"><?php echo "$$row[precio]<br>$row[cantidad] unidad(es)"; ?></h5>
                 </div>
@@ -29,8 +29,12 @@ if ($stmt->rowCount() > 0) {
         <!--Modal Vista previa-->
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
     <?php
-    $i++;
-    }
+    $subtotal += ($row['precio'] * $row['cantidad']);
+    }?>
+    <div class="titulosPags">
+        <span style="font-size: 25px;">SUBTOTAL: $<?php echo $subtotal?></span>
+    </div>
+    <?php
 } else {
     ?>
     <div class="titulosPags">
