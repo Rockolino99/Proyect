@@ -29,7 +29,7 @@ if ($stmt->rowCount() > 0) {
                     <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo">Editar</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo<?php echo $i; ?>">Editar</button>
                             <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
                                 <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
                         </div>
@@ -39,7 +39,7 @@ if ($stmt->rowCount() > 0) {
         </div>
         <!--Modal Vista previa-->
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
-        <div id="modalVistaPrevia<?php echo $i++; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="modalVistaPrevia<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content cafe" style="background: linear-gradient(90deg, #F3D6FA, #D6D6FA);">
                     <div class="modal-header">
@@ -69,7 +69,7 @@ if ($stmt->rowCount() > 0) {
         </div>
         <!--Fin Modal Vista previa-->
         <!--Modal Editar Articulo-->
-        <div id="modalEditarArticulo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="modalEditarArticulo<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -82,13 +82,13 @@ if ($stmt->rowCount() > 0) {
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="nombre">Nombre:</label>
-                                        <input type="text" class="form-control" id="editarNombre" placeholder="Nombre" value="<?php echo $row['nombre'] ?>">
+                                        <input type="text" class="form-control" id="editarNombre<?php echo $i; ?>" placeholder="Nombre" value="<?php echo $row['nombre'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="editamarca">Marca:</label>
-                                        <input type="text" class="form-control" id="editarMarca" placeholder="Marca" value="<?php echo $row['marca'] ?>">
+                                        <input type="text" class="form-control" id="editarMarca<?php echo $i; ?>" placeholder="Marca" value="<?php echo $row['marca'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -96,24 +96,24 @@ if ($stmt->rowCount() > 0) {
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="precio">Precio:</label>
-                                        <input type="number" class="form-control" id="editarPrecio" placeholder="Precio" min="1" value="<?php echo $row['precio'] ?>">
+                                        <input type="number" class="form-control" id="editarPrecio<?php echo $i; ?>" placeholder="Precio" min="1" value="<?php echo $row['precio'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="color">Existencia:</label>
-                                        <input type="number" class="form-control" id="editarExistencia" placeholder="Existencia" value="<?php echo $row['existencia'] ?>">
+                                        <input type="number" class="form-control" id="editarExistencia<?php echo $i; ?>" placeholder="Existencia" value="<?php echo $row['existencia'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripción:</label>
-                                <textarea name="descripcion" class="form-control" id="editarDescripcion" cols="30" rows="2" style="resize: none;" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
+                                <textarea name="descripcion" class="form-control" id="editarDescripcion<?php echo $i; ?>" cols="30" rows="2" style="resize: none;" placeholder="Descripcion"><?php echo $row['descripcion'] ?></textarea>
                             </div>
                             <div class="modal-footer">
                                 <div class="form-group">
                                     <button type="button" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
-                            <?php echo $_POST['categoria'] ?>, <?php echo '\''.$_POST['admin'].'\'' ?>)" class="btn btn-success">Aceptar</button>
+                            <?php echo $_POST['categoria'] ?>, <?php echo '\''.$_POST['admin'].'\'' ?>, '<?php echo $i; ?>')" class="btn btn-success">Aceptar</button>
                                 </div>
                             </div>
                         </div>
@@ -123,6 +123,7 @@ if ($stmt->rowCount() > 0) {
         </div>
         <!--Fin Modal Editar Articulo-->
     <?php
+    $i++;
     }
 } else {
     ?>

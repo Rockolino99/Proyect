@@ -21,7 +21,7 @@ class Login {
     function setRegistro() {
         
         $query = "SELECT *
-                  FROM cutsiegirl.usuario
+                  FROM u672703426_cutsiegirl.usuario
                   WHERE correo = :correo";
 
         $stmt = $this->conn->prepare($query);
@@ -37,7 +37,7 @@ class Login {
                 return 0;
             else {
                 $stmt = '';
-                $query = "INSERT INTO cutsiegirl.usuario
+                $query = "INSERT INTO u672703426_cutsiegirl.usuario
                           SET nombre = :nombre,
                           apellido_paterno = :apellido_paterno,
                           apellido_materno = :apellido_materno,
@@ -76,7 +76,7 @@ class Login {
 
     function login() {
         $query = "SELECT *
-                  FROM cutsiegirl.usuario
+                  FROM u672703426_cutsiegirl.usuario
                   WHERE correo = :correo";
 
         $stmt = $this->conn->prepare($query);
@@ -104,7 +104,7 @@ class Login {
                     $_SESSION['correo'] = $row['correo'];
                     $_SESSION['direccion'] = $row['direccion'];
 
-                    $query = "UPDATE cutsiegirl.usuario
+                    $query = "UPDATE u672703426_cutsiegirl.usuario
                               SET bloqueo = 0
                               WHERE correo = :correo
                               AND idUsuario = :idUsuario";
@@ -123,7 +123,7 @@ class Login {
                     return 1;//Inicio de sesión
                 }
                 //Contraseña incorrecta
-                $query = "UPDATE cutsiegirl.usuario
+                $query = "UPDATE u672703426_cutsiegirl.usuario
                           SET bloqueo = :bloqueo
                           WHERE correo = :correo
                           AND idUsuario = :idUsuario";
@@ -150,7 +150,7 @@ class Login {
 
     function resetPass() {
         $query = "SELECT *
-                  FROM cutsiegirl.usuario
+                  FROM u672703426_cutsiegirl.usuario
                   WHERE correo = :correo";
 
         $stmt = $this->conn->prepare($query);
@@ -170,7 +170,7 @@ class Login {
         $this->idUsuario = $row['idUsuario'];
         $this->contra = password_hash($this->contra, PASSWORD_BCRYPT);
         
-        $query = "UPDATE cutsiegirl.usuario
+        $query = "UPDATE u672703426_cutsiegirl.usuario
                   SET contra = :contra,
                       bloqueo = :bloqueo
                   WHERE correo = :correo

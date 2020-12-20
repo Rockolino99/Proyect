@@ -260,16 +260,16 @@ session_start();
                     </h6>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="titulosPiePag">CUTSIE INFO</h5>
+                    <h5 class="titulosPiePag"><i class="fas fa-address-book"></i> CUTSIE INFO</h5>
                     <div class="info">
-                        <a href="">Envíos y devoluciones</a><br>
-                        <a href="">Nuestras políticas</a><br>
-                        <a href="">Metodos de pago</a><br>
+                        <a href=""><i class="fas fa-circle-notch"></i> Envíos y devoluciones</a><br>
+                        <a href=""><i class="fas fa-circle-notch"></i> Nuestras políticas</a><br>
+                        <a href=""><i class="fas fa-circle-notch"></i> Metodos de pago</a><br>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
-                        <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
+                        <h5 class="titulosPiePag"><i class="fas fa-heart"></i> ENCUÉNTRANOS EN LAS REDES</h5>
                         <div class="redes-footer">
                             <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
