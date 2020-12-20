@@ -1,24 +1,23 @@
 <?php
 
-if(isset($_POST['enviarContact'])){
-    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['telefono']) && !empty($_POST['mensaje']) ){
-        $name=$_POST['name'];
-        $asunto='Su solicitud esta siendo procesada ';
-        $msj='<h4>Gracias por ponerse en contacto con nosotros ' . $name . '<br> nos comunicaremos contigo lo más pronto posible.</h4>'; 
-        $email=$_POST['email'];
-        $telefono=$_POST['telefono'];
-        $mensaje=$_POST['mensaje'];
+if(isset($_POST['suscribirme'])){
+    if(!empty($_POST['email1'])){
+        $email1=$_POST['email1'];
+        $asunto='Cupón por suscripcion';
+        $msj="<h3><center>¡Felicidades obtuviste un cupón del 40%OFF</center></h3>";
+        $msj.='
+        <center><img src="http://cutsiegirl.store/images/CUPONES/propuestas%20a%20modificar/Cupon%2040off.png"></center>'; 
         $header ="From: cutsiegirl@gmail.com" . "\r\n";
         $header.="Reply-To: cutsiegirl@gmail.com" . "\r\n";
         //$header.= "X-Mailer: PHP/" . phpversion();
         $header.= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $mail = @mail($email,$asunto,$msj,$header);  
+        $mail = @mail($email1,$asunto,$msj,$header);  
         if($mail){
             echo"<script>
                 swal({
                     icon: 'success',
-                    title: 'HECHO',
-                    text: 'Mensaje enviado exitosamente!',
+                    title: 'FELICIDADES',
+                    text: 'Cupón enviado exitosamente!',
                     buttons: false,
                     timer: 4000
                 })
@@ -28,7 +27,7 @@ if(isset($_POST['enviarContact'])){
                 swal({
                     icon: 'error',
                     title: 'ERROR',
-                    text: 'Error en  el envio de su mensaje!',
+                    text: 'Error en  el envio de su cupón!',
                     buttons: false,
                     timer: 4000
                 })

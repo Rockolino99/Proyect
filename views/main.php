@@ -67,15 +67,18 @@
             <br><br>
             <h3 class="centrar-texto">Suscríbete para obtener más cupónes</h3>
             <br>
+            <form method="post">
             <fieldset class="centrar-texto">
                 <label for="email">E-mail:</label>
-                <input class="buu" type="email" id="email" placeholder="Tu correo electrónico" required>
+                <input class="buu" type="email" id="email" name="email1" placeholder="Tu correo electrónico" required>
             </fieldset>
             <br>
-            <input type="submit" value="Suscribirme" class="boton boton-azul "><br><br><br>
-
+            <input type="submit" value="Suscribirme" name="suscribirme" class="boton boton-azul "><br><br><br>
             <br><br>
-
+            <?php
+                include 'php/correoCupon.php';
+            ?>
+            </form>
         </section>
     </div>
 
