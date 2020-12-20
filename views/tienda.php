@@ -145,7 +145,7 @@ $admin = "'" . $admin . "'";
             <h4 style="text-align: center;">Usa el código del siguiente cupón en tus compras para tener descuentos especiales.</h4>
             <br>
             <div class="centrar-texto">
-                <img src="images/CUPONES/propuestas a modificar/Cupon 40offx.png" alt="cupón">
+                <img src="images/CUPONES/propuestas a modificar/3 cupon cutsiecolors.png" alt="cupón">
             </div>
             <br><br>
             </div>
