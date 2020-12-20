@@ -62,7 +62,7 @@
             <h3 class="centrar-texto">Llegaron las ofertas Navideñas</h3>
             <br>
             <div class="centrar-texto">
-                <img src="images/CUPONES/propuestas a modificar/Cupon 40off.png" alt="cupón">
+                <img src="images/CUPONES/propuestas a modificar/Cupon 40offx.png" alt="cupón">
             </div>
             <br><br>
             <h3 class="centrar-texto">Suscríbete para obtener más cupónes</h3>
