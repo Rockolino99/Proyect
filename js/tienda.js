@@ -152,7 +152,7 @@ function addArticulo(cat, admin) {
                     idCategoria: parseInt($('#idCategoria').attr('data-idcategoria')),
                     descripcion: descripcion,
                     existencia: existencia,
-                    talla, talla,
+                    talla: talla,
                     precio: precio,
                     imagen: ruta,
                     color: color

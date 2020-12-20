@@ -29,6 +29,7 @@ session_start();
     <script src="js/login.js"></script>
     <script src="js/tienda.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/carrito.js"></script>
     <!--AnimateCSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--Fin Links-->
@@ -79,6 +80,7 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
                 </li>
             </ul>
+            <button type="button" onclick="verCarrito()">Carrito</button>
             <?php
             if (isset($_SESSION['idUsuario'])) {
             ?>
