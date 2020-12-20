@@ -260,7 +260,7 @@ session_start();
                     </h6>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="titulosPiePag">CUTSIE INFO</h5>
+                    <h5 class="titulosPiePag"><i class="fas fa-address-book"></i> CUTSIE INFO</h5>
                     <div class="info">
                         <a href="">Envíos y devoluciones</a><br>
                         <a href="">Nuestras políticas</a><br>
