@@ -178,23 +178,27 @@ section>h2 {
     border-radius: 10px;
 }
 
-*/ label {
-    font-size: 30px;
-}
-
-
 /* Estilos seccion preguntas */
 
-.container1 {
+.container1{
     padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.preguntasRetro {
+.container2 {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    padding: 15px;
+}
+
+.clasPreg{
+    margin-left: 25px;
 }
 
 .radio-inline {
     margin-right: 70px;
+    margin-left: 25px;
 }

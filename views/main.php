@@ -69,7 +69,7 @@
             <br>
             <form method="post">
             <fieldset class="centrar-texto">
-                <label for="email">E-mail:</label>
+                <label style="font-size: 30px;" for="email">E-mail:</label>
                 <input class="buu" type="email" id="email" name="email1" placeholder="Tu correo electrónico" required>
             </fieldset>
             <br>
@@ -86,51 +86,56 @@
     if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
     ?>
     <div class="container1">
-        <h2 style="font-size: 40px; font-weight: bolder; text-align: center;">AYÚDANOS A MEJORAR</h2><br>
-        <h3 style="text-align: center;">¡Porque tu opinión nos importa!</h3><br>
-        <div class="preguntasRetro">
-        <form method="post">
-            <h4 style="text-align: center;">Contesta estas sencillas preguntas acerca de tu experiencia en CutsieGirl</h4><br>
-            <h5>¿Cómo ha sido tu experiencia en CutsieGirl?</h5>
-            <label class="radio-inline">
-                <input type="radio" name="optradio">Buena
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio">Mala
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio">Regular
-            </label>
+        <div style="width:100%">
+            <h2 style="font-size: 40px; font-weight: bolder; text-align: center;">AYÚDANOS A MEJORAR</h2><br>
+            <h3 style="text-align: center;">¡Porque tu opinión nos importa!</h3><br>
+        </div>
+        <div class="container2">
+            <div>
+                <img src="images/ayuda.gif" alt="">
+            </div>
+            <form method="post" class="clasPreg">
+                <h4 style="text-align: justify; font-size: 22px;"><b>Contesta estas sencillas preguntas sobre tu experiencia en CutsieGirl</b></h4><br>
+                <h5>¿Cómo ha sido tu experiencia en CutsieGirl?</h5>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Buena
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Mala
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Regular
+                </label>
 
-            <h5>¿Consideras que los precios de los articulos son muy elevados?</h5>
+                <h5>¿Consideras que los precios de los articulos son muy elevados?</h5>
 
-            <label class="radio-inline">
-                <input type="radio" name="optradio1">Si
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio1">No
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio1">Regular
-            </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio1">Si
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio1">No
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio1">Regular
+                </label>
 
-            <h5>¿Es buena la calidad de la ropa?</h5>
+                <h5>¿Es buena la calidad de la ropa?</h5>
 
-            <label class="radio-inline">
-                <input type="radio" name="optradio2">Si
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio2">No
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio2">Regular
-            </label>
-            <br><br><br>
-            <center><button style="font-size: 18px; font-weight: bolder; width: 20%;" type="submit" name="enviarP" class="btn btn-primary">Enviar</button></center>
-            <?php 
-                include 'php/correoCuponRegalo.php'; 
-            ?>
-        </form>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio2">Si
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio2">No
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio2">Regular
+                </label>
+                <br><br><br>
+                <button style="font-size: 18px; font-weight: bolder; width: 20%;" type="submit" name="enviarP" class="btn btn-primary">Enviar</button>
+                <?php 
+                    include 'php/correoCuponRegalo.php'; 
+                ?>
+            </form>
         </div>
     </div>
     <?php } ?>
