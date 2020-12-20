@@ -58,10 +58,17 @@ if ($stmt->rowCount() > 0) {
                                 <div class="nombreTalla">Talla: <?php echo $row['talla']; ?></div><br>
                                 <div class="nombreColor">Color: <?php echo $row['color']; ?></div><br>
                                 <div class="nombreCantidad"><label for="cantidadVP">Cantidad:</label></div>
-                                <input type="number" class="form-control" id="cantidadVP" placeholder="Cantidad" value="1" required onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"><br>
+                                <input type="number" class="form-controls" id="cantidadVP<?php echo $i?>" placeholder="Cantidad" value="1" required onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"
+                                style="width: 20%;"><br>
                                 <div class="nombreDesc"> <?php echo $row['descripcion']; ?></div><br>
                                 <button class="btn btn-primary" style="background-color: saddlebrown; border-color:saddlebrown; float:right"
-                                onclick="addToCart('Hola','Mundo')
+                                onclick="addToCart(<?php echo '\''.$row['nombre'].'\'' ?>,//nombre
+                                                   $('#cantidadVP'+<?php echo $i;?>).val(),//cantidad
+                                                   <?php echo $row['precio']; ?>,//Precio
+                                                   <?php echo '\''.$row['imagen'].'\'' ?>,//Imagen
+                                                   <?php echo $row['idCategoria'] ?>,//Cateogria
+                                                   <?php echo $row['idInventario'] ?>,/*Inventario*/
+                                                   <?php echo $i; ?>)
                                 ">Añadir al carrito</button>
                             </div>
                         </div>

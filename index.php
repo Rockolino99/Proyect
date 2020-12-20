@@ -80,16 +80,18 @@ session_start();
                     <a class="nav-link active" href="index.php?mod=ayuda" style="color: white;">AYUDA</a>
                 </li>
             </ul>
-            <!--Carrito de Compras-->
-            <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
             <?php
             if (isset($_SESSION['idUsuario'])) {
             ?>
+                <!--Carrito de Compras-->
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
                 <a href="php/logout.php" style="color: white;" class="nav-link active"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
             <?php
             } else {
                 session_destroy();
             ?>
+                <!--Carrito de Compras-->
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
                 <!--Login-->
                 <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                     <li class="dropdown order-1">
@@ -238,23 +240,11 @@ session_start();
                     <h3>Carrito</h3>
                     <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
-                <div class="modal-body">
-                    <div class="vistacarrito">
-                        <div class="col-5">
-                            <img src="images/INVIERNO/invierno1.jpg" style="float: left; width: 100%;"><hr>
-                        </div>
-                        <div class="col-7 vista2">
-                            <div class="nombreArticuloCarrito"></div><br>
-                            <div class="nombreAPrecioCarrito"></div><br>
-                            <div class="nombreMarcaCarrito"></div><br>
-                            <div class="nombreTallaCarrito"></div><br>
-                            <div class="nombreColorCarrito"></div><br>
-                            <div class="nombreDescCarrito"></div><br>
-                        </div>
-                    </div>
+                <div class="modal-body" id="bodyCarrito">
+                    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="">Comprar</button>
+                    <button class="btn btn-primary" style="float:right" onclick="">Finlaizar compra</button>
                 </div>
             </div>
         </div>
