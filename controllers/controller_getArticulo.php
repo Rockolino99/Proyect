@@ -113,7 +113,7 @@ if ($stmt->rowCount() > 0) {
                             <div class="modal-footer">
                                 <div class="form-group">
                                     <button type="button" onclick="editArticulo(<?php echo $row['idArticulo'] ?>,<?php echo $row['idInventario'] ?>,
-                            <?php echo $_POST['categoria'] ?>)" class="btn btn-success">Aceptar</button>
+                            <?php echo $_POST['categoria'] ?>, <?php echo '\''.$_POST['admin'].'\'' ?>)" class="btn btn-success">Aceptar</button>
                                 </div>
                             </div>
                         </div>
