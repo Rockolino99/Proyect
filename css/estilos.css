@@ -22,6 +22,7 @@ p.card-text {
 
 
 /*Inicia estilos de pie de pagina*/
+
 .pie-de-pagina {
     background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%));
 }
@@ -47,18 +48,20 @@ ul li a {
     align-items: center;
     left: 0;
 }
- .info a{
-     color: white;
-    
- }
+
+.info a {
+    color: white;
+}
+
 .titulosPiePag {
     color: white;
     padding: 5px;
     text-align: center;
-
 }
 
+
 /*Estilos para iconos redes sociales*/
+
 .fa-facebook-f {
     color: blue;
     font-size: 35px;
@@ -80,18 +83,21 @@ ul li a {
     opacity: 0.5;
 }
 
+
 /*Carrito de compras*/
-.fa-shopping-cart{
+
+.fa-shopping-cart {
     font-size: 15px;
 }
-.fa-shopping-cart>b{
+
+.fa-shopping-cart>b {
     font-weight: bolder;
     box-sizing: border-box;
-    
 }
 
 
 /*Imagenes opacas*/
+
 .opaco :hover {
     filter: brightness(0.5);
     transition: 0.5s;
@@ -107,6 +113,7 @@ ul li a {
 
 
 /* Estilos inicio cupón */
+
 section>h2 {
     font-size: 40px;
     font-weight: bolder;
@@ -118,6 +125,10 @@ section>h2 {
 
 #cupones {
     background-image: url(../images/CUPONES/background/1519x832.png);
+}
+
+#fondocupon {
+    background-image: url(../images/pruebafondo.jpg);
 }
 
 .boton {
@@ -174,16 +185,16 @@ section>h2 {
 
 /* Estilos seccion preguntas */
 
-.container1{
+.container1 {
     padding: 50px;
 }
 
-.preguntasRetro{
+.preguntasRetro {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.radio-inline{
+.radio-inline {
     margin-right: 70px;
 }
