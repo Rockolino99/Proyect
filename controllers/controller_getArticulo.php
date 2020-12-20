@@ -60,7 +60,9 @@ if ($stmt->rowCount() > 0) {
                                 <div class="nombreCantidad"><label for="cantidadVP">Cantidad:</label></div>
                                 <input type="number" class="form-control" id="cantidadVP" placeholder="Cantidad" value="1" required onchange="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)" onkeyup="validaCantidad(this, $(this).val(),<?php echo $row['existencia']; ?>)"><br>
                                 <div class="nombreDesc"> <?php echo $row['descripcion']; ?></div><br>
-                                <button class="btn btn-primary" style="background-color: saddlebrown; border-color:saddlebrown; float:right" onclick="/*addToCart()*/">Añadir al carrito</button>
+                                <button class="btn btn-primary" style="background-color: saddlebrown; border-color:saddlebrown; float:right"
+                                onclick="addToCart('Hola','Mundo')
+                                ">Añadir al carrito</button>
                             </div>
                         </div>
                     </div>
