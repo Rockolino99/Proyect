@@ -135,5 +135,17 @@ $admin = "'" . $admin . "'";
         <br><br>
     <?php
     }
+    if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
     ?>
+    <br>
+            <h3 class="centrar-texto">Nos encanta consentirte así que...</h3>
+            <br>
+            <h3 class="centrar-texto">Usa el siguiente cupón en tus compras para tener descuentos especiales.</h3>
+            <br>
+            <div class="centrar-texto">
+                <img src="images/CUPONES/propuestas a modificar/Cupon 40offx.png" alt="cupón">
+            </div>
+            <br><br>
+    <?php } ?>
+    
 </body>
