@@ -19,7 +19,7 @@ class Inventario {
 
     function addInventario() {
         
-        $query = "INSERT INTO cutsiegirl.inventario
+        $query = "INSERT INTO u672703426_cutsiegirl.inventario
                   SET
                   idArticulo = :idArticulo,
                   existencia = :existencia,
@@ -54,7 +54,7 @@ class Inventario {
 
     function getInventario() {//Modificar
         $query = "SELECT *
-                  FROM cutsiegirl.articulo";
+                  FROM u672703426_cutsiegirl.articulo";
 
         $stmt = $this->conn->prepare($query);
         if($stmt->execute())
@@ -65,7 +65,7 @@ class Inventario {
 
     function deleteInventario() {
         $query = "DELETE
-                  FROM cutsiegirl.inventario
+                  FROM u672703426_cutsiegirl.inventario
                   WHERE idInventario = :idInventario";
 
         $stmt = $this->conn->prepare($query);
@@ -81,7 +81,7 @@ class Inventario {
     }
 
     function editInventario() {
-        $query = "UPDATE cutsiegirl.inventario
+        $query = "UPDATE u672703426_cutsiegirl.inventario
                   SET precio = :precio,
                       existencia = :existencia
                   WHERE idInventario = :idInventario";

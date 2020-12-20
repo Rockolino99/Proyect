@@ -18,7 +18,7 @@ class Articulo {
 
     function addArticulo() {
         
-        $query = "INSERT INTO cutsiegirl.articulo
+        $query = "INSERT INTO u672703426_cutsiegirl.articulo
                   SET
                   nombre = :nombre,
                   marca = :marca,
@@ -50,7 +50,7 @@ class Articulo {
     function getArticulo() {
         $query = "SELECT a.idArticulo, a.nombre, a.marca, a.descripcion, a.idCategoria,
                          i.idInventario, i.existencia, i.talla, i.precio, i.imagen, i.color
-                  FROM cutsiegirl.articulo a, cutsiegirl.inventario i
+                  FROM u672703426_cutsiegirl.articulo a, cutsiegirl.inventario i
                   WHERE a.idArticulo = i.idArticulo
                   AND status = 1
                   AND idCategoria = :idCategoria";
@@ -69,7 +69,7 @@ class Articulo {
     
     function deleteArticulo() {
         $query = "DELETE
-                  FROM cutsiegirl.articulo
+                  FROM u672703426_cutsiegirl.articulo
                   WHERE idArticulo = :idArticulo";
 
         $stmt = $this->conn->prepare($query);
@@ -85,7 +85,7 @@ class Articulo {
     }
 
     function editArticulo() {
-        $query = "UPDATE cutsiegirl.articulo
+        $query = "UPDATE u672703426_cutsiegirl.articulo
                   SET nombre = :nombre,
                   marca = :marca,
                   descripcion = :descripcion

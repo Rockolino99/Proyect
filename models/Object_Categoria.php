@@ -14,7 +14,7 @@ class Categoria {
 
     function getCategoria() {
         $query = "SELECT idCategoria, nombre
-                  FROM cutsiegirl.categoria";
+                  FROM u672703426_cutsiegirl.categoria";
 
         $stmt = $this->conn->prepare($query);
         if($stmt->execute())

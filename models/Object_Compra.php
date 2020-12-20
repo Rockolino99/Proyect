@@ -17,7 +17,7 @@ class Compra {
 
     function addCompra() {
         
-        $query = "INSERT INTO cutsiegirl.compras
+        $query = "INSERT INTO u672703426_cutsiegirl.compras
                   SET
                   idProveedor = :idProveedor,
                   idInventario = :idInventario,
