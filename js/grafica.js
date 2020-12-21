@@ -3,19 +3,26 @@ function verGrafica() {
     $.ajax({
         url: 'controllers/controller_getGrafica.php',
         success: function(data) {
-            data = JSON.parse(data)
-            var data = [{
-                values: [data[0].cantidad, data[1].cantidad, data[2].cantidad, data[3].cantidad],
-                labels: [data[0].nombre, data[1].nombre, data[2].nombre, data[3].nombre],
+
+            graphicData = JSON.parse(data)
+
+            var datos = [{
+                values: [],
+                labels: [],
                 type: 'pie'
             }];
-              
+            //console.log(datos[0].values)
+            for(value of graphicData) {
+                datos[0].labels.push(value['nombre'])
+                datos[0].values.push(value['cantidad'])
+            }
+            console.log(datos)
             var layout = {
                 height: 400,
                 width: 500
             };
               
-            Plotly.newPlot('grafica', data, layout);
+            Plotly.newPlot('grafica', datos, layout);
         }
     })
 }
