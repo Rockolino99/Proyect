@@ -238,7 +238,6 @@ session_start();
         </div>
     </div>
     <!--Modal carrito de compras-->
-    <form action="views/fincompra.php">
     <div id="modalCarrito" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -250,12 +249,13 @@ session_start();
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="fincompra()" type="submit">Finalizar compra</button>
+                    <button class="btn btn-primary" style="float:right" onclick="finCompra(
+                        <?php echo isset($_SESSION['correo'])? '\''.$_SESSION['correo'].'\'' : '0'; ?>
+                    )" type="submit">Finalizar compra</button>
                 </div>
             </div>
         </div>
     </div>
-    </form>
 
     <!--Fin Modal carrito de compras-->
     <!--Fin Header-->
@@ -279,6 +279,8 @@ session_start();
             break;
         case 'restablecerPass': //Restablecer contraseña
             include "views/password.php";
+        case 'fincompra': //Finalizar la compra
+            include "views/fincompra.php";
     }
     ?>
     <!--Footer (Pie de pagina)-->
