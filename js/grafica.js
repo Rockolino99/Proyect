@@ -11,7 +11,7 @@ function verGrafica() {
                 labels: [],
                 type: 'pie'
             }];
-            //console.log(datos[0].values)
+
             for(value of graphicData) {
                 datos[0].labels.push(value['nombre'])
                 datos[0].values.push(value['cantidad'])
