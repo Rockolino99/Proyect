@@ -302,8 +302,9 @@ session_start();
                         <h5 class="titulosPiePag"><i class="fas fa-heart"></i> ENCUÉNTRANOS EN LAS REDES</h5>
                         <div class="redes-footer">
                             <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/_cutsiegirl" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                            
                         </div>
                     </div>
                 </div>

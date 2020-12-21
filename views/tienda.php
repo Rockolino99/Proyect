@@ -134,9 +134,9 @@ $admin = "'" . $admin . "'";
         <!--Fin poner modal-->
         <center>
             <h3>Prendas por proveedor</h3>
-            <div id="grafica"></div>
+            <div id="grafica" onload="verGrafica()"></div>
         </center>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
+        <button type="button" class="btn btn-primary btn-agrega" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
         <br><br>
     <?php
     }
