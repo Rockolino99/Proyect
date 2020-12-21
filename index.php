@@ -238,6 +238,7 @@ session_start();
         </div>
     </div>
     <!--Modal carrito de compras-->
+    <form action="views/fincompra.php">
     <div id="modalCarrito" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -249,11 +250,12 @@ session_start();
                     
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="fincompra()">Finalizar compra</button>
+                    <button class="btn btn-primary" style="float:right" onclick="fincompra()" type="submit">Finalizar compra</button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 
     <!--Fin Modal carrito de compras-->
     <!--Fin Header-->
