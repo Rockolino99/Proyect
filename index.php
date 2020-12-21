@@ -30,11 +30,14 @@ session_start();
     <script src="js/tienda.js"></script>
     <script src="js/contacto.js"></script>
     <script src="js/carrito.js"></script>
+    <script src="js/grafica.js"></script>
     <!--AnimateCSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!--Fin Links-->
-    <!-- CDN -->
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!--Ploty-->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <!--Fin Links-->
 
 </head>
 
@@ -81,7 +84,7 @@ session_start();
                 </li>
             </ul>
             <div style="display:flex;">
-                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b> CARRITO</b></a>
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"></b></a>
             <?php
                 if (isset($_SESSION['idUsuario'])) {
                 ?>
@@ -114,7 +117,7 @@ session_start();
                                             <input name="captcha_challenge" placeholder="Captcha" class="form-control form-control-sm" type="text" id="captcha" pattern="[A-Z]{6}">
                                         </div>
                                         <!--Fin Captcha-->
-                                        <input type="checkbox" name="remember" id="remember"><label for="remember">&nbsp;Recuérdame</label>
+                                        <input type="checkbox" name="remember" id="remember" checked><label for="remember">&nbsp;Recuérdame</label>
                                         <div class="form-group text-center">
                                             <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
                                             <!--onclick="login()"-->

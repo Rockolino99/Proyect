@@ -1,4 +1,14 @@
-//var carrito = [{nombre: "juan", apellido: "perez"}]
+$(document).ready(updateCarrito())
+
+function updateCarrito() {//#carrito
+    $.ajax({
+        url: 'controllers/controller_getNumCart.php',
+        success: function(value) {
+            $('#carrito').empty()
+            $('#carrito').append(" "+ value)
+        }
+    })
+}
 
 function verCarrito() {
     //bodyCarrito
@@ -24,6 +34,7 @@ function addToCart(nombre, cantidad, precio, imagen, idCategoria, idInventario, 
         },
         url: 'controllers/controller_addToCart.php',
         success: function(res) {
+            updateCarrito()
             swal({
                 icon: 'success',
                 text: '¡Agregado al carrito!',
@@ -36,6 +47,7 @@ function addToCart(nombre, cantidad, precio, imagen, idCategoria, idInventario, 
 }
 
 function dropCart(idCarrito) {
+    updateCarrito()
     $.ajax({
         type: 'POST',
         data: {
@@ -44,6 +56,7 @@ function dropCart(idCarrito) {
         url: 'controllers/controller_deleteCart.php',
         success: function() {
             verCarrito()
+            updateCarrito()
             swal({
                 icon: 'success',
                 text: 'Eliminado del carrito!',
@@ -55,6 +68,7 @@ function dropCart(idCarrito) {
 }
 
 function deleteAllCart() {
+    updateCarrito()
     $.ajax({
         url: 'controllers/controller_deleteAllCart.php',
         success: function() {

@@ -3,7 +3,7 @@ $admin = isset($_GET['admin']) ? base64_decode($_GET['admin']) : '0';
 $admin = "'" . $admin . "'";
 ?>
 
-<body onload="getArticulo(<?php echo $_GET['cat']; ?>, <?php echo $admin; ?>)">
+<body onload="getArticulo(<?php echo $_GET['cat']; ?>, <?php echo $admin; ?>), verGrafica()">
 
     <div class="titulosPags">
         <?php
@@ -22,6 +22,7 @@ $admin = "'" . $admin . "'";
     </div>
     <div class="row" id="patas1" style="padding: 30px; width: 100%; margin: auto;"></div>
     </div>
+    <br>
         
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
@@ -131,6 +132,10 @@ $admin = "'" . $admin . "'";
             </div>
         </div>
         <!--Fin poner modal-->
+        <center>
+            <h3>Prendas por proveedor</h3>
+            <div id="grafica"></div>
+        </center>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
         <br><br>
     <?php

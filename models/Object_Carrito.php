@@ -93,5 +93,18 @@ class Carrito {
             return 0;
     }
 
+    function getNumCarrito() {
+
+        $query = "SELECT SUM(cantidad)
+                  AS cantidad
+                  FROM u672703426_cutsiegirl.carrito";
+
+        $stmt = $this->conn->prepare($query);
+
+        if($stmt->execute())
+            return $stmt;
+        else
+            return '0';
+    }
 }
 ?>

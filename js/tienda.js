@@ -159,7 +159,8 @@ function addArticulo(cat, admin) {
                 },
                 url: "controllers/controller_addArticulo.php",
                 success: function (result) {
-                     getArticulo(cat, admin)
+                    getArticulo(cat, admin)
+                    verGrafica()
                 }
             })
             //Mensaje de éxito
