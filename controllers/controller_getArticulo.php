@@ -14,7 +14,9 @@ if ($stmt->rowCount() > 0) {
     //Card: nombre, marca, descripcion, imagen, talla, color, existencia
     //Venta: idInventario, precio, idCategoria
     //idArticulo
+    $rand = rand(0, $stmt->rowCount() - 1);
     $i = 0;
+
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="col-3">
             <div class="card" style="width: 18rem; height: 100%;">
@@ -25,8 +27,17 @@ if ($stmt->rowCount() > 0) {
                     </div>
                 </div>
                 <div class="card-body">
+                <?php
+                if($i == $rand) {
+                    $newPrecio = 0.9 * $row['precio'];?>
+                    <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - <del>$$row[precio]</del> - $$newPrecio"; ?></h5>
+                <?php
+                    $row['precio'] = $newPrecio;
+                } else {
+                    ?>
                     <h5 class="card-title" style="text-align: center;"><?php echo "$row[nombre] - $$row[precio]"; ?></h5>
-                    <?php if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
+                    <?php }
+                    if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
                             <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo<?php echo $i; ?>">Editar</button>

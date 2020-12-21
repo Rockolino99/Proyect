@@ -346,6 +346,7 @@ function reestablecerPass() {
     $('#form_RestablecerPass').trigger('reset')
     $('#modalReestablecer').modal('hide')
 }
+
 //funciones para captcha
 //Poner nueva imagen
 function newCaptcha() {
