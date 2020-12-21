@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <textarea class="form-control" id="InputMensaje" name="mensaje" placeholder="Compartános su mensaje" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" name="enviarContact" onclick="contacto()" style="width:20%;">Enviar</button>
+                <button type="submit" class="btn btn-primary" name="enviarContact" onclick="contacto()" style="width:20%; border-radius:15px">Enviar</button>
                 <?php
                     include 'php/correo.php';
                 ?>

@@ -23,7 +23,7 @@ $admin = "'" . $admin . "'";
     <div class="row" id="patas1" style="padding: 30px; width: 100%; margin: auto;"></div>
     </div>
     <br>
-        
+
     <?php
     //Si el que esta logueado es el admin nos dará la opción de modificar la tienda
     if (isset($_SESSION['correo']) && $_SESSION['correo'] == 'admin@cutsiegirl.mx') { ?>
@@ -123,7 +123,7 @@ $admin = "'" . $admin . "'";
                             </div>
                             <div class="modal-footer">
                                 <div class="form-group">
-                                    <button type="button" onclick="addArticulo(<?php echo $_GET['cat'] ?>, <?php echo $admin; ?>)" class="btn btn-success">Añadir Articulo</button>
+                                    <button type="button" onclick="addArticulo(<?php echo $_GET['cat'] ?>, <?php echo $admin; ?>)" class="btn btn-success" style="border-radius: 15px;">Añadir Articulo</button>
                                 </div>
                             </div>
                         </div>
@@ -132,19 +132,23 @@ $admin = "'" . $admin . "'";
             </div>
         </div>
         <!--Fin poner modal-->
-        <center>
+        <div class="botonAddArticulo">
+            <button type="button" class="btn btn-primary btn-agrega" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')" style="border-radius: 15px;">Nuevo artículo</button>
+        </div><br>
+        <div class="graficaProveedores">
             <h3>Prendas por proveedor</h3>
-            <div id="grafica" onload="verGrafica()"></div>
-        </center>
-        <button type="button" class="btn btn-primary btn-agrega" data-toggle="modal" data-target="#modalAddArticulo" onclick="$('#formularioAddArticulo').trigger('reset')">Nuevo artículo</button>
-        <br><br>
+            <center>
+                <div id="grafica" onload="verGrafica()"></div>
+            </center>
+        </div>
     <?php
     }
 
     if (isset($_SESSION['correo']) && $_SESSION['correo'] != 'admin@cutsiegirl.mx') {
     ?>
-    <br>    <div id="fondocupon">
         <br>
+        <div id="fondocupon">
+            <br>
             <h1 class="centrar-texto">NOS ENCANTA CONSENTIRTE, ASÍ QUE...</h1>
             <br>
             <h4 style="text-align: center;">Usa el código del siguiente cupón en tus compras para tener descuentos especiales.</h4>
@@ -153,8 +157,6 @@ $admin = "'" . $admin . "'";
                 <img src="images/CUPONES/propuestas a modificar/3 cupon cutsiecolors.png" alt="cupón">
             </div>
             <br><br>
-            </div>
+        </div>
     <?php } ?>
-    <br>
-    
 </body>

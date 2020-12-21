@@ -41,9 +41,11 @@ session_start();
 
 </head>
 
-<body onload="updateCarrito()">
+<body>
     <!--Header (Encabezado)-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%; position: sticky; z-index: 1">
+    <!--Efecto transparencia en el nav-->
+    <!--background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px);-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%; position: sticky; z-index: 1;">
         <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,19 +86,17 @@ session_start();
                 </li>
             </ul>
             <div style="display:flex;">
-                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"></b></a>
-            <?php
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"> 0</b></a>
+                <?php
                 if (isset($_SESSION['idUsuario'])) {
                 ?>
                     <!--Carrito de Compras-->
-                    
+
                     <a href="php/logout.php" onclick="deleteAllCart()" style="color: white;" class="nav-link active" title="Cerrar sesión"><b><?php echo strtoupper($_SESSION['nombreUsuario']) ?></b> <i class="fas fa-sign-out-alt"></i></a>
                 <?php
                 } else {
                     session_destroy();
                 ?>
-                    <!--Carrito de Compras-->
-                    
                     <!--Login-->
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                         <li class="dropdown order-1">
@@ -119,12 +119,12 @@ session_start();
                                         <!--Fin Captcha-->
                                         <input type="checkbox" name="remember" id="remember" checked><label for="remember">&nbsp;Recuérdame</label>
                                         <div class="form-group text-center">
-                                            <button type="button" class="btn btn-primary" name="entrar" onclick="login()">Entrar</button>
+                                            <button type="button" class="btn btn-primary" name="entrar" onclick="login()" style="border-radius: 15px;">Entrar</button>
                                             <!--onclick="login()"-->
                                         </div>
                                         <br>
                                         <div class="form-group text-center">
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro">Registrarse</button>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalRegistro" style="border-radius: 15px;">Registrarse</button>
                                         </div>
                                         <div class="form-group">
                                             <a href="#" data-toggle="modal" data-target="#modalReestablecer" target="_blank" style="color: blue; text-align: center;">¿Olvidaste tu contraseña? Restablécela aquí</a>
@@ -134,10 +134,10 @@ session_start();
                             </ul>
                         </li>
                     </ul>
-                </div>
-            <?php
-            }
-            ?>
+            </div>
+        <?php
+                }
+        ?>
         </div>
     </nav>
     <!--//Modal registro-->
@@ -192,7 +192,7 @@ session_start();
                         </div>
                         <div class="modal-footer">
                             <div class="">
-                                <button type="button" class="btn btn-primary btn-block" name="enviar" id="btnRegistrar" onclick="registro()">Enviar</button>
+                                <button type="button" class="btn btn-primary btn-block" name="enviar" id="btnRegistrar" onclick="registro()" style="border-radius: 15px;">Enviar</button>
                             </div>
                         </div>
                     </div>
@@ -230,7 +230,7 @@ session_start();
                         </div>
                         <br><br>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="reestablecerPass()">Cambiar contraseña</button>
+                            <button type="button" class="btn btn-primary" onclick="reestablecerPass()" style="border-radius: 15px;">Cambiar contraseña</button>
                         </div>
                     </div>
                 </form>
@@ -246,7 +246,7 @@ session_start();
                     <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body" id="bodyCarrito">
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" style="float:right" onclick="fincompra()">Finalizar compra</button>
@@ -304,7 +304,7 @@ session_start();
                             <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/_cutsiegirl" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                            
+
                         </div>
                     </div>
                 </div>

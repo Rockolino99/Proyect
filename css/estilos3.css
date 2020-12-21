@@ -58,11 +58,19 @@
     font-size: 27px;
 }
 
-.cafe {
-    color: saddlebrown;
-}
 .vistaCarrito {
     display: flex;
     justify-content: space-around;
 }
 
+.botonAddArticulo{
+    text-align: center;
+}
+
+.graficaProveedores{
+    text-align: center;
+}
+
+.vistaPre{
+    background-image: url(../images/pruebafondo.jpg);
+}

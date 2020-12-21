@@ -40,9 +40,9 @@ if ($stmt->rowCount() > 0) {
                     if (($_POST['admin']) == 'admin@cutsiegirl.mx') {
                         $admin = "'" . $_POST['admin'] . "'" ?>
                         <div style="display: flex; justify-content: space-between;">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo<?php echo $i; ?>">Editar</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modalEditarArticulo<?php echo $i; ?>" style="border-radius: 15px;">Editar</button>
                             <button class="btn btn-danger" onclick="deleteArticulo(<?php echo $row['idArticulo'] ?>,
-                                <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)">Eliminar</button>
+                                <?php echo $row['idInventario'] ?>, <?php echo $_POST['categoria'] ?>, <?php echo $admin; ?>)" style="border-radius: 15px;">Eliminar</button>
                         </div>
                     <?php } ?>
                 </div>
@@ -52,7 +52,7 @@ if ($stmt->rowCount() > 0) {
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
         <div id="modalVistaPrevia<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content cafe" style="background: linear-gradient(90deg, #F3D6FA, #D6D6FA);">
+                <div class="modal-content vistaPre">
                     <div class="modal-header">
                         <h3 class="cafe">Vista Previa</h3>
                         <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
