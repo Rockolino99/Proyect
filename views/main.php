@@ -57,7 +57,7 @@
     <div id="cupones">
         <section class="contenedor">
             <br><br>
-            <h2 class="centrar-texto">CUPÓNERA DICIEMBRE</h2>
+            <h2 class="centrar-texto">CUPONERA DICIEMBRE</h2>
             <br>
             <h3 class="centrar-texto">Llegaron las ofertas Navideñas</h3>
             <br>
