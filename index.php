@@ -246,7 +246,7 @@ session_start();
                     
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="">Finalizar compra</button>
+                    <button class="btn btn-primary" style="float:right" onclick="fincompra()">Finalizar compra</button>
                 </div>
             </div>
         </div>

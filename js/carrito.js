@@ -11,6 +11,31 @@ function verCarrito() {
     })
 }
 
+function fincompra(){
+    $.ajax({
+        url: 'controllers/controller_finCompra.php',
+        success: function(res) {
+            if (res == 2) {
+                swal({
+                     icon: 'success',
+                     title: 'BIEN',
+                     text: 'AHUEVO BROOO',
+                     buttons: false,
+                     timer: 4000
+                 })
+             } else {
+                 swal({
+                     icon: 'error',
+                     title: 'PENDEJA',
+                     text: 'ESTUPIDA ESTUPIDA ESTUPIDA',
+                     buttons: false,
+                     timer: 4000
+                 })
+             }
+        }
+    })
+}
+
 function addToCart(nombre, cantidad, precio, imagen, idCategoria, idInventario, i) {
     $.ajax({
         type: 'POST',
