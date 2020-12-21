@@ -238,6 +238,7 @@ session_start();
         </div>
     </div>
     <!--Modal carrito de compras-->
+    <form action="views/fincompra.php">
     <div id="modalCarrito" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -249,11 +250,12 @@ session_start();
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" style="float:right" onclick="fincompra()">Finalizar compra</button>
+                    <button class="btn btn-primary" style="float:right" onclick="fincompra()" type="submit">Finalizar compra</button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 
     <!--Fin Modal carrito de compras-->
     <!--Fin Header-->
@@ -299,9 +301,9 @@ session_start();
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
-                        <h5 class="titulosPiePag"><i class="fas fa-heart"></i> ENCUÉNTRANOS EN LAS REDES</h5>
+                        <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
                         <div class="redes-footer">
-                            <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-square"></i></a>
                             <a href="https://www.instagram.com/_cutsiegirl" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
 

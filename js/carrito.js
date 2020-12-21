@@ -1,11 +1,11 @@
 $(document).ready(updateCarrito())
 
-function updateCarrito() {//#carrito
+function updateCarrito() { //#carrito
     $.ajax({
         url: 'controllers/controller_getNumCart.php',
         success: function(value) {
             $('#carrito').empty()
-            $('#carrito').append(" "+ value)
+            $('#carrito').append(" " + value)
         }
     })
 }
@@ -21,27 +21,11 @@ function verCarrito() {
     })
 }
 
-function fincompra(){
+function fincompra() {
     $.ajax({
         url: 'controllers/controller_finCompra.php',
         success: function(res) {
-            if (res == 2) {
-                swal({
-                     icon: 'success',
-                     title: 'BIEN',
-                     text: 'AHUEVO BROOO',
-                     buttons: false,
-                     timer: 4000
-                 })
-             } else {
-                 swal({
-                     icon: 'error',
-                     title: 'PENDEJA',
-                     text: 'ESTUPIDA ESTUPIDA ESTUPIDA',
-                     buttons: false,
-                     timer: 4000
-                 })
-             }
+            $('#fincompra').append(res)
         }
     })
 }

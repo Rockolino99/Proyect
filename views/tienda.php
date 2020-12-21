@@ -149,7 +149,7 @@ $admin = "'" . $admin . "'";
         <br>
         <div id="fondocupon">
             <br>
-            <h1 class="centrar-texto">NOS ENCANTA CONSENTIRTE, ASÍ QUE...</h1>
+            <br><h1 class="centrar-texto">NOS ENCANTA CONSENTIRTE, ASÍ QUE...</h1>
             <br>
             <h4 style="text-align: center;">Usa el código del siguiente cupón en tus compras para tener descuentos especiales.</h4>
             <br>
