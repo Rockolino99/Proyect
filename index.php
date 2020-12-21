@@ -41,7 +41,7 @@ session_start();
 
 </head>
 
-<body>
+<body onload="updateCarrito()">
     <!--Header (Encabezado)-->
     <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, rgb(10%, 40%, 85%), rgb(80%, 20%, 40%)); top:0; width:100%; position: sticky; z-index: 1">
         <a class="navbar-brand" href="index.php"><img src="" width="70px"></a>
