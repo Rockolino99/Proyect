@@ -68,10 +68,11 @@ ul li a {
     margin-right: 20px;
 }
 
-.fa-twitter {
-    color: #00acee;
+.fa-instagram {
+    color: white;
     font-size: 35px;
     margin-right: 20px;
+    
 }
 
 .fa-youtube {
@@ -180,7 +181,7 @@ section>h2 {
 
 /* Estilos seccion preguntas */
 
-.container1{
+.container1 {
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -194,7 +195,7 @@ section>h2 {
     padding: 15px;
 }
 
-.clasPreg{
+.clasPreg {
     margin-left: 25px;
 }
 
