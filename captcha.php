@@ -42,8 +42,8 @@ $black = imagecolorallocate($image, 0, 0, 0);
 $white = imagecolorallocate($image, 255, 255, 255);
 $textcolors = [$black, $white];
  
-$fonts = [dirname(__FILE__).'\fonts\Acme-Regular.ttf', dirname(__FILE__).'\fonts\Ubuntu-R.ttf', 
-dirname(__FILE__).'\fonts\Merriweather-Regular.ttf', dirname(__FILE__).'\fonts\PlayfairDisplay-Regular.ttf'];
+$fonts = [dirname(__FILE__).'/fonts/Acme-Regular.ttf', dirname(__FILE__).'/fonts/Ubuntu-R.ttf', 
+dirname(__FILE__).'/fonts/Merriweather-Regular.ttf', dirname(__FILE__).'/fonts/PlayfairDisplay-Regular.ttf'];
  
 $string_length = 6;
 $captcha_string = generate_string($permitted_chars, $string_length);
