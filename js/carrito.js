@@ -21,11 +21,47 @@ function verCarrito() {
     })
 }
 
-function fincompra() {
+function finCompra(num) {
+
+    if (num == '0') {
+        swal({
+            icon: 'error',
+            text: '¡Debes iniciar sesión para poder realizar la compra!',
+            buttons: false,
+            timer: 3000
+        })
+        return
+    }
+
+    $.ajax({
+            url: 'controllers/controller_getNumCart.php',
+            success: function(value) {
+                if (value == 0) {
+                    swal({
+                        icon: 'error',
+                        text: '¡Debes agregar algo al carrito!',
+                        buttons: false,
+                        timer: 2000
+                    })
+                    return
+                } else {
+                    location.assign('index.php?mod=fincompra')
+                }
+            }
+        })
+        /*
+        
+        
+         */
+}
+
+function getCartFinal() {
     $.ajax({
         url: 'controllers/controller_finCompra.php',
-        success: function(res) {
-            $('#fincompra').append(res)
+        success: function(data) {
+            $('#productosCarritoFinal').append(data)
+                //Esto es para que agregue lo del controlador finCompra al div de fincompra.php.
+                //En controller_finCompra.php va todo el diseño relacionado con el carrito, que es lo que se va a comprar
         }
     })
 }
