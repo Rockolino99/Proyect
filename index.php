@@ -56,7 +56,7 @@ session_start();
                     <a href="index.php"><img src="images/loguito.png" width="60px" alt=""></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php" style="color: white;">JSJS<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php" style="color: white;">INICIO<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
