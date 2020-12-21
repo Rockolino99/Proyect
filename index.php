@@ -301,9 +301,9 @@ session_start();
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
-                        <h5 class="titulosPiePag"><i class="fas fa-heart"></i> ENCUÉNTRANOS EN LAS REDES</h5>
+                        <h5 class="titulosPiePag">ENCUÉNTRANOS EN LAS REDES</h5>
                         <div class="redes-footer">
-                            <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/Cutsiegirl" target="_blank"><i class="fab fa-facebook-square"></i></a>
                             <a href="https://www.instagram.com/_cutsiegirl" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                             

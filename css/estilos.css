@@ -62,26 +62,38 @@ ul li a {
 
 /*Estilos para iconos redes sociales*/
 
-.fa-facebook-f {
-    color: blue;
+.fa-facebook-square{
+    color: white;
     font-size: 35px;
     margin-right: 20px;
 }
 
-.fa-instagram {
+.fa-instagram{
     color: white;
     font-size: 35px;
     margin-right: 20px;
     
 }
 
-.fa-youtube {
-    color: red;
+.fa-youtube{
+    color: white;
     font-size: 35px;
 }
 
 .fab:hover {
-    opacity: 0.5;
+    opacity: 0.7;
+}
+
+.fa-facebook-square:hover{
+    color: rgb(155, 223, 255);
+}
+
+.fa-instagram:hover{
+    color: rgb(255, 92, 206);
+}
+
+.fa-youtube:hover{
+    color: rgb(255, 0, 0);
 }
 
 
