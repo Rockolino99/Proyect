@@ -31,6 +31,7 @@ session_start();
     <script src="js/contacto.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/grafica.js"></script>
+    <script src="js/fincompra.js"></script>
     <!--AnimateCSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--Font Awesome-->

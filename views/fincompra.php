@@ -7,7 +7,41 @@
     <div class="contentfinCompra">
     <div id="productosCarritoFinal">
     <!-- código a copiar-->
-        <form action="" style="width:50%;" method="post">
+        <form style="width:50%;">
+            <h5>Direccion de envio</h5>
+            <small  class="form-text text-muted" >Todo los campos son obligatorios</small>
+           <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="apat">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre completo" name="nombreCompleto" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="amat">Telefono</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="Telefono" name="telefono" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="user">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="pass">Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" required>
+                      </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="pass">Código Postal</label>
+                                    <input type="number" class="form-control" id="cp" placeholder="C.P" name="cp" required>
+                                </div>
+                            </div>
+                        </div>
 
             <h5>Método de pago</h5>
             <nav style="width:90%;">
@@ -50,9 +84,9 @@
                     <label for="benavides"><img src="images/benavides.PNG" alt="" height="25" width="55"></label>
                     <div style="padding-left:10px; padding-rigth:10px">
                         <p>1. Menciona al empleado que quieres pagar un servicio de CutsieGirl.</p>
-                        <span>2. Muestrale este codigo QR al cajero para que lo escanee y listo.</span>
+                        <span>2. Muestrale este código QR al cajero para que lo escanee y listo.</span>
                     </div>
-                    <img src="images/codigoqr.png" alt="">
+                    <center><img src="images/codigoqr.png" alt=""></center>
                 </div>
             </div>
 
@@ -70,15 +104,13 @@
             $total= $costoenvio + $subtotal;
             ?>
             <div>
-            <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
-            <input type="text" name="cupon" placeholder="CUTSIE-XXXX">
+                <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
+                <input type="text" name="cupon" placeholder="CUTSIEXXXX">   
             </div><br><br>
-            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
         </form>
 
     </div>
 
     </div>
-    
-
-</body>
+            
