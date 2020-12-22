@@ -95,18 +95,32 @@
                         <input type="radio" name="type" id="mast" value="tarjeta">
                         <label for="mast"><img src="images/ms.png" alt="" width="40" height="25"></label>
                     </div><br>
-                    <div>
-                        <label for="number">Número de tarjeta</label>
-                        <input class="a" type="number" id="number" name="number" placeholder="1234-5678-9012-3456">       
+                    <div class="form-row">
+                        <div class="col-4">
+                            <label for="number">Número de tarjeta</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="number" id="number" name="number" class="form-control" placeholder="1234-5678-9012-3456">
+                        </div>
                     </div><br>
-                    <div>
-                        <label for="name">Nombre del titular</label>
-                        <input class="a" type="text" name="name" id="name" placeholder="Como aparece en la tarjeta">
+
+                    <div class="form-row">
+                        <div class="col-4">
+                            <label for="name">Nombre del titular</label>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Como aparece en la tarjeta">
+                        </div>
                     </div><br>
-                    <div>
-                        <label for="security">Código de seguridad</label>
-                        <input class="a" type="text" name="security" id="security" placeholder="***********">
-                    </div>                
+
+                    <div class="form-row">
+                        <div class="col-5">
+                            <label for="security">Código de seguridad</label>
+                        </div>
+                        <div class="col-7">
+                            <input class="form-control" type="text" name="security" id="security" placeholder=" • • • " style="width:80px">
+                        </div>
+                    </div>           
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <p>Selecciona la sucursal</p>   
@@ -137,10 +151,13 @@
             }
             $total= $costoenvio + $subtotal;
             ?>
-            <div>
-                <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
-                <input type="text" name="cupon" placeholder="CUTSIEXXXX">   
-            </div><br><br>
+
+            <div class="form-group">
+                <p><b>¿Tienes un cupón de descuento?</b></p>
+                <label for="cupon"><b>Ingresa su código aquí</p></label>
+                <input class="form-control" type="text" id="cupon" name="cupon" placeholder="CUTSIEXXXX" style="width:200px;">   
+            </div><br>
+
             <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
         </form>
 
