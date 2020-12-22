@@ -13,6 +13,7 @@ if ($stmt->rowCount() > 0) {
     //idCarrito, idInventario, idCategoria
     //nombre, precio, imagen
     $subtotal = 0;
+    $categorias = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="articulo">
             <div class="card">
@@ -30,6 +31,7 @@ if ($stmt->rowCount() > 0) {
         <!--Vista previa: nombre, marca, descripcion, imagen, talla, color, existencia, precio-->
     <?php
     $subtotal += ($row['precio'] * $row['cantidad']);
+    
     }?>
     <div class="titulosPags">
         <span style="font-size: 25px;">SUBTOTAL: $<?php echo $subtotal?></span>

@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+                <input type="text" class="form-control" id="direccionVta" placeholder="Dirección" name="direccion" required>
             </div>
             <div class="row">
                 <div class="col-5">
@@ -66,7 +66,7 @@
 
                 <div class="col-4">
                    <div class="form-group">
-                        <input type="text" class="form-control" id="cp" placeholder="Ciudad" name="ciudad" required>
+                        <input type="text" class="form-control" id="municipio" placeholder="Municipio" name="municipio" required>
                     </div>
                 </div>
 

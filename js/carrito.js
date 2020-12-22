@@ -1,4 +1,5 @@
 $(document).ready(updateCarrito())
+var categorias = []
 
 function updateCarrito() { //#carrito
     $.ajax({
@@ -122,17 +123,19 @@ function deleteAllCart() {
     })
 }
 
-function verNota(nombre) {
-    //direccion
-    //codigo_postal
+function verNota(nombre, idUsuario) {
+    alert(idUsuario)
+    idNota = '45'
+    direccion = "Chapulines #402"
+    direccion = direccion.replace('#','_')
+    cp = "20156"
     envio = $('#envio').val()
     iva = $('#iva').val()
     subtotal = $('#subtotal').val()
     cupon = $('#cupon').val()
     modo = $('input:radio[name=type]:checked').val() == 'oxxo'? "OXXO" : "TARJETA DE CREDITO"
-    alert(modo)
     
-    $.ajax({
+    /*$.ajax({
        type: 'POST',
        data:{
            nombre: nombre,
@@ -142,9 +145,14 @@ function verNota(nombre) {
            cupon: cupon,
            modo: modo
        },
-       url: 'controllers/controller_sendNota.php',
-       success: function(){
-           
+       url: 'pdf/nota.php',
+       success: function(res){
+        alert(res)
        } 
-    })
+    })*/
+    
+    var datos = 'nombre='+nombre+'&envio='+envio+'&direccion='+direccion+'&modo='+modo+'&idNota='+idNota+
+    '&cp='+cp+'&iva='+iva+'&cupon='+cupon+'&subtotal='+subtotal
+    //IMPORTANTE
+    window.open('pdf/nota.php?'+datos,'_blank')
 }

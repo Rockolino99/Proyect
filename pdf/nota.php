@@ -1,17 +1,24 @@
 <?php
 date_default_timezone_set('America/Mexico_City');
-//AddPage(orientation[PORTRAIT, LADSCAPE], tamaño [A3, A4, A5, LETTER, LEGAL]),
-//SetFont[tipo(COURIER, HELVETICA, ARIAL, TIMES, SYMBOL, ZAPDINGBATS), estilo[normal, B, I, U], tamaño],
-//Cell(ancho, alto, texto, bordes, ?, alineación, rellenar, link)
-//OutPut(destino[I, D, F, S], nombre_archivo, utf-8)
-$nombre_cliente="GEORGINA";
-$direccion="CALLE CHAPULINES #412";
-$no_nota="45";
-$modo_pago="Tarjeta de crédito";
-$subtotal=0;
-$gastos_envio="1500";
-$cupon="CUTSIECHS";
-$iva=0;
+
+include_once '../connection/Object_Connection.php';
+include_once '../models/Object_Carrito.php';
+
+$database = new Database();
+$db = $database->getConnection();
+
+$carrito = new Carrito($db);
+
+$stmt = $carrito->getCarrito();
+
+$nombre_cliente=$_GET['nombre'];
+$direccion = str_replace('_', '#', $_GET['direccion']);
+$no_nota=$_GET['idNota'];
+$modo_pago = $_GET['modo'];
+$subtotal=$_GET['subtotal'];
+$gastos_envio=$_GET['envio'];
+$cupon=$_GET['cupon'];
+$iva=$_GET['iva'];
 $total_pagar="800";
 
 
@@ -24,14 +31,14 @@ $total_por_prenda=array("8000.00","2400.00","9000.00");
 
 define('FPDF_FONTPATH','.');
 require ("fpdf/fpdf.php");
-//require("../fpdf/fpdf.php");
+
 
 $fpdf=new FPDF('P','pt','A4');
 $fpdf->AddFont('Rajdhani-Bold','','rajdhani-bold.php');
 $fpdf->AddPage();
 $fpdf->SetFont('Rajdhani-Bold','',14);
 $fpdf->SetTextColor(64,81,69);
-$fpdf->Image('images/nota.jpg',0,0,603,850);
+$fpdf->Image('../images/nota.jpg',0,0,603,850);
 
 //Text(y, x,":v") 
 $fpdf ->Text(400,220,"FECHA: ");
@@ -45,38 +52,25 @@ $fpdf ->Text(494,250.5,$no_nota);
 
 //Articulo
 $y=390;
-foreach($cantidad as $nombre){
-    $fpdf ->Text(70,$y,$nombre);
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $fpdf ->Text(70, $y, $row['cantidad']);
+    $fpdf ->Text(150, $y, $row['nombre']);
+    $fpdf ->Text(250, $y, $row['precio']);
+    $fpdf ->Text(492, $y, $row['cantidad']*$row['precio']);
     $y+=40;
 }
-$y=390;
-foreach($nombre_producto as $nombre){
-    $fpdf ->Text(150,$y,$nombre);
-    $y+=40;
-}
-$y=390;
-foreach($precio_producto as $nombre){
-    $fpdf ->Text(250,$y,'$'.$nombre);
-    $y+=40;
-}
-$y=390;
-$parcial;
-for($i=0; $i<sizeof($nombre_producto);$i++){
-    $parcial=$cantidad[$i]*$precio_producto[$i];
-    $fpdf ->Text(492,$y,'$'.$parcial);
-    $y+=40;
-    $subtotal+=$parcial;
-}
+
 $fpdf ->Text(174,633,$modo_pago);
 
-$iva=$subtotal*1.16;
-$total_pagar=$iva+$subtotal;
+$cupon = (-1)*(40/100)*$subtotal;//Modificar cupón
+
+$total_pagar=$iva+$subtotal+$gastos_envio+$cupon;
 
 $fpdf ->Text(492,633,'$'.$subtotal);
 
-//$fpdf ->Text(492,664,'$'.$gastos_envio);
+$fpdf ->Text(492,664,'$'.$gastos_envio);
 
-//$fpdf ->Text(492,695,'$'.$cupon);
+$fpdf ->Text(492,695,'$'.$cupon);
 
 $fpdf ->Text(492,726,'$'.$iva);
 
