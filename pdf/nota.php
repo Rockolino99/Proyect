@@ -1,4 +1,9 @@
 <?php
+
+require 'AttachMailer.php';
+
+session_start();
+
 date_default_timezone_set('America/Mexico_City');
 
 include_once '../connection/Object_Connection.php';
@@ -76,41 +81,18 @@ $fpdf ->Text(492,726,'$'.$iva);
 
 $fpdf ->Text(492,757,'$'.$total_pagar);
 
-$fpdf ->OutPut();
+//nombra al archivo nota.pdf, y manda el archivo al navegador
+$fpdf ->OutPut('nota.pdf','I');
 
+//con la clase AttachMailer.php se manda el archivo al correo del usuario
+$from='cutsiegirl@gmail.com';
+$to = $_SESSION['correo'];
 
-if(isset($_POST['continuar'])){
-    
-    $correo=$_SESSION['correo'];
-    $asunto='Nota de compra';
-    $msj="<h2><center>Gracias por comprar en CutsieGirl</center>";
-    $msj.=$fpdf;
-    $header.="Reply-To: cutsiegirl@gmail.com" . "\r\n";
-    //$header.= "X-Mailer: PHP/" . phpversion();
-    $header.= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $mail = @mail($correo,$asunto,$msj,$header);      
-    if($mail){
-        echo"<script>
-            swal({
-                icon: 'success',
-                title: 'FELICIDADES',
-                text: 'Cupón enviado exitosamente!',
-                buttons: false,
-                timer: 4000
-            })
-        </script>";
-    }else{
-        echo"<script>
-            swal({
-                icon: 'error',
-                title: 'ERROR',
-                text: 'Error en  el envio de su cupón!',
-                buttons: false,
-                timer: 4000
-            })
-        </script>";
-    }    
-}
+$mailer= new AttachMailer($from, $to,"Nota de compra", "<h3>¡Gracias por comprar en CutsieGirl!</h3><p>Visualiza tu nota de compra.</p>");
+$mailer->attachFile("nota.pdf");
 
+$resultado=($mailer->send() ?"Enviado":"Problema al enviar");
+
+echo($resultado);
 
 ?>
