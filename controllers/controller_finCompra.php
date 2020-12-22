@@ -63,3 +63,6 @@ if ($stmt->rowCount() > 0) {
             }
         ?>
     </div>
+            <input type="hidden" id="envio" value="<?php echo $costoenvio; ?>">
+            <input type="hidden" id="subtotal" value="<?php echo $subtotal; ?>">
+            <input type="hidden" id="iva" value="<?php echo $iva; ?>">

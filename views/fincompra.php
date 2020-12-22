@@ -20,11 +20,11 @@
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div id="md1">
                         <p>Selecciona tu tarjeta</p>   
-                        <input type="radio" name="type" id="visa">
+                        <input type="radio" name="type" id="visa" value="tarjeta">
                         <label for="visa"><img src="images/visa.png" alt="" height="25" width="40"></label>
-                        <input type="radio" name="type" id="am">
+                        <input type="radio" name="type" id="am" value="tarjeta">
                         <label for="am"><img src="images/amex.png" alt="" width="40" height="35"></label>
-                        <input type="radio" name="type" id="mast">
+                        <input type="radio" name="type" id="mast" value="tarjeta">
                         <label for="mast"><img src="images/ms.png" alt="" width="40" height="25"></label>
                     </div><br>
                     <div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <p>Selecciona la sucursal</p>   
-                    <input type="radio" name="type" id="oxxo">
+                    <input type="radio" name="type" id="oxxo" value="oxxo">
                     <label for="oxxo"><img src="images/oxxo.jpg" alt="" height="35" width="40"></label>
                     <input type="radio" name="type" id="farmacia" disabled>
                     <label for="farmacia"><img src="images/farmacia.jpg" alt="" height="25" width="55"></label>
@@ -71,9 +71,10 @@
             ?>
             <div>
             <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
-            <input type="text" name="cupon" placeholder="CUTSIE-XXXX">
+            <input type="text" name="cupon" id="cupon" placeholder="CUTSIE-XXXX">
             </div><br><br>
-            <button type="submit" class="btn btn-primary">Continuar</button>
+            <?php $name = "'".$_SESSION['nombreUsuario']." ".$_SESSION['apellidos']."'";?>
+            <button type="button" class="btn btn-primary" onclick="verNota(<?php echo $name; ?>)">Continuar</button>
         </form>
 
     </div>

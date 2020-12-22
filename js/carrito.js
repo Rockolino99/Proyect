@@ -121,3 +121,30 @@ function deleteAllCart() {
         }
     })
 }
+
+function verNota(nombre) {
+    //direccion
+    //codigo_postal
+    envio = $('#envio').val()
+    iva = $('#iva').val()
+    subtotal = $('#subtotal').val()
+    cupon = $('#cupon').val()
+    modo = $('input:radio[name=type]:checked').val() == 'oxxo'? "OXXO" : "TARJETA DE CREDITO"
+    alert(modo)
+    
+    $.ajax({
+       type: 'POST',
+       data:{
+           nombre: nombre,
+           envio: envio,
+           iva: iva,
+           subtotal: subtotal,
+           cupon: cupon,
+           modo: modo
+       },
+       url: 'controllers/controller_sendNota.php',
+       success: function(){
+           
+       } 
+    })
+}
