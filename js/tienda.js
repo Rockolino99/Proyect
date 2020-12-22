@@ -251,6 +251,17 @@ function deleteArticulo(idArticulo, idInventario, cat, admin) {
     })
 }
 function validaCantidad(elemento,cantidad, existencia){
+    
+    if(existencia == 0) {
+        swal({
+            icon: 'info',
+            text: '¡No quedan productos disponibles!',
+            buttons: false,
+            timer: 2000
+        })
+        $(elemento).val('0')
+        return
+    }
     if(isNaN(cantidad) || cantidad == ''){
         swal({
             icon: 'warning',

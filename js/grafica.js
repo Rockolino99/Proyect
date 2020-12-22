@@ -22,7 +22,7 @@ function verGrafica() {
                 datos[0].labels.push(value['nombre'])
                 datos[0].values.push(value['cantidad'])
             }
-            console.log(datos)
+
             var layout = {
                 height: 400,
                 width: 500

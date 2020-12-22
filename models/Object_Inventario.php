@@ -13,6 +13,8 @@ class Inventario {
     public $imagen;
     public $color;
 
+    public $cantidad;
+
     function __construct($db) {
         $this->conn = $db;
     }
@@ -98,6 +100,25 @@ class Inventario {
 
         echo $stmt->execute();
 
+    }
+
+    function updateInventario() {
+        $query = "UPDATE u672703426_cutsiegirl.inventario
+                  SET existencia = existencia - :cantidad
+                  WHERE idInventario = :idInventario";
+        
+        $stmt = $this->conn->prepare($query);
+
+        $this->idInventario = htmlspecialchars(strip_tags($this->idInventario));
+        $this->cantidad = htmlspecialchars(strip_tags($this->prcantidadecio));
+
+        $stmt->bindParam(":idInventario", $this->idInventario);
+        $stmt->bindParam(":cantidad", $this->cantidad);
+
+        if($stmt->execute())
+            return $stmt;
+        else
+            return 0;
     }
 }
 ?>
