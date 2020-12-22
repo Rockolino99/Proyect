@@ -187,9 +187,12 @@ function verNota3(nombre, idNota, cupon) {
     //IMPORTANTE
     var datos = 'nombre='+nombre+'&envio='+envio+'&direccion='+direccion+'&modo='+modo+'&idNota='+idNota+
     '&cp='+cp+'&iva='+iva+'&cupon='+cupon+'&subtotal='+subtotal
-    setTimeout( function(){
+    setTimeout(function(){
                     window.open('pdf/nota.php?'+datos,'_blank')
-                    deleteAllCart()
                     location.assign('index.php')
                 }, 3000)
+
+    setTimeout(function() {
+        deleteAllCart()
+    },6000)
 }
