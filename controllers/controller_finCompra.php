@@ -35,7 +35,23 @@ if ($stmt->rowCount() > 0) {
         }?>
         <div class="titulosPags">
             <span style="font-size: 25px;">SUBTOTAL: $<?php echo $subtotal?></span>
-            <span style="font-size: 20px;"></span>
+            
+            <?php
+            $iva=0;
+            $costoenvio =0;
+            $iva= $subtotal*.16;
+                if($subtotal > 2000){
+                $costoenvio=0;
+               ?> <span style="font-size: 22px;">ENVÍO: Gratis</span>
+           <?php }else{
+                $costoenvio=200;
+                ?> <span style="font-size: 25px;">IVA: $<?php echo $iva?></span> 
+                <span style="font-size: 25px;">ENVÍO: $200</span>
+            <?php }
+            $total= $costoenvio + $subtotal + $iva; 
+            ?>
+            <span style="font-size: 25px;">TOTAL: $<?php echo $total?></span>
+            
         </div>
         <?php
             } else {
@@ -47,3 +63,6 @@ if ($stmt->rowCount() > 0) {
             }
         ?>
     </div>
+            <input type="hidden" id="envio" value="<?php echo $costoenvio; ?>">
+            <input type="hidden" id="subtotal" value="<?php echo $subtotal; ?>">
+            <input type="hidden" id="iva" value="<?php echo $iva; ?>">

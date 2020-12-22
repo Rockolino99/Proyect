@@ -3,7 +3,7 @@
     <span style="font-size: 25px;">FINALIZAR COMPRA</span>
 </div>
 
-<body onload="getCartFinal()">
+<body onload="getCartFinal(), updateCarrito()">
     <div class="contentfinCompra">
     <div id="productosCarritoFinal">
     <!-- código a copiar-->
@@ -54,11 +54,11 @@
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div id="md1">
                         <p>Selecciona tu tarjeta</p>   
-                        <input type="radio" name="type" id="visa">
+                        <input type="radio" name="type" id="visa" value="tarjeta">
                         <label for="visa"><img src="images/visa.png" alt="" height="25" width="40"></label>
-                        <input type="radio" name="type" id="am">
+                        <input type="radio" name="type" id="am" value="tarjeta">
                         <label for="am"><img src="images/amex.png" alt="" width="40" height="35"></label>
-                        <input type="radio" name="type" id="mast">
+                        <input type="radio" name="type" id="mast" value="tarjeta">
                         <label for="mast"><img src="images/ms.png" alt="" width="40" height="25"></label>
                     </div><br>
                     <div>
@@ -76,13 +76,13 @@
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <p>Selecciona la sucursal</p>   
-                    <input type="radio" name="type" id="oxxo">
+                    <input type="radio" name="type" id="oxxo" value="oxxo">
                     <label for="oxxo"><img src="images/oxxo.jpg" alt="" height="35" width="40"></label>
                     <input type="radio" name="type" id="farmacia" disabled>
                     <label for="farmacia"><img src="images/farmacia.jpg" alt="" height="25" width="55"></label>
                     <input type="radio" name="type" id="benavides" disabled>
                     <label for="benavides"><img src="images/benavides.PNG" alt="" height="25" width="55"></label>
-                    <div style="padding-left:10px; padding-rigth:10px">
+                    <div style="padding-left:10px; padding-right:10px">
                         <p>1. Menciona al empleado que quieres pagar un servicio de CutsieGirl.</p>
                         <span>2. Muestrale este código QR al cajero para que lo escanee y listo.</span>
                     </div>
@@ -96,7 +96,7 @@
             $subtotal = 50;
             //fin temporal
             $costoenvio =0;
-                if($subtotal > 2000){
+            if($subtotal > 2000){
                 $costoenvio=0;
             }else{
                 $costoenvio=200;

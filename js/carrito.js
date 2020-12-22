@@ -60,8 +60,8 @@ function getCartFinal() {
         url: 'controllers/controller_finCompra.php',
         success: function(data) {
             $('#productosCarritoFinal').append(data)
-                //Esto es para que agregue lo del controlador finCompra al div de fincompra.php.
-                //En controller_finCompra.php va todo el diseño relacionado con el carrito, que es lo que se va a comprar
+            //Esto es para que agregue lo del controlador finCompra al div de fincompra.php.
+            //En controller_finCompra.php va todo el diseño relacionado con el carrito, que es lo que se va a comprar
         }
     })
 }
@@ -119,5 +119,32 @@ function deleteAllCart() {
         success: function() {
             verCarrito()
         }
+    })
+}
+
+function verNota(nombre) {
+    //direccion
+    //codigo_postal
+    envio = $('#envio').val()
+    iva = $('#iva').val()
+    subtotal = $('#subtotal').val()
+    cupon = $('#cupon').val()
+    modo = $('input:radio[name=type]:checked').val() == 'oxxo'? "OXXO" : "TARJETA DE CREDITO"
+    alert(modo)
+    
+    $.ajax({
+       type: 'POST',
+       data:{
+           nombre: nombre,
+           envio: envio,
+           iva: iva,
+           subtotal: subtotal,
+           cupon: cupon,
+           modo: modo
+       },
+       url: 'controllers/controller_sendNota.php',
+       success: function(){
+           
+       } 
     })
 }
