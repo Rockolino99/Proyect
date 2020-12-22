@@ -13,7 +13,7 @@ function finalizarCompra() {
     if (nombreCompleto == null || nombreCompleto.length == 0 || /^\s+$/.test(nombreCompleto)) {
         swal({
             icon: 'warning',
-            text: '¡Ingrese su nombre en la dirección!',
+            text: '¡Ingrese su nombre completo!',
             buttons: false,
             timer: 2000
         })
@@ -39,7 +39,7 @@ function finalizarCompra() {
             buttons: false,
             timer: 2000
         })
-        $('#direccion').focus()
+        $('#direccionVta').focus()
         return
     }
     //municipio
