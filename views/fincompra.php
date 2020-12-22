@@ -159,9 +159,6 @@
             </div><br>
 
             <button type="button" class="btn btn-primary"onclick="finalizarCompra()" name="continuar">Continuar</button>
-            <?php
-                include 'pdf/nota.php';
-            ?>
         </form>
 
     </div>
