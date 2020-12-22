@@ -178,8 +178,18 @@ function verNota3(nombre, idNota, cupon) {
     direccion = direccion.replace('#','_')
     modo = $('input:radio[name=type]:checked').val() == 'oxxo'? "OXXO" : "TARJETA DE CREDITO"
 
+    swal({
+        icon: 'success',
+        title: 'COMPRA EXITOSA',
+        text: '¡Revisa tu correo electrónico!',
+        timer: 3000
+    })
     //IMPORTANTE
     var datos = 'nombre='+nombre+'&envio='+envio+'&direccion='+direccion+'&modo='+modo+'&idNota='+idNota+
     '&cp='+cp+'&iva='+iva+'&cupon='+cupon+'&subtotal='+subtotal
-    window.open('pdf/nota.php?'+datos,'_blank')
+    setTimeout( function(){
+                    window.open('pdf/nota.php?'+datos,'_blank')
+                    deleteAllCart()
+                    location.assign('index.php')
+                }, 3000)
 }
