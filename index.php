@@ -86,7 +86,8 @@ session_start();
                 </li>
             </ul>
             <div style="display:flex;">
-                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"> 0</b></a>
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"><script>updateCarrito()</script></b></a>
+                
                 <?php
                 if (isset($_SESSION['idUsuario'])) {
                 ?>

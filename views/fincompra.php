@@ -3,7 +3,6 @@
     <span style="font-size: 25px;">FINALIZAR COMPRA</span>
 </div>
 
-<body onload="getCartFinal()">
     <div class="contentfinCompra">
     <div id="productosCarritoFinal">
     <!-- código a copiar-->
@@ -49,6 +48,7 @@
                     <input type="radio" name="type" id="benavides" disabled>
                     <label for="benavides"><img src="images/benavides.PNG" alt="" height="25" width="55"></label>
                     <div style="padding-left:10px; padding-rigth:10px">
+                    <div style="padding-left:10px; padding-right:10px">
                         <p>1. Menciona al empleado que quieres pagar un servicio de CutsieGirl.</p>
                         <span>2. Muestrale este codigo QR al cajero para que lo escanee y listo.</span>
                     </div>
@@ -57,7 +57,22 @@
             </div>
 
             <!--Gastos de envío esto va al controlador-->
+<<<<<<< Updated upstream
             
+=======
+            <?php
+            //temporal
+            $subtotal = 50;
+            //fin temporal
+            $costoenvio =0;
+            if($subtotal > 2000){
+                $costoenvio=0;
+            }else{
+                $costoenvio=200;
+            }
+            $total= $costoenvio + $subtotal;
+            ?>
+>>>>>>> Stashed changes
             <div>
             <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
             <input type="text" name="cupon" placeholder="CUTSIE-XXXX">
