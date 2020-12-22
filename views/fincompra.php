@@ -158,7 +158,10 @@
                 <input class="form-control" type="text" id="cupon" name="cupon" placeholder="CUTSIEXXXX" style="width:200px;">   
             </div><br>
 
-            <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
+            <button type="button" class="btn btn-primary"onclick="finalizarCompra()" name="continuar">Continuar</button>
+            <?php
+                include 'pdf/nota.php';
+            ?>
         </form>
 
     </div>
