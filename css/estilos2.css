@@ -116,3 +116,26 @@ h3{
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
+/*Estilos finalizar compra*/
+
+.contentfinCompra{
+  display:flex; 
+  justify-content:center;
+}
+
+#productosCarritoFinal{
+  display:flex; 
+  justify-content:center; 
+  width:70%;
+}
+
+
+.tab-content{
+  padding: 20px;
+}
+
+#visa, #am, #mast, #oxxo, #farmacia, #benavides{
+  margin-left: 25px;
+}
