@@ -57,18 +57,7 @@
             </div>
 
             <!--Gastos de envío esto va al controlador-->
-            <?php
-            //temporal
-            $subtotal = 50;
-            //fin temporal
-            $costoenvio =0;
-                if($subtotal > 2000){
-                $costoenvio=0;
-            }else{
-                $costoenvio=200;
-            }
-            $total= $costoenvio + $subtotal;
-            ?>
+            
             <div>
             <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
             <input type="text" name="cupon" placeholder="CUTSIE-XXXX">

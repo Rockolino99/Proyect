@@ -35,7 +35,22 @@ if ($stmt->rowCount() > 0) {
         }?>
         <div class="titulosPags">
             <span style="font-size: 25px;">SUBTOTAL: $<?php echo $subtotal?></span>
-            <span style="font-size: 20px;"></span>
+            
+            <?php
+            //temporal
+            
+            //fin temporal
+            $costoenvio =0;
+                if($subtotal > 2000){
+                $costoenvio=0;
+               ?> <span style="font-size: 22px;">ENVÍO: Gratis</span>
+           <?php }else{
+                $costoenvio=200;
+                ?> <span style="font-size: 25px;">ENVÍO: $200</span>
+            <?php }
+            $total= $costoenvio + $subtotal; ?>
+            <span style="font-size: 25px;">TOTAL: $<?php echo $total?></span>
+            
         </div>
         <?php
             } else {
