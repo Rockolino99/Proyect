@@ -1,8 +1,8 @@
 <?php
 
-require 'AttachMailer.php';
-
 session_start();
+
+require 'AttachMailer.php';
 
 date_default_timezone_set('America/Mexico_City');
 
@@ -71,8 +71,10 @@ $fpdf ->Text(492,726,'$'.$iva);
 
 $fpdf ->Text(492,757,'$'.$total_pagar);
 
-//nombra al archivo nota.pdf, y manda el archivo al navegador
+//nombra al archivo nota.pdf, lo guarda y lo manda el archivo al navegador
+$fpdf ->OutPut('nota.pdf','F');
 $fpdf ->OutPut('nota.pdf','I');
+
 
 //con la clase AttachMailer.php se manda el archivo al correo del usuario
 $from='cutsiegirl@gmail.com';
