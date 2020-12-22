@@ -124,35 +124,62 @@ function deleteAllCart() {
 }
 
 function verNota(nombre, idUsuario) {
-    alert(idUsuario)
-    idNota = '45'
-    direccion = "Chapulines #402"
-    direccion = direccion.replace('#','_')
-    cp = "20156"
+    cupon = $('#cupon').val()
+    $.ajax({
+        type: 'POST',
+        data: {
+            descripcion: cupon
+        },
+        url: 'controllers/controller_getCupon.php',
+        success: function(cup){
+            verNota2(nombre, idUsuario, cup, cupon)
+        }
+    })
+    
+}
+
+function verNota2(nombre, idUsuario, cupon, descripcion) {
     envio = $('#envio').val()
     iva = $('#iva').val()
     subtotal = $('#subtotal').val()
-    cupon = $('#cupon').val()
+    total = parseFloat((-1)*(cupon/100)*subtotal) + parseFloat(iva) + parseFloat(subtotal) + parseFloat(envio)
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            total: total,
+            idUsuario: idUsuario,
+            descripcion: descripcion
+        },
+        url: 'controllers/controller_addNota.php',
+        success: function(idNota) {
+            verNota3(nombre, idNota, cupon)
+        }
+    })
+    
+}
+
+function verNota3(nombre, idNota, cupon) {
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            idNota: idNota
+        },
+        url: 'controllers/controller_registroVenta.php',
+        success: function() {
+        }
+    })
+
+    envio = $('#envio').val()
+    iva = $('#iva').val()
+    subtotal = $('#subtotal').val()
+    direccion = $('#direccionVta').val()
+    direccion = direccion.replace('#','_')
     modo = $('input:radio[name=type]:checked').val() == 'oxxo'? "OXXO" : "TARJETA DE CREDITO"
-    
-    /*$.ajax({
-       type: 'POST',
-       data:{
-           nombre: nombre,
-           envio: envio,
-           iva: iva,
-           subtotal: subtotal,
-           cupon: cupon,
-           modo: modo
-       },
-       url: 'pdf/nota.php',
-       success: function(res){
-        alert(res)
-       } 
-    })*/
-    
+
+    //IMPORTANTE
     var datos = 'nombre='+nombre+'&envio='+envio+'&direccion='+direccion+'&modo='+modo+'&idNota='+idNota+
     '&cp='+cp+'&iva='+iva+'&cupon='+cupon+'&subtotal='+subtotal
-    //IMPORTANTE
     window.open('pdf/nota.php?'+datos,'_blank')
 }

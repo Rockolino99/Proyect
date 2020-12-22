@@ -1,4 +1,5 @@
-function finalizarCompra() {
+function finalizarCompra(user, idUsuario) {
+
     var nombre = $('#name').val()
     var number = $('#number').val()
     var codigo = $('#security').val()
@@ -85,7 +86,7 @@ function finalizarCompra() {
                 buttons: false,
                 timer: 2000
             })
-            $('#InputNombre').focus()
+            $('#name').focus()
             return
         }
         //codigo de verificacion
@@ -102,6 +103,6 @@ function finalizarCompra() {
     }
 
 
-    verNota("juan", 2)
+    verNota(user,idUsuario)
 
 }

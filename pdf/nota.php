@@ -16,7 +16,7 @@ $carrito = new Carrito($db);
 
 $stmt = $carrito->getCarrito();
 
-$nombre_cliente=$_GET['nombre'];
+$nombre_cliente = strtoupper($_GET['nombre']);
 $direccion = str_replace('_', '#', $_GET['direccion']);
 $no_nota=$_GET['idNota'];
 $modo_pago = $_GET['modo'];
@@ -25,14 +25,6 @@ $gastos_envio=$_GET['envio'];
 $cupon=$_GET['cupon'];
 $iva=$_GET['iva'];
 $total_pagar="800";
-
-
-$cantidad=array("15","12","70");
-$nombre_producto=array("mamadas","mamadas2","mamadas3");
-$precio_producto=array("450.00","250.00","700.00");
-$total_por_prenda=array("8000.00","2400.00","9000.00");
-
-
 
 define('FPDF_FONTPATH','.');
 require ("fpdf/fpdf.php");
@@ -50,8 +42,6 @@ $fpdf ->Text(400,220,"FECHA: ");
 $fpdf ->Text(445,220,date("d/m/Y"));
 
 $fpdf ->Text(60,220,$nombre_cliente);
-//$fpdf ->Text(145,220,$ap_paterno);
-//$fpdf ->Text(220,220,$ap_materno);
 $fpdf ->Text(60,250,$direccion);
 $fpdf ->Text(494,250.5,$no_nota);
 
@@ -67,7 +57,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 $fpdf ->Text(174,633,$modo_pago);
 
-$cupon = (-1)*(40/100)*$subtotal;//Modificar cupón
+$cupon = (-1)*($cupon/100)*$subtotal;
 
 $total_pagar=$iva+$subtotal+$gastos_envio+$cupon;
 

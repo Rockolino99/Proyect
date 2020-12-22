@@ -125,7 +125,7 @@ function registro() {
         data: {
             nombre: nombre,
             apellido_paterno: ap_paterno,
-            apellido_materno: ap_paterno,
+            apellido_materno: ap_materno,
             correo: correo,
             password: password,
             direccion: direccion

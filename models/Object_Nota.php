@@ -15,7 +15,7 @@ class Nota {
         $this->conn = $db;
     }
 
-    function addArticulo() {
+    function addNota() {
         
         $query = "INSERT INTO u672703426_cutsiegirl.nota
                   SET

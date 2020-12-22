@@ -118,7 +118,7 @@
                             <label for="security">Código de seguridad</label>
                         </div>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="security" id="security" placeholder=" • • • " style="width:80px">
+                            <input class="form-control" type="password" name="security" id="security" placeholder=" • • • " style="width:80px">
                         </div>
                     </div>           
                 </div>
@@ -157,8 +157,11 @@
                 <label for="cupon"><b>Ingresa su código aquí</p></label>
                 <input class="form-control" type="text" id="cupon" name="cupon" placeholder="CUTSIEXXXX" style="width:200px;">   
             </div><br>
-
-            <button type="button" class="btn btn-primary"onclick="finalizarCompra()" name="continuar">Continuar</button>
+            <?php
+                $user = "'".$_SESSION['nombreUsuario']." ".$_SESSION['apellidos']."'";
+                $idUsuario = "'".$_SESSION['idUsuario']."'";
+            ?>
+            <button type="button" class="btn btn-primary"onclick="finalizarCompra(<?php echo $user; ?>,<?php echo $idUsuario; ?>)" name="continuar">Continuar</button>
         </form>
 
     </div>
