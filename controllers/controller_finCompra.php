@@ -37,18 +37,19 @@ if ($stmt->rowCount() > 0) {
             <span style="font-size: 25px;">SUBTOTAL: $<?php echo $subtotal?></span>
             
             <?php
-            //temporal
-            
-            //fin temporal
+            $iva=0;
             $costoenvio =0;
+            $iva= $subtotal*.16;
                 if($subtotal > 2000){
                 $costoenvio=0;
                ?> <span style="font-size: 22px;">ENVÍO: Gratis</span>
            <?php }else{
                 $costoenvio=200;
-                ?> <span style="font-size: 25px;">ENVÍO: $200</span>
+                ?> <span style="font-size: 25px;">IVA: $<?php echo $iva?></span> 
+                <span style="font-size: 25px;">ENVÍO: $200</span>
             <?php }
-            $total= $costoenvio + $subtotal; ?>
+            $total= $costoenvio + $subtotal + $iva; 
+            ?>
             <span style="font-size: 25px;">TOTAL: $<?php echo $total?></span>
             
         </div>
