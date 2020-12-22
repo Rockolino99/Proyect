@@ -6,42 +6,76 @@
 <body onload="getCartFinal(), updateCarrito()">
     <div class="contentfinCompra">
     <div id="productosCarritoFinal">
-    <!-- código a copiar-->
-        <form style="width:50%;">
-            <h5>Direccion de envio</h5>
-            <small  class="form-text text-muted" >Todo los campos son obligatorios</small>
+
+        <form style="width:50%; padding-right: 20px;">
+            <h5>Datos de envio</h5>
+            <p  class="form-text text-muted">*Todos los campos son obligatorios</p>
            <div class="row">
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="apat">Nombre Completo</label>
-                            <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre completo" name="nombreCompleto" required>
+                        <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre completo" name="nombreCompleto" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="amat">Telefono</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Telefono" name="telefono" required>
+                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono" required>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="user">Dirección:</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+                <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option value="Aguascalientes" selected>Aguascalientes</option>
+                            <option value="Baja California">Baja California</option>
+                            <option value="Baja California Sur">Baja California Sur</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Estado de México">Estado de México</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">San Luis Potosí</option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="pass">Ciudad</label>
-                                <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" required>
-                      </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="pass">Código Postal</label>
-                                    <input type="number" class="form-control" id="cp" placeholder="C.P" name="cp" required>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="col-4">
+                   <div class="form-group">
+                        <input type="text" class="form-control" id="cp" placeholder="Ciudad" name="cp" required>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                   <div class="form-group">
+                        <input type="number" class="form-control" id="cp" placeholder="C.P" name="cp" required>
+                    </div>
+                </div>
+            </div>
 
             <h5>Método de pago</h5>
             <nav style="width:90%;">
