@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
+                <input type="text" class="form-control" id="direccionVta" placeholder="Dirección" name="direccion" required>
             </div>
             <div class="row">
                 <div class="col-5">
@@ -66,7 +66,7 @@
 
                 <div class="col-4">
                    <div class="form-group">
-                        <input type="text" class="form-control" id="cp" placeholder="Ciudad" name="cp" required>
+                        <input type="text" class="form-control" id="municipio" placeholder="Municipio" name="municipio" required>
                     </div>
                 </div>
 
@@ -141,15 +141,7 @@
                 <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
                 <input type="text" name="cupon" placeholder="CUTSIEXXXX">   
             </div><br><br>
-<<<<<<< Updated upstream
             <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
-=======
-<<<<<<< HEAD
-            <button type="button" class="btn btn-primary" onclick="">Continuar</button>
-=======
-            <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
->>>>>>> 62be696ff759ffb155623b8dcc65f3357216521d
->>>>>>> Stashed changes
         </form>
 
     </div>

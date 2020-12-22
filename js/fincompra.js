@@ -5,7 +5,8 @@ function finalizarCompra() {
     var nombreCompleto = $('#nombreCompleto').val()
     var telefono = $('#telefono').val()
     var cp = $('#cp').val()
-    var dir = $('#direccion').val()
+    var dir = $('#direccionVta').val()
+    var municipio = $('#municipio').val()
 
 
     //nombre completo
@@ -39,6 +40,17 @@ function finalizarCompra() {
             timer: 2000
         })
         $('#direccion').focus()
+        return
+    }
+    //municipio
+    if (municipio == null || municipio.length == 0 || /^\s+$/.test(municipio)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingrese su municipio!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#municipio').focus()
         return
     }
     //codigo postal
@@ -87,6 +99,6 @@ function finalizarCompra() {
         return
     }
 
-
+    verNota("juan", 2)
 
 }
