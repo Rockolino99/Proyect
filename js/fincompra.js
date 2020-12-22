@@ -64,40 +64,43 @@ function finalizarCompra() {
         $('#cp').focus()
         return
     }
-    //numero de la tarjeta
-    if (number == null || number.length == 0 || number.length < 16 || number.length > 16) {
-        swal({
-            icon: 'warning',
-            text: '¡Ingresa una tarjeta valida!',
-            buttons: false,
-            timer: 2000
-        })
-        $('#number').focus()
-        return
+    if ($('input:radio[name=type]:checked').val() == 'tarjeta') {
+        //numero de la tarjeta
+        if (number == null || number.length == 0 || number.length < 16 || number.length > 16) {
+            swal({
+                icon: 'warning',
+                text: '¡Ingresa una tarjeta valida!',
+                buttons: false,
+                timer: 2000
+            })
+            $('#number').focus()
+            return
+        }
+
+        //validación nombre
+        if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
+            swal({
+                icon: 'warning',
+                text: '¡Ingrese su nombre!',
+                buttons: false,
+                timer: 2000
+            })
+            $('#InputNombre').focus()
+            return
+        }
+        //codigo de verificacion
+        if (codigo == null || codigo.length == 0 || codigo.length < 3 || codigo.length > 3) {
+            swal({
+                icon: 'warning',
+                text: '¡Ingresa un código valido!',
+                buttons: false,
+                timer: 2000
+            })
+            $('#security').focus()
+            return
+        }
     }
 
-    //validación nombre
-    if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
-        swal({
-            icon: 'warning',
-            text: '¡Ingrese su nombre!',
-            buttons: false,
-            timer: 2000
-        })
-        $('#InputNombre').focus()
-        return
-    }
-    //codigo de verificacion
-    if (codigo == null || codigo.length == 0 || codigo.length < 3 || codigo.length > 3) {
-        swal({
-            icon: 'warning',
-            text: '¡Ingresa un código valido!',
-            buttons: false,
-            timer: 2000
-        })
-        $('#security').focus()
-        return
-    }
 
     verNota("juan", 2)
 
