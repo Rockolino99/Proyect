@@ -141,7 +141,15 @@
                 <p><b>¿Tienes un cupón de descuento? <br> Ingresa su código aquí</p></b>
                 <input type="text" name="cupon" placeholder="CUTSIEXXXX">   
             </div><br><br>
+<<<<<<< Updated upstream
             <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
+=======
+<<<<<<< HEAD
+            <button type="button" class="btn btn-primary" onclick="">Continuar</button>
+=======
+            <button type="button" class="btn btn-primary"onclick="finalizarCompra()">Continuar</button>
+>>>>>>> 62be696ff759ffb155623b8dcc65f3357216521d
+>>>>>>> Stashed changes
         </form>
 
     </div>
