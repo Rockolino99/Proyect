@@ -87,8 +87,12 @@ session_start();
                 </li>
             </ul>
             <div style="display:flex;">
-                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito"><script>updateCarrito()</script></b></a>
-                
+                <a class="nav-link active" data-toggle="modal" data-target="#modalCarrito" style="color: white;" onclick="verCarrito()"><i class="fas fa-shopping-cart"></i><b id="carrito">
+                        <script>
+                            updateCarrito()
+                        </script>
+                    </b></a>
+
                 <?php
                 if (isset($_SESSION['idUsuario'])) {
                 ?>
@@ -252,7 +256,7 @@ session_start();
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" style="float:right" onclick="finCompra(
-                        <?php echo isset($_SESSION['correo'])? '\''.$_SESSION['correo'].'\'' : '0'; ?>
+                        <?php echo isset($_SESSION['correo']) ? '\'' . $_SESSION['correo'] . '\'' : '0'; ?>
                     )" type="submit">Finalizar compra</button>
                 </div>
             </div>
