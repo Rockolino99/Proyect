@@ -21,9 +21,15 @@ function registro() {
     var ap_paterno = $('#apat').val()
     var ap_materno = $('#amat').val()
     var correo = $('#correo').val()
-    var direccion = $('#direccion').val()
+    //var direccion = $('#direccion').val()
+    var colonia = $('#colonia').val()
+    var cp = $('#cp').val()
+    var calle = $('#calle').val()
+    var numero = $('#numero').val()
+
     var password = $('#pass').val()
     var password2 = $('#pass2').val()
+
 
     //validación nombre
     if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
@@ -73,16 +79,52 @@ function registro() {
         $('#correo').focus()
         return
     }
-
-    //validación direccion
-    if (direccion == null || direccion.length == 0 || /^\s+$/.test(direccion)) {
+    
+    //validación colonia
+    if (colonia == null || colonia.length == 0 || /^\s+$/.test(colonia)) {
         swal({
             icon: 'warning',
-            text: '¡Ingresa tu direccion!',
+            text: '¡Ingresa tu colonia!',
             buttons: false,
             timer: 2000
         })
-        $('#direccion').focus()
+        $('#colonia').focus()
+        return
+    }
+
+    //validación código postal
+    if (cp == null || cp.length == 0 || /^\s+$/.test(cp)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu código postal!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#cp').focus()
+        return
+    }
+
+    //validación calle
+    if (calle == null || calle.length == 0 || /^\s+$/.test(calle)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu calle!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#calle').focus()
+        return
+    }
+
+    //validación numero
+    if (numero == null || numero.length == 0 || /^\s+$/.test(numero)) {
+        swal({
+            icon: 'warning',
+            text: '¡Ingresa tu numero!',
+            buttons: false,
+            timer: 2000
+        })
+        $('#numero').focus()
         return
     }
 
@@ -128,7 +170,11 @@ function registro() {
             apellido_materno: ap_materno,
             correo: correo,
             password: password,
-            direccion: direccion
+            //direccion: direccion
+            colonia: colonia,
+            cp: cp,
+            calle,calle,
+            numero,numero
         },
         url: "controllers/controller_RegistroUsuario.php",
        success: function (result) {

@@ -9,7 +9,11 @@ class Login {
     public $nombre;
     public $apellido_paterno;
     public $apellido_materno;
-    public $direccion;
+    //public $direccion;
+    public $colonia;
+    public $cp;
+    public $calle;
+    public $numero;
     public $bloqueo;
 
     public $idUsuario;
@@ -43,7 +47,10 @@ class Login {
                           apellido_materno = :apellido_materno,
                           correo = :correo,
                           contra = :contra,
-                          direccion = :direccion,
+                          colonia = :colonia,
+                          cp = :cp,
+                          calle = :calle,
+                          numero = :numero,
                           bloqueo = :bloqueo";
                 
                 $stmt = $this->conn->prepare($query);
@@ -54,7 +61,11 @@ class Login {
                 $this->apellido_paterno = htmlspecialchars(strip_tags($this->apellido_paterno));
                 $this->apellido_materno = htmlspecialchars(strip_tags($this->apellido_materno));
                 $this->contra = htmlspecialchars(strip_tags($this->contra));
-                $this->direccion = htmlspecialchars(strip_tags($this->direccion));
+                //$this->direccion = htmlspecialchars(strip_tags($this->direccion));
+                $this->colonia = htmlspecialchars(strip_tags($this->colonia));
+                $this->cp = htmlspecialchars(strip_tags($this->cp));
+                $this->calle = htmlspecialchars(strip_tags($this->calle));
+                $this->numero = htmlspecialchars(strip_tags($this->numero));
                 $this->bloqueo = htmlspecialchars(strip_tags($this->bloqueo));
         
                 $stmt->bindParam(":nombre", $this->nombre);
@@ -62,7 +73,11 @@ class Login {
                 $stmt->bindParam(":apellido_materno", $this->apellido_materno);
                 $stmt->bindParam(":correo", $this->correo);
                 $stmt->bindParam(":contra", $this->contra);
-                $stmt->bindParam(":direccion", $this->direccion);
+                //$stmt->bindParam(":direccion", $this->direccion);
+                $stmt->bindParam(":colonia", $this->colonia);
+                $stmt->bindParam(":cp", $this->cp);
+                $stmt->bindParam(":calle", $this->calle);
+                $stmt->bindParam(":numero", $this->numero);
                 $stmt->bindParam(":bloqueo", $this->bloqueo);
                 
                 if($stmt->execute())
@@ -102,7 +117,11 @@ class Login {
                     $_SESSION['nombreUsuario'] = $row['nombre'];
                     $_SESSION['apellidos'] = "$row[apellido_paterno] $row[apellido_materno]";
                     $_SESSION['correo'] = $row['correo'];
-                    $_SESSION['direccion'] = $row['direccion'];
+                    //$_SESSION['direccion'] = $row['direccion'];
+                    $_SESSION['colonia'] = $row['colonia'];
+                    $_SESSION['cp'] = $row['cp'];
+                    $_SESSION['calle'] = $row['calle'];
+                    $_SESSION['numero'] = $row['numero'];
 
                     $query = "UPDATE u672703426_cutsiegirl.usuario
                               SET bloqueo = 0

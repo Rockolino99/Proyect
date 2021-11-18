@@ -12,7 +12,12 @@ $login->apellido_paterno = $_POST['apellido_paterno'];
 $login->apellido_materno = $_POST['apellido_materno'];
 $login->correo = $_POST['correo'];
 $login->contra = $_POST['password'];
-$login->direccion = $_POST['direccion'];
+//
+$login->colonia = $_POST['colonia'];
+$login->cp = $_POST['cp'];
+$login->calle = $_POST['calle'];
+$login->numero = $_POST['numero'];
+//
 $login->bloqueo = 0;
 
 echo $login->setRegistro();//retorna ultimo id insertado

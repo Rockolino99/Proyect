@@ -174,10 +174,42 @@ session_start();
                             <label for="correo">Correo Electrónico:</label>
                             <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico" name="correo" required>
                         </div>
+                        <!--
                         <div class="form-group">
                             <label for="user">Dirección:</label>
                             <input type="text" class="form-control" id="direccion" placeholder="Dirección" name="direccion" required>
                         </div>
+                        -->
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="colonia">Colonia:</label>
+                                    <input type="text" class="form-control" id="colonia" placeholder="Colonia" name="colonia" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cp">Código Postal:</label>
+                                    <input type="text" class="form-control" id="cp" placeholder="Código Postal" name="cp" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="calle">Calle:</label>
+                                    <input type="text" class="form-control" id="calle" placeholder="Colonia" name="colonia" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="numero">Nº exterior:</label>
+                                    <input type="text" class="form-control" id="numero" placeholder="Nº exterior" name="numero" required>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
@@ -187,7 +219,7 @@ session_start();
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="pass">Confirma Contraseña:</label>
+                                    <label for="pass2">Confirma Contraseña:</label>
                                     <input type="password" class="form-control" id="pass2" placeholder="Repite Tu Contraseña" name="pass2" required>
                                 </div>
                             </div>
